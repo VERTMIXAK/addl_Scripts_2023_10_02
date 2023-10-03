@@ -1,0 +1,1087 @@
+
+ Model Input Parameters:  ROMS/TOMS version 3.7  
+                          Monday - June 17, 2019 -  1:50:18 PM
+ -----------------------------------------------------------------------------
+
+ PALAU_800m;   800m telescoping to 2500m
+
+ Operating system : Linux
+ CPU/hardware     : x86_64
+ Compiler system  : ifort
+ Compiler command : /opt/scyld/openmpi/1.10.7/intel/bin/mpif90
+ Compiler flags   : -heap-arrays -fp-model precise -ip -O3 -free -free
+
+ Input Script  : 
+
+ SVN Root URL  : https:://myroms.org/svn/src
+ SVN Revision  : exported
+
+ Local Root    : /import/c1/VERTMIX/jgpender/roms-kate_svn
+ Header Dir    : ./Apps/PALAU_800m
+ Header file   : palau.h
+ Analytical Dir: ./Apps/PALAU_800m
+
+ Resolution, Grid 01: 0722x0652x050,  Parallel Nodes:  49,  Tiling: 007x007
+
+
+ Physical Parameters, Grid: 01
+ =============================
+
+         10  ntimes            Number of timesteps for 3-D equations.
+     10.000  dt                Timestep size (s) for 3-D equations.
+          5  ndtfast           Number of timesteps for 2-D equations between
+                                 each 3D timestep.
+          1  ERstr             Starting ensemble/perturbation run number.
+          1  ERend             Ending ensemble/perturbation run number.
+          0  nrrec             Number of restart records to read from disk.
+          T  LcycleRST         Switch to recycle time-records in restart file.
+       8640  nRST              Number of timesteps between the writing of data
+                                 into restart fields.
+          1  ninfo             Number of timesteps between print of information
+                                 to standard output.
+        360  nSTA              Number of timesteps between the writing of data
+                                 the stations file.
+        360  nFLT              Number of timesteps between the writing of data
+                                 into floats file.
+          T  ldefout           Switch to create a new output NetCDF file(s).
+       1080  nHIS              Number of timesteps between the writing fields
+                                 into history file.
+       8640  ndefHIS           Number of timesteps between creation of new
+                                 history files.
+          1  ntsAVG            Starting timestep for the accumulation of output
+                                 time-averaged data.
+       8640  nAVG              Number of timesteps between the writing of
+                                 time-averaged data into averages file.
+       8640  ndefAVG           Number of timesteps between creation of new
+                                 time-averaged file.
+        360  nHIS2             Number of timesteps between the writing of
+                                 surface file.
+       8640  ndefHIS2          Number of timesteps between creation of new
+                                 surface file.
+ 1.3300E+01  nl_tnu2(01)       NLM Horizontal, harmonic mixing coefficient
+                                 (m2/s) for tracer 01: temp
+ 1.3300E+01  nl_tnu2(02)       NLM Horizontal, harmonic mixing coefficient
+                                 (m2/s) for tracer 02: salt
+ 8.9000E+00  nl_visc2          NLM Horizontal, harmonic mixing coefficient
+                                 (m2/s) for momentum.
+          F  LuvSponge         Turning OFF sponge on horizontal momentum.
+          F  LtracerSponge(01) Turning OFF sponge on tracer 01: temp
+          F  LtracerSponge(02) Turning OFF sponge on tracer 02: salt
+ 1.0000E-07  Akt_bak(01)       Background vertical mixing coefficient (m2/s)
+                                 for tracer 01: temp
+ 1.0000E-09  Akt_bak(02)       Background vertical mixing coefficient (m2/s)
+                                 for tracer 02: salt
+ 1.0000E-05  Akv_bak           Background vertical mixing coefficient (m2/s)
+                                 for momentum.
+ 3.0000E-04  rdrg              Linear bottom drag coefficient (m/s).
+ 3.0000E-03  rdrg2             Quadratic bottom drag coefficient.
+ 2.0000E-02  Zob               Bottom roughness (m).
+          1  lmd_Jwt           Jerlov water type.
+          2  Vtransform        S-coordinate transformation equation.
+          5  Vstretching       S-coordinate stretching function.
+ 6.5000E+00  theta_s           S-coordinate surface control parameter.
+ 4.0000E+00  theta_b           S-coordinate bottom  control parameter.
+    250.000  Tcline            S-coordinate surface/bottom layer width (m) used
+                                 in vertical coordinate stretching.
+   1025.000  rho0              Mean density (kg/m3) for Boussinesq approximation.
+   5962.000  dstart            Time-stamp assigned to model initialization (days).
+     -1.000  tide_start        Reference time origin for tidal forcing (days).
+20000101.00  time_ref          Reference time for units attribute (yyyymmdd.dd)
+ 1.0000E+00  Tnudg(01)         Nudging/relaxation time scale (days)
+                                 for tracer 01: temp
+ 1.0000E+00  Tnudg(02)         Nudging/relaxation time scale (days)
+                                 for tracer 02: salt
+ 9.0000E+01  Tnudg_SSS         Nudging/relaxation time scale (days)
+                                 for sea surface salinity.
+ 1.0000E+00  Znudg             Nudging/relaxation time scale (days)
+                                 for free-surface.
+ 1.0000E+00  M2nudg            Nudging/relaxation time scale (days)
+                                 for 2D momentum.
+ 1.0000E+00  M3nudg            Nudging/relaxation time scale (days)
+                                 for 3D momentum.
+ 1.2000E+02  obcfac            Factor between passive and active
+                                 open boundary conditions.
+          F  VolCons(1)        NLM western  edge boundary volume conservation.
+          F  VolCons(2)        NLM southern edge boundary volume conservation.
+          F  VolCons(3)        NLM eastern  edge boundary volume conservation.
+          F  VolCons(4)        NLM northern edge boundary volume conservation.
+     10.000  T0                Background potential temperature (C) constant.
+     35.000  S0                Background salinity (PSU) constant.
+      1.000  gamma2            Slipperiness variable: free-slip (1.0) or 
+                                                      no-slip (-1.0).
+          F  LuvSrc            Turning OFF momentum point Sources/Sinks.
+          F  LwSrc             Turning OFF volume influx point Sources/Sinks.
+          F  LtracerSrc(01)    Turning OFF point Sources/Sinks on tracer 01: temp
+          F  LtracerSrc(02)    Turning OFF point Sources/Sinks on tracer 02: salt
+          F  LsshCLM           Turning OFF processing of SSH climatology.
+          F  Lm2CLM            Turning OFF processing of 2D momentum climatology.
+          F  Lm3CLM            Turning OFF processing of 3D momentum climatology.
+          F  LtracerCLM(01)    Turning OFF processing of climatology tracer 01: temp
+          F  LtracerCLM(02)    Turning OFF processing of climatology tracer 02: salt
+          F  LnudgeM2CLM       Turning OFF nudging of 2D momentum climatology.
+          F  LnudgeM3CLM       Turning OFF nudging of 3D momentum climatology.
+          F  LnudgeTCLM(01)    Turning OFF nudging of climatology tracer 01: temp
+          F  LnudgeTCLM(02)    Turning OFF nudging of climatology tracer 02: salt
+          T  Hout(idUvel)      Write out 3D U-momentum component.
+          T  Hout(idVvel)      Write out 3D V-momentum component.
+          T  Hout(idWvel)      Write out W-momentum component.
+          T  Hout(idTvar)      Write out tracer 01: temp
+          T  Hout(idTvar)      Write out tracer 02: salt
+          T  Hout(idDano)      Write out density anomaly.
+
+          T  Hout2(idFsur)     Write out averaged free-surface.
+          T  Hout2(idebf)      Write out Ekman buoyancy flux.
+          T  Hout2(idUbar)     Write out averaged 2D U-momentum component.
+          T  Hout2(idVbar)     Write out averaged 2D V-momentum component.
+          T  Hout2(idUvel)     Write out averaged 3D U-momentum component.
+          T  Hout2(idVvel)     Write out averaged 3D V-momentum component.
+          T  Hout2(idTvar)     Write out averaged tracer 01: temp
+          T  Hout2(idTvar)     Write out averaged tracer 02: salt
+          T  Hout2(idUsms)     Write out averaged surface U-momentum stress.
+          T  Hout2(idVsms)     Write out averaged surface V-momentum stress.
+          T  Hout2(idUbms)     Write out averaged bottom U-momentum stress.
+          T  Hout2(idVbms)     Write out averaged bottom V-momentum stress.
+          T  Hout2(idTsur)     Write out averaged surface net heat flux.
+          T  Hout2(idTsur)     Write out averaged surface net salt flux.
+          T  Hout2(idSrad)     Write out averaged shortwave radiation flux.
+
+          T  Aout(idFsur)      Write out averaged free-surface.
+          T  Aout(idUbar)      Write out averaged 2D U-momentum component.
+          T  Aout(idVbar)      Write out averaged 2D V-momentum component.
+          T  Aout(idUvel)      Write out averaged 3D U-momentum component.
+          T  Aout(idVvel)      Write out averaged 3D V-momentum component.
+          T  Aout(idWvel)      Write out averaged W-momentum component.
+          T  Aout(idTvar)      Write out averaged tracer 01: temp
+          T  Aout(idTvar)      Write out averaged tracer 02: salt
+          T  Aout(idUsms)      Write out averaged surface U-momentum stress.
+          T  Aout(idVsms)      Write out averaged surface V-momentum stress.
+          T  Aout(idUbms)      Write out averaged bottom U-momentum stress.
+          T  Aout(idVbms)      Write out averaged bottom V-momentum stress.
+          T  Aout(idTsur)      Write out averaged surface net heat flux.
+          T  Aout(idTsur)      Write out averaged surface net salt flux.
+          T  Aout(idSrad)      Write out averaged shortwave radiation flux.
+          T  Aout(idHsbl)      Write out averaged depth of surface boundary layer.
+          T  Aout(id2dRV)      Write out averaged 2D relative vorticity.
+          T  Aout(id3dRV)      Write out averaged 3D relative vorticity.
+
+ Output/Input Files:
+
+             Output Restart File:  ./netcdfOutput/palau_rst.nc
+       Output Forward State File:  palau_fwd.nc
+       Prefix for Averages Files:  ./netcdfOutput/palau_avg
+       Prefix for Surface Files:  ./netcdfOutput/palau_his2
+            Output Stations File:  ./netcdfOutput/palau_sta.nc
+              Output Floats File:  ./netcdfOutput/palau_flt.nc
+                 Input Grid File:  ../../InputFiles/Gridpak/PALAU_800m.nc
+    Input Nonlinear Initial File:  ../../InputFiles/BC_IC_UH_2016/ini_2016_119/UH_2016_119_ic_PALAU_800m.nc
+           Input Forcing File 01:  ../../InputFiles/Forcing/palau_frc.nc
+           Input Forcing File 02:  ../../InputFiles/Forcing/qcorr.nc
+           Input Forcing File 03:  ../../InputFiles/TidesM2S2K1O1/PALAU_tides_otps.nc
+         Input Boundary File 01:  ../../InputFiles/BC_IC_UH_2016/UH_2016_119_bdry_PALAU_800m.nc
+          Station positions File:  ../../InputFiles/External_vertMoor/stations.in
+   Initial Floats Positions File:  ../../InputFiles/External_vertMoor/floats_PALAU.in
+
+ Tile partition information for Grid 01:  0722x0652x0050  tiling: 007x007
+
+     tile     Istr     Iend     Jstr     Jend     Npts
+
+ Number of tracers:            2
+        0        1      101        1       91   459550
+        1      102      205        1       91   473200
+        2      206      309        1       91   473200
+        3      310      413        1       91   473200
+        4      414      517        1       91   473200
+        5      518      621        1       91   473200
+        6      622      722        1       91   459550
+        7        1      101       92      185   474700
+        8      102      205       92      185   488800
+        9      206      309       92      185   488800
+       10      310      413       92      185   488800
+       11      414      517       92      185   488800
+       12      518      621       92      185   488800
+       13      622      722       92      185   474700
+       14        1      101      186      279   474700
+       15      102      205      186      279   488800
+       16      206      309      186      279   488800
+       17      310      413      186      279   488800
+       18      414      517      186      279   488800
+       19      518      621      186      279   488800
+       20      622      722      186      279   474700
+       21        1      101      280      373   474700
+       22      102      205      280      373   488800
+       23      206      309      280      373   488800
+       24      310      413      280      373   488800
+       25      414      517      280      373   488800
+       26      518      621      280      373   488800
+       27      622      722      280      373   474700
+       28        1      101      374      467   474700
+       29      102      205      374      467   488800
+       30      206      309      374      467   488800
+       31      310      413      374      467   488800
+       32      414      517      374      467   488800
+       33      518      621      374      467   488800
+       34      622      722      374      467   474700
+       35        1      101      468      561   474700
+       36      102      205      468      561   488800
+       37      206      309      468      561   488800
+       38      310      413      468      561   488800
+       39      414      517      468      561   488800
+       40      518      621      468      561   488800
+       41      622      722      468      561   474700
+       42        1      101      562      652   459550
+       43      102      205      562      652   473200
+       44      206      309      562      652   473200
+       45      310      413      562      652   473200
+       46      414      517      562      652   473200
+       47      518      621      562      652   473200
+       48      622      722      562      652   459550
+
+ Tile minimum and maximum fractional coordinates for Grid 01:
+   (interior points only)
+
+     tile     Xmin     Xmax     Ymin     Ymax     grid
+
+        0     0.50   101.50     0.50    91.50  RHO-points
+        1   101.50   205.50     0.50    91.50  RHO-points
+        2   205.50   309.50     0.50    91.50  RHO-points
+        3   309.50   413.50     0.50    91.50  RHO-points
+        4   413.50   517.50     0.50    91.50  RHO-points
+        5   517.50   621.50     0.50    91.50  RHO-points
+        6   621.50   722.50     0.50    91.50  RHO-points
+        7     0.50   101.50    91.50   185.50  RHO-points
+        8   101.50   205.50    91.50   185.50  RHO-points
+        9   205.50   309.50    91.50   185.50  RHO-points
+       10   309.50   413.50    91.50   185.50  RHO-points
+       11   413.50   517.50    91.50   185.50  RHO-points
+       12   517.50   621.50    91.50   185.50  RHO-points
+       13   621.50   722.50    91.50   185.50  RHO-points
+       14     0.50   101.50   185.50   279.50  RHO-points
+       15   101.50   205.50   185.50   279.50  RHO-points
+       16   205.50   309.50   185.50   279.50  RHO-points
+       17   309.50   413.50   185.50   279.50  RHO-points
+       18   413.50   517.50   185.50   279.50  RHO-points
+       19   517.50   621.50   185.50   279.50  RHO-points
+       20   621.50   722.50   185.50   279.50  RHO-points
+       21     0.50   101.50   279.50   373.50  RHO-points
+       22   101.50   205.50   279.50   373.50  RHO-points
+       23   205.50   309.50   279.50   373.50  RHO-points
+       24   309.50   413.50   279.50   373.50  RHO-points
+       25   413.50   517.50   279.50   373.50  RHO-points
+       26   517.50   621.50   279.50   373.50  RHO-points
+       27   621.50   722.50   279.50   373.50  RHO-points
+       28     0.50   101.50   373.50   467.50  RHO-points
+       29   101.50   205.50   373.50   467.50  RHO-points
+       30   205.50   309.50   373.50   467.50  RHO-points
+       31   309.50   413.50   373.50   467.50  RHO-points
+       32   413.50   517.50   373.50   467.50  RHO-points
+       33   517.50   621.50   373.50   467.50  RHO-points
+       34   621.50   722.50   373.50   467.50  RHO-points
+       35     0.50   101.50   467.50   561.50  RHO-points
+       36   101.50   205.50   467.50   561.50  RHO-points
+       37   205.50   309.50   467.50   561.50  RHO-points
+       38   309.50   413.50   467.50   561.50  RHO-points
+       39   413.50   517.50   467.50   561.50  RHO-points
+       40   517.50   621.50   467.50   561.50  RHO-points
+       41   621.50   722.50   467.50   561.50  RHO-points
+       42     0.50   101.50   561.50   652.50  RHO-points
+       43   101.50   205.50   561.50   652.50  RHO-points
+       44   205.50   309.50   561.50   652.50  RHO-points
+       45   309.50   413.50   561.50   652.50  RHO-points
+       46   413.50   517.50   561.50   652.50  RHO-points
+       47   517.50   621.50   561.50   652.50  RHO-points
+       48   621.50   722.50   561.50   652.50  RHO-points
+
+        0     1.00   101.50     0.50    91.50    U-points
+        1   101.50   205.50     0.50    91.50    U-points
+        2   205.50   309.50     0.50    91.50    U-points
+        3   309.50   413.50     0.50    91.50    U-points
+        4   413.50   517.50     0.50    91.50    U-points
+        5   517.50   621.50     0.50    91.50    U-points
+        6   621.50   722.00     0.50    91.50    U-points
+        7     1.00   101.50    91.50   185.50    U-points
+        8   101.50   205.50    91.50   185.50    U-points
+        9   205.50   309.50    91.50   185.50    U-points
+       10   309.50   413.50    91.50   185.50    U-points
+       11   413.50   517.50    91.50   185.50    U-points
+       12   517.50   621.50    91.50   185.50    U-points
+       13   621.50   722.00    91.50   185.50    U-points
+       14     1.00   101.50   185.50   279.50    U-points
+       15   101.50   205.50   185.50   279.50    U-points
+       16   205.50   309.50   185.50   279.50    U-points
+       17   309.50   413.50   185.50   279.50    U-points
+       18   413.50   517.50   185.50   279.50    U-points
+       19   517.50   621.50   185.50   279.50    U-points
+       20   621.50   722.00   185.50   279.50    U-points
+       21     1.00   101.50   279.50   373.50    U-points
+       22   101.50   205.50   279.50   373.50    U-points
+       23   205.50   309.50   279.50   373.50    U-points
+       24   309.50   413.50   279.50   373.50    U-points
+       25   413.50   517.50   279.50   373.50    U-points
+       26   517.50   621.50   279.50   373.50    U-points
+       27   621.50   722.00   279.50   373.50    U-points
+       28     1.00   101.50   373.50   467.50    U-points
+       29   101.50   205.50   373.50   467.50    U-points
+       30   205.50   309.50   373.50   467.50    U-points
+       31   309.50   413.50   373.50   467.50    U-points
+       32   413.50   517.50   373.50   467.50    U-points
+       33   517.50   621.50   373.50   467.50    U-points
+       34   621.50   722.00   373.50   467.50    U-points
+       35     1.00   101.50   467.50   561.50    U-points
+       36   101.50   205.50   467.50   561.50    U-points
+       37   205.50   309.50   467.50   561.50    U-points
+       38   309.50   413.50   467.50   561.50    U-points
+       39   413.50   517.50   467.50   561.50    U-points
+       40   517.50   621.50   467.50   561.50    U-points
+       41   621.50   722.00   467.50   561.50    U-points
+       42     1.00   101.50   561.50   652.50    U-points
+       43   101.50   205.50   561.50   652.50    U-points
+       44   205.50   309.50   561.50   652.50    U-points
+       45   309.50   413.50   561.50   652.50    U-points
+       46   413.50   517.50   561.50   652.50    U-points
+       47   517.50   621.50   561.50   652.50    U-points
+       48   621.50   722.00   561.50   652.50    U-points
+
+        0     0.50   101.50     1.00    91.50    V-points
+        1   101.50   205.50     1.00    91.50    V-points
+        2   205.50   309.50     1.00    91.50    V-points
+        3   309.50   413.50     1.00    91.50    V-points
+        4   413.50   517.50     1.00    91.50    V-points
+        5   517.50   621.50     1.00    91.50    V-points
+        6   621.50   722.50     1.00    91.50    V-points
+        7     0.50   101.50    91.50   185.50    V-points
+        8   101.50   205.50    91.50   185.50    V-points
+        9   205.50   309.50    91.50   185.50    V-points
+       10   309.50   413.50    91.50   185.50    V-points
+       11   413.50   517.50    91.50   185.50    V-points
+       12   517.50   621.50    91.50   185.50    V-points
+       13   621.50   722.50    91.50   185.50    V-points
+       14     0.50   101.50   185.50   279.50    V-points
+       15   101.50   205.50   185.50   279.50    V-points
+       16   205.50   309.50   185.50   279.50    V-points
+       17   309.50   413.50   185.50   279.50    V-points
+       18   413.50   517.50   185.50   279.50    V-points
+       19   517.50   621.50   185.50   279.50    V-points
+       20   621.50   722.50   185.50   279.50    V-points
+       21     0.50   101.50   279.50   373.50    V-points
+       22   101.50   205.50   279.50   373.50    V-points
+       23   205.50   309.50   279.50   373.50    V-points
+       24   309.50   413.50   279.50   373.50    V-points
+       25   413.50   517.50   279.50   373.50    V-points
+       26   517.50   621.50   279.50   373.50    V-points
+       27   621.50   722.50   279.50   373.50    V-points
+       28     0.50   101.50   373.50   467.50    V-points
+       29   101.50   205.50   373.50   467.50    V-points
+       30   205.50   309.50   373.50   467.50    V-points
+       31   309.50   413.50   373.50   467.50    V-points
+       32   413.50   517.50   373.50   467.50    V-points
+       33   517.50   621.50   373.50   467.50    V-points
+       34   621.50   722.50   373.50   467.50    V-points
+       35     0.50   101.50   467.50   561.50    V-points
+       36   101.50   205.50   467.50   561.50    V-points
+       37   205.50   309.50   467.50   561.50    V-points
+       38   309.50   413.50   467.50   561.50    V-points
+       39   413.50   517.50   467.50   561.50    V-points
+       40   517.50   621.50   467.50   561.50    V-points
+       41   621.50   722.50   467.50   561.50    V-points
+       42     0.50   101.50   561.50   652.00    V-points
+       43   101.50   205.50   561.50   652.00    V-points
+       44   205.50   309.50   561.50   652.00    V-points
+       45   309.50   413.50   561.50   652.00    V-points
+       46   413.50   517.50   561.50   652.00    V-points
+       47   517.50   621.50   561.50   652.00    V-points
+       48   621.50   722.50   561.50   652.00    V-points
+
+ Maximum halo size in XI and ETA directions:
+
+               HaloSizeI(1) =     232
+               HaloSizeJ(1) =     212
+                TileSide(1) =     110
+                TileSize(1) =   11000
+
+
+ Input Assimilation Files:
+
+   Verification Parameters File:  ./Apps/s4dvar.in
+      Input/Output Lanczos File:  ocean_lcz.nc
+      Input/Output Hessian File:  ocean_hss.nc
+       Output verification File:  ./netcdfOutput/ocean_mod.nc
+
+ Lateral Boundary Conditions: NLM
+ ============================
+
+ Variable               Grid  West Edge    South Edge   East Edge    North Edge
+ ---------              ----  ----------   ----------   ----------   ----------
+
+ zeta                     1   Chapman Imp  Chapman Imp  Chapman Imp  Chapman Imp
+
+ ubar                     1   Flather      Flather      Flather      Flather
+
+ vbar                     1   Flather      Flather      Flather      Flather
+
+ u                        1   Rad + Nud    Rad + Nud    Rad + Nud    Rad + Nud
+
+ v                        1   Rad + Nud    Rad + Nud    Rad + Nud    Rad + Nud
+
+ temp                     1   Rad + Nud    Rad + Nud    Rad + Nud    Rad + Nud
+
+ salt                     1   Rad + Nud    Rad + Nud    Rad + Nud    Rad + Nud
+
+ Activated C-preprocessing Options:
+
+ PALAU               PALAU_800m;   800m telescoping to 2500m
+ ADD_FSOBC           Adding tidal elevation to processed OBC data.
+ ADD_M2OBC           Adding tidal currents to processed OBC data.
+ ANA_BSFLUX          Analytical kinematic bottom salinity flux.
+ ANA_BTFLUX          Analytical kinematic bottom temperature flux.
+ ASSUMED_SHAPE       Using assumed-shape arrays.
+ AVERAGES            Writing out time-averaged nonlinear model fields.
+ CURVGRID            Orthogonal curvilinear grid.
+ DIFF_GRID           Horizontal diffusion coefficient scaled by grid size.
+ DJ_GRADPS           Parabolic Splines density Jacobian (Shchepetkin, 2002).
+ DOUBLE_PRECISION    Double precision arithmetic.
+ FLOATS              Simulated Lagrangian drifters.
+ FORWARD_WRITE       Write out Forward solution for Tangent/Adjoint.
+ !FULL_GRID          Considering observations at interior points only.
+ HISTORY2            Writing out secondary surface fields.
+ LMD_CONVEC          LMD convective mixing due to shear instability.
+ LMD_MIXING          Large/McWilliams/Doney interior mixing.
+ LMD_NONLOCAL        LMD convective nonlocal transport.
+ LMD_RIMIX           LMD diffusivity due to shear instability.
+ LMD_SHAPIRO         Shapiro filtering boundary layer depth.
+ LMD_SKPP            KPP surface boundary layer mixing.
+ MASKING             Land/Sea masking.
+ MIX_GEO_TS          Mixing of tracers along geopotential surfaces.
+ MIX_S_UV            Mixing of momentum along constant S-surfaces.
+ MPI                 MPI distributed-memory configuration.
+ NONLINEAR           Nonlinear Model.
+ NONLIN_EOS          Nonlinear Equation of State for seawater.
+ OBSERVATIONS        Processing 4DVar observations.
+ PERFECT_RESTART     Processing perfect restart variables.
+ POWER_LAW           Power-law shape time-averaging barotropic filter.
+ PROFILE             Time profiling activated .
+ QCORRECTION         Surface net heat flux correction.
+ RADIATION_2D        Use tangential phase speed in radiation conditions.
+ RI_SPLINES          Parabolic Spline Reconstruction for Richardson Number.
+ !RST_SINGLE         Double precision fields in restart NetCDF file.
+ SALINITY            Using salinity.
+ SOLAR_SOURCE        Solar Radiation Source Term.
+ SOLVE3D             Solving 3D Primitive Equations.
+ SSH_TIDES           Add tidal elevation to SSH climatology.
+ STATIONS            Writing out station data.
+ TS_U3HADVECTION     Third-order upstream horizontal advection of tracers.
+ TS_C4VADVECTION     Fourth-order centered vertical advection of tracers.
+ TS_DIF2             Harmonic mixing of tracers.
+ UV_ADV              Advection of momentum.
+ UV_COR              Coriolis term.
+ UV_U3HADVECTION     Third-order upstream horizontal advection of 3D momentum.
+ UV_C4VADVECTION     Fourth-order centered vertical advection of momentum.
+ UV_DRAG_GRID        Spatially varying quadratic drag coefficient.
+ UV_QDRAG            Quadratic bottom stress.
+ UV_TIDES            Add tidal currents to 2D momentum climatologies.
+ UV_VIS2             Harmonic mixing of momentum.
+ VAR_RHO_2D          Variable density barotropic mode.
+ VISC_GRID           Horizontal viscosity coefficient scaled by grid size.
+ VERIFICATION        Proccess model solution at observation locations.
+
+ Process Information:
+
+ Node #  8 (pid=   29918) is active.
+ Node #  0 (pid=   29889) is active.
+ Node #  1 (pid=   29898) is active.
+ Node #  9 (pid=   29921) is active.
+ Node # 41 (pid=   29917) is active.
+ Node # 24 (pid=   29915) is active.
+ Node #  4 (pid=   29907) is active.
+ Node # 11 (pid=   29928) is active.
+ Node # 13 (pid=   29933) is active.
+ Node # 17 (pid=   29894) is active.
+ Node #  2 (pid=   29901) is active.
+ Node # 10 (pid=   29925) is active.
+ Node # 34 (pid=   29896) is active.
+ Node # 12 (pid=   29931) is active.
+ Node # 25 (pid=   29919) is active.
+ Node #  3 (pid=   29904) is active.
+ Node # 42 (pid=   29920) is active.
+ Node # 16 (pid=   29941) is active.
+ Node # 33 (pid=   29895) is active.
+ Node # 21 (pid=   29906) is active.
+ Node #  5 (pid=   29910) is active.
+ Node #  7 (pid=   29916) is active.
+ Node # 36 (pid=   29902) is active.
+ Node # 44 (pid=   29926) is active.
+ Node # 19 (pid=   29900) is active.
+ Node # 27 (pid=   29924) is active.
+ Node # 29 (pid=   29930) is active.
+ Node # 38 (pid=   29908) is active.
+ Node # 35 (pid=   29899) is active.
+ Node # 37 (pid=   29905) is active.
+ Node # 43 (pid=   29923) is active.
+ Node # 18 (pid=   29897) is active.
+ Node # 20 (pid=   29903) is active.
+ Node # 26 (pid=   29922) is active.
+ Node #  6 (pid=   29913) is active.
+ Node # 28 (pid=   29927) is active.
+ Node # 45 (pid=   29929) is active.
+ Node # 46 (pid=   29932) is active.
+ Node # 15 (pid=   29938) is active.
+ Node # 32 (pid=   29940) is active.
+ Node # 14 (pid=   29935) is active.
+ Node # 23 (pid=   29912) is active.
+ Node # 40 (pid=   29914) is active.
+ Node # 47 (pid=   29936) is active.
+ Node # 30 (pid=   29934) is active.
+ Node # 31 (pid=   29937) is active.
+ Node # 48 (pid=   29939) is active.
+ Node # 22 (pid=   29909) is active.
+ Node # 39 (pid=   29911) is active.
+
+ INITIAL: Configuring and initializing forward nonlinear model ...
+ *******
+
+ Vertical S-coordinate System, Grid 01:
+
+ level   S-coord     Cs-curve   Z   at hmin       at hc    half way     at hmax
+
+    50   0.0000000   0.0000000        0.000       0.000       0.000       0.000
+    49  -0.0100000  -0.0000260       -0.185      -1.253      -2.453      -2.627
+    48  -0.0204082  -0.0001083       -0.378      -2.565      -5.216      -5.794
+    47  -0.0312245  -0.0002539       -0.579      -3.935      -8.316      -9.554
+    46  -0.0424490  -0.0004706       -0.787      -5.365     -11.782     -13.968
+    45  -0.0540816  -0.0007669       -1.003      -6.856     -15.646     -19.101
+    44  -0.0661224  -0.0011520       -1.226      -8.409     -19.944     -25.028
+    43  -0.0785714  -0.0016365       -1.457     -10.026     -24.715     -31.829
+    42  -0.0914286  -0.0022322       -1.696     -11.708     -30.006     -39.599
+    41  -0.1046939  -0.0029527       -1.943     -13.456     -35.867     -48.441
+    40  -0.1183673  -0.0038131       -2.198     -15.273     -42.355     -58.474
+    39  -0.1324490  -0.0048310       -2.460     -17.160     -49.538     -69.837
+    38  -0.1469388  -0.0060264       -2.730     -19.121     -57.492     -82.684
+    37  -0.1618367  -0.0074227       -3.008     -21.157     -66.305     -97.199
+    36  -0.1771429  -0.0090465       -3.294     -23.274     -76.079    -113.590
+    35  -0.1928571  -0.0109291       -3.588     -25.473     -86.932    -132.100
+    34  -0.2089796  -0.0131065       -3.889     -27.761     -99.001    -153.011
+    33  -0.2255102  -0.0156208       -4.199     -30.141    -112.447    -176.651
+    32  -0.2424490  -0.0185209       -4.517     -32.621    -127.455    -203.403
+    31  -0.2597959  -0.0218638       -4.843     -35.207    -144.242    -233.712
+    30  -0.2775510  -0.0257161       -5.178     -37.908    -163.060    -268.097
+    29  -0.2957143  -0.0301554       -5.521     -40.734    -184.205    -307.164
+    28  -0.3142857  -0.0352722       -5.872     -43.695    -208.021    -351.621
+    27  -0.3332653  -0.0411720       -6.233     -46.805    -234.908    -402.290
+    26  -0.3526531  -0.0479775       -6.602     -50.079    -265.333    -460.130
+    25  -0.3724490  -0.0558315       -6.980     -53.535    -299.838    -526.256
+    24  -0.3926531  -0.0648993       -7.368     -57.194    -339.052    -601.959
+    23  -0.4132653  -0.0753722       -7.765     -61.080    -383.701    -688.733
+    22  -0.4342857  -0.0874700       -8.172     -65.219    -434.621    -788.293
+    21  -0.4557143  -0.1014443       -8.589     -69.645    -492.767    -902.603
+    20  -0.4775510  -0.1175802       -9.018     -74.391    -559.224   -1033.893
+    19  -0.4997959  -0.1361984       -9.457     -79.499    -635.209   -1184.662
+    18  -0.5224490  -0.1576537       -9.909     -85.013    -722.071   -1357.684
+    17  -0.5455102  -0.1823322      -10.372     -90.980    -821.278   -1555.973
+    16  -0.5689796  -0.2106430      -10.849     -97.453    -934.383   -1782.722
+    15  -0.5928571  -0.2430039      -11.339    -104.483   -1062.974   -2041.195
+    14  -0.6171429  -0.2798181      -11.843    -112.120   -1208.584   -2334.539
+    13  -0.6418367  -0.3214394      -12.362    -120.410   -1372.557   -2665.518
+    12  -0.6669388  -0.3681221      -12.896    -129.383   -1555.859   -3036.117
+    11  -0.6924490  -0.4199541      -13.445    -139.050   -1758.824   -3447.021
+    10  -0.7183673  -0.4767723      -14.009    -149.392   -1980.833   -3896.959
+     9  -0.7446939  -0.5380650      -14.588    -160.345   -2219.940   -4381.933
+     8  -0.7714286  -0.6028702      -15.179    -171.787   -2472.491   -4894.433
+     7  -0.7985714  -0.6696948      -15.781    -183.533   -2732.812   -5422.801
+     6  -0.8261224  -0.7364862      -16.390    -195.326   -2993.103   -5951.007
+     5  -0.8540816  -0.8007046      -17.003    -206.848   -3243.713   -6459.223
+     4  -0.8824490  -0.8595428      -17.615    -217.749   -3473.974   -6925.526
+     3  -0.9112245  -0.9103159      -18.223    -227.693   -3673.684   -7328.954
+     2  -0.9404082  -0.9509845      -18.824    -236.424   -3835.094   -7653.583
+     1  -0.9700000  -0.9806783      -19.416    -243.835   -3954.895   -7892.615
+     0  -1.0000000  -1.0000000      -20.000    -250.000   -4035.380   -8050.759
+
+ Time Splitting Weights for Grid 01:    ndtfast =   5    nfast =   7
+ ==================================
+
+    Primary            Secondary            Accumulated to Current Step
+
+  1 0.0119306869089341 0.2000000000000000 0.0119306869089341 0.2000000000000000
+  2 0.0475049776008205 0.1976138626182131 0.0594356645097547 0.3976138626182131
+  3 0.1047629417620785 0.1881128670980491 0.1641986062718331 0.5857267297162622
+  4 0.1760826281731955 0.1671602787456334 0.3402812344450286 0.7528870084618955
+  5 0.2416469636634478 0.1319437531109943 0.5819281981084765 0.8848307615728898
+  6 0.2602974116474964 0.0836143603783047 0.8422256097559728 0.9684451219511945
+  7 0.1577743902440273 0.0315548780488054 1.0000000000000000 0.9999999999999999
+
+ ndtfast, nfast =    5   7   nfast/ndtfast =  1.40000
+
+ Centers of gravity and integrals (values must be 1, 1, approx 1/2, 1, 1):
+
+    1.000000000000 1.084198606272 0.542099303136 1.000000000000 1.000000000000
+
+ Power filter parameters, Fgamma, gamma =  0.28400   0.00000
+
+ Metrics information for Grid 01:
+ ===============================
+
+ Minimum X-grid spacing, DXmin =  7.62340115E-01 km
+ Maximum X-grid spacing, DXmax =  2.75717877E+00 km
+ Minimum Y-grid spacing, DYmin =  7.47737134E-01 km
+ Maximum Y-grid spacing, DYmax =  2.78397930E+00 km
+ Minimum Z-grid spacing, DZmin =  1.85223658E-01 m
+ Maximum Z-grid spacing, DZmax =  5.28367361E+02 m
+
+ Minimum barotropic Courant Number =  5.01724863E-02
+ Maximum barotropic Courant Number =  9.92108792E-01
+ Maximum Coriolis   Courant Number =  2.59440863E-04
+
+ Horizontal mixing scaled by grid size, GRDMAX =  2.62190136E+00 km
+
+ NLM: GET_STATE - Read state initial conditions,             t =  5962 00:00:00
+                   (Grid 01, File: UH_2016_119_ic_PALAU_800m.nc, Rec=0001, Index=1)
+                - free-surface
+                   (Min =  8.48875610E-01 Max =  1.44332594E+00)
+                - vertically integrated u-momentum component
+                   (Min = -1.09456525E+00 Max =  3.29593997E-01)
+                - vertically integrated v-momentum component
+                   (Min = -6.73573779E-01 Max =  1.35550887E+00)
+                - u-momentum component
+                   (Min = -2.12391539E+00 Max =  1.45202635E+00)
+                - v-momentum component
+                   (Min = -1.45269633E+00 Max =  2.39661650E+00)
+                - potential temperature
+                   (Min =  1.65543268E+00 Max =  3.13633520E+01)
+                - salinity
+                   (Min =  3.40644327E+01 Max =  3.51481709E+01)
+    GET_NGFLD   - tidal period
+                   (Min =  4.32000000E+04 Max =  9.29496231E+04)
+    GET_2DFLD   - tidal elevation amplitude
+                   (Min =  0.00000000E+00 Max =  5.35045862E-01)
+    GET_2DFLD   - tidal elevation phase angle
+                   (Min =  0.00000000E+00 Max =  5.60815120E+00)
+    GET_2DFLD   - tidal current inclination angle
+                   (Min =  0.00000000E+00 Max =  6.28066436E+00)
+    GET_2DFLD   - tidal current phase angle
+                   (Min =  0.00000000E+00 Max =  6.20062145E+00)
+    GET_2DFLD   - maximum tidal current, ellipse major axis
+                   (Min =  0.00000000E+00 Max =  4.17194843E-01)
+    GET_2DFLD   - minimum tidal current, ellipse minor axis
+                   (Min = -2.06845067E-02 Max =  5.02399839E-02)
+    GET_2DFLD   - surface u-momentum stress,                 t =  5962 00:00:00
+                   (Rec=0000697, Index=1, File: palau_frc.nc)
+                   (Tmin=       5875.0000 Tmax=       6318.8750)
+                   (Min = -8.79101368E-05 Max =  1.58519729E-05)
+    GET_2DFLD   - surface v-momentum stress,                 t =  5962 00:00:00
+                   (Rec=0000697, Index=1, File: palau_frc.nc)
+                   (Tmin=       5875.0000 Tmax=       6318.8750)
+                   (Min = -3.07142311E-05 Max =  7.50467260E-06)
+    GET_2DFLD   - solar shortwave radiation flux,            t =  5962 00:00:00
+                   (Rec=0000697, Index=1, File: palau_frc.nc)
+                   (Tmin=       5875.0000 Tmax=       6318.8750)
+                   (Min =  2.50175139E-05 Max =  4.68685612E-05)
+    GET_2DFLD   - surface net heat flux,                     t =  5962 00:00:00
+                   (Rec=0000697, Index=1, File: palau_frc.nc)
+                   (Tmin=       5875.0000 Tmax=       6318.8750)
+                   (Min = -3.57183744E-05 Max =  4.01677625E-05)
+    GET_2DFLD   - sea surface temperature climatology,       t =  5949 00:00:00
+                   (Rec=0000052, Index=1, File: qcorr.nc)
+                   (Tmin=       4397.0000 Tmax=       6923.0000)
+                   (Min =  2.84679996E+01 Max =  2.91422918E+01)
+    GET_2DFLD   - surface net heat flux sensitivity to SST,  t =  5949 00:00:00
+                   (Rec=0000052, Index=1, File: qcorr.nc)
+                   (Tmin=       4397.0000 Tmax=       6923.0000)
+                   (Min = -7.27474096E-06 Max = -2.79551895E-06)
+    GET_2DFLD   - surface net freswater flux, (E-P),         t =  5962 00:00:00
+                   (Rec=0000697, Index=1, File: palau_frc.nc)
+                   (Tmin=       5875.0000 Tmax=       6318.8750)
+                   (Min = -7.87971949E-09 Max =  1.63904025E-08)
+    GET_NGFLD   - free-surface western boundary condition,   t =  5962 00:00:00
+                   (Rec=0000001, Index=2, File: UH_2016_119_bdry_PALAU_800m.nc)
+                   (Tmin=       5962.0000 Tmax=       6002.0000)
+                   (Min =  9.43578821E-01 Max =  1.24520855E+00)
+    GET_NGFLD   - free-surface eastern boundary condition,   t =  5962 00:00:00
+                   (Rec=0000001, Index=2, File: UH_2016_119_bdry_PALAU_800m.nc)
+                   (Tmin=       5962.0000 Tmax=       6002.0000)
+                   (Min =  1.10842101E+00 Max =  1.29162853E+00)
+    GET_NGFLD   - free-surface southern boundary condition,  t =  5962 00:00:00
+                   (Rec=0000001, Index=2, File: UH_2016_119_bdry_PALAU_800m.nc)
+                   (Tmin=       5962.0000 Tmax=       6002.0000)
+                   (Min =  9.35504376E-01 Max =  1.25194155E+00)
+    GET_NGFLD   - free-surface northern boundary condition,  t =  5962 00:00:00
+                   (Rec=0000001, Index=2, File: UH_2016_119_bdry_PALAU_800m.nc)
+                   (Tmin=       5962.0000 Tmax=       6002.0000)
+                   (Min =  1.05532035E+00 Max =  1.28105903E+00)
+    GET_NGFLD   - 2D u-momentum western boundary condition,  t =  5962 00:00:00
+                   (Rec=0000001, Index=2, File: UH_2016_119_bdry_PALAU_800m.nc)
+                   (Tmin=       5962.0000 Tmax=       6002.0000)
+                   (Min = -1.15799982E-01 Max =  1.02405392E-01)
+    GET_NGFLD   - 2D v-momentum western boundary condition,  t =  5962 00:00:00
+                   (Rec=0000001, Index=2, File: UH_2016_119_bdry_PALAU_800m.nc)
+                   (Tmin=       5962.0000 Tmax=       6002.0000)
+                   (Min = -1.81453566E-01 Max = -2.29595189E-02)
+    GET_NGFLD   - 2D u-momentum eastern boundary condition,  t =  5962 00:00:00
+                   (Rec=0000001, Index=2, File: UH_2016_119_bdry_PALAU_800m.nc)
+                   (Tmin=       5962.0000 Tmax=       6002.0000)
+                   (Min = -1.23077271E-01 Max =  1.17842840E-01)
+    GET_NGFLD   - 2D v-momentum eastern boundary condition,  t =  5962 00:00:00
+                   (Rec=0000001, Index=2, File: UH_2016_119_bdry_PALAU_800m.nc)
+                   (Tmin=       5962.0000 Tmax=       6002.0000)
+                   (Min = -7.31342143E-02 Max =  7.72033918E-02)
+    GET_NGFLD   - 2D u-momentum southern boundary condition, t =  5962 00:00:00
+                   (Rec=0000001, Index=2, File: UH_2016_119_bdry_PALAU_800m.nc)
+                   (Tmin=       5962.0000 Tmax=       6002.0000)
+                   (Min = -2.50325487E-01 Max =  1.64354507E-02)
+    GET_NGFLD   - 2D v-momentum southern boundary condition, t =  5962 00:00:00
+                   (Rec=0000001, Index=2, File: UH_2016_119_bdry_PALAU_800m.nc)
+                   (Tmin=       5962.0000 Tmax=       6002.0000)
+                   (Min = -2.29650020E-01 Max =  5.36218092E-02)
+    GET_NGFLD   - 2D u-momentum northern boundary condition, t =  5962 00:00:00
+                   (Rec=0000001, Index=2, File: UH_2016_119_bdry_PALAU_800m.nc)
+                   (Tmin=       5962.0000 Tmax=       6002.0000)
+                   (Min = -9.59073559E-02 Max =  1.02529477E-01)
+    GET_NGFLD   - 2D v-momentum northern boundary condition, t =  5962 00:00:00
+                   (Rec=0000001, Index=2, File: UH_2016_119_bdry_PALAU_800m.nc)
+                   (Tmin=       5962.0000 Tmax=       6002.0000)
+                   (Min = -8.14938606E-02 Max =  1.00611603E-01)
+    GET_NGFLD   - 3D u-momentum western boundary condition,  t =  5962 00:00:00
+                   (Rec=0000001, Index=2, File: UH_2016_119_bdry_PALAU_800m.nc)
+                   (Tmin=       5962.0000 Tmax=       6002.0000)
+                   (Min = -1.03837347E+00 Max =  1.12030610E+00)
+    GET_NGFLD   - 3D v-momentum western boundary condition,  t =  5962 00:00:00
+                   (Rec=0000001, Index=2, File: UH_2016_119_bdry_PALAU_800m.nc)
+                   (Tmin=       5962.0000 Tmax=       6002.0000)
+                   (Min = -8.22784134E-01 Max =  7.25472513E-01)
+    GET_NGFLD   - 3D u-momentum eastern boundary condition,  t =  5962 00:00:00
+                   (Rec=0000001, Index=2, File: UH_2016_119_bdry_PALAU_800m.nc)
+                   (Tmin=       5962.0000 Tmax=       6002.0000)
+                   (Min = -9.88579021E-01 Max =  8.17969646E-01)
+    GET_NGFLD   - 3D v-momentum eastern boundary condition,  t =  5962 00:00:00
+                   (Rec=0000001, Index=2, File: UH_2016_119_bdry_PALAU_800m.nc)
+                   (Tmin=       5962.0000 Tmax=       6002.0000)
+                   (Min = -6.35688887E-01 Max =  7.30867991E-01)
+    GET_NGFLD   - 3D u-momentum southern boundary condition, t =  5962 00:00:00
+                   (Rec=0000001, Index=2, File: UH_2016_119_bdry_PALAU_800m.nc)
+                   (Tmin=       5962.0000 Tmax=       6002.0000)
+                   (Min = -8.30583978E-01 Max =  6.07616217E-01)
+    GET_NGFLD   - 3D v-momentum southern boundary condition, t =  5962 00:00:00
+                   (Rec=0000001, Index=2, File: UH_2016_119_bdry_PALAU_800m.nc)
+                   (Tmin=       5962.0000 Tmax=       6002.0000)
+                   (Min = -7.66566064E-01 Max =  9.55046031E-01)
+    GET_NGFLD   - 3D u-momentum northern boundary condition, t =  5962 00:00:00
+                   (Rec=0000001, Index=2, File: UH_2016_119_bdry_PALAU_800m.nc)
+                   (Tmin=       5962.0000 Tmax=       6002.0000)
+                   (Min = -1.04288162E+00 Max =  3.55103867E-01)
+    GET_NGFLD   - 3D v-momentum northern boundary condition, t =  5962 00:00:00
+                   (Rec=0000001, Index=2, File: UH_2016_119_bdry_PALAU_800m.nc)
+                   (Tmin=       5962.0000 Tmax=       6002.0000)
+                   (Min = -4.91939689E-01 Max =  7.21957897E-01)
+    GET_NGFLD   - temperature western boundary condition,    t =  5962 00:00:00
+                   (Rec=0000001, Index=2, File: UH_2016_119_bdry_PALAU_800m.nc)
+                   (Tmin=       5962.0000 Tmax=       6002.0000)
+                   (Min =  1.68720901E+00 Max =  3.01100463E+01)
+    GET_NGFLD   - salinity western boundary condition,       t =  5962 00:00:00
+                   (Rec=0000001, Index=2, File: UH_2016_119_bdry_PALAU_800m.nc)
+                   (Tmin=       5962.0000 Tmax=       6002.0000)
+                   (Min =  3.43495566E+01 Max =  3.50226456E+01)
+    GET_NGFLD   - temperature eastern boundary condition,    t =  5962 00:00:00
+                   (Rec=0000001, Index=2, File: UH_2016_119_bdry_PALAU_800m.nc)
+                   (Tmin=       5962.0000 Tmax=       6002.0000)
+                   (Min =  1.82554076E+00 Max =  3.03657538E+01)
+    GET_NGFLD   - salinity eastern boundary condition,       t =  5962 00:00:00
+                   (Rec=0000001, Index=2, File: UH_2016_119_bdry_PALAU_800m.nc)
+                   (Tmin=       5962.0000 Tmax=       6002.0000)
+                   (Min =  3.41574070E+01 Max =  3.51058044E+01)
+    GET_NGFLD   - temperature southern boundary condition,   t =  5962 00:00:00
+                   (Rec=0000001, Index=2, File: UH_2016_119_bdry_PALAU_800m.nc)
+                   (Tmin=       5962.0000 Tmax=       6002.0000)
+                   (Min =  1.74021174E+00 Max =  3.06962314E+01)
+    GET_NGFLD   - salinity southern boundary condition,      t =  5962 00:00:00
+                   (Rec=0000001, Index=2, File: UH_2016_119_bdry_PALAU_800m.nc)
+                   (Tmin=       5962.0000 Tmax=       6002.0000)
+                   (Min =  3.41388773E+01 Max =  3.50765438E+01)
+    GET_NGFLD   - temperature northern boundary condition,   t =  5962 00:00:00
+                   (Rec=0000001, Index=2, File: UH_2016_119_bdry_PALAU_800m.nc)
+                   (Tmin=       5962.0000 Tmax=       6002.0000)
+                   (Min =  1.69101068E+00 Max =  2.96813774E+01)
+    GET_NGFLD   - salinity northern boundary condition,      t =  5962 00:00:00
+                   (Rec=0000001, Index=2, File: UH_2016_119_bdry_PALAU_800m.nc)
+                   (Tmin=       5962.0000 Tmax=       6002.0000)
+                   (Min =  3.43319158E+01 Max =  3.51052477E+01)
+
+ Basin information for Grid 01:
+
+ Maximum grid stiffness ratios:  rx0 =   3.036840E-01 (Beckmann and Haidvogel)
+                                 rx1 =   2.254523E+01 (Haney)
+
+ Initial basin volumes: TotVolume =  1.4606115761E+15 m3
+                        MinVolume =  1.2230938954E+05 m3
+                        MaxVolume =  2.2743672786E+09 m3
+                          Max/Min =  1.8595197697E+04
+
+      DEF_MOD   - creating model/observation data file, Grid 01: ./netcdfOutput/ocean_mod.nc
+
+ NL ROMS/TOMS: started time-stepping: (Grid: 01 TimeSteps: 00000001 - 00000010)
+
+    GET_2DFLD   - surface u-momentum stress,                 t =  5962 03:00:00
+                   (Rec=0000698, Index=2, File: palau_frc.nc)
+                   (Tmin=       5875.0000 Tmax=       6318.8750)
+                   (Min = -9.11026325E-05 Max =  1.64663037E-05)
+    GET_2DFLD   - surface v-momentum stress,                 t =  5962 03:00:00
+                   (Rec=0000698, Index=2, File: palau_frc.nc)
+                   (Tmin=       5875.0000 Tmax=       6318.8750)
+                   (Min = -3.91447741E-05 Max =  9.09524494E-06)
+    GET_2DFLD   - solar shortwave radiation flux,            t =  5962 03:00:00
+                   (Rec=0000698, Index=2, File: palau_frc.nc)
+                   (Tmin=       5875.0000 Tmax=       6318.8750)
+                   (Min =  1.49887111E-04 Max =  2.25142911E-04)
+    GET_2DFLD   - surface net heat flux,                     t =  5962 03:00:00
+                   (Rec=0000698, Index=2, File: palau_frc.nc)
+                   (Tmin=       5875.0000 Tmax=       6318.8750)
+                   (Min =  9.92611819E-05 Max =  2.17195528E-04)
+    GET_2DFLD   - sea surface temperature climatology,       t =  5979 00:00:00
+                   (Rec=0000053, Index=2, File: qcorr.nc)
+                   (Tmin=       4397.0000 Tmax=       6923.0000)
+                   (Min =  2.92647907E+01 Max =  2.97902672E+01)
+    GET_2DFLD   - surface net heat flux sensitivity to SST,  t =  5979 00:00:00
+                   (Rec=0000053, Index=2, File: qcorr.nc)
+                   (Tmin=       4397.0000 Tmax=       6923.0000)
+                   (Min = -6.23997798E-06 Max = -2.76118896E-06)
+    GET_2DFLD   - surface net freswater flux, (E-P),         t =  5962 03:00:00
+                   (Rec=0000698, Index=2, File: palau_frc.nc)
+                   (Tmin=       5875.0000 Tmax=       6318.8750)
+                   (Min = -7.70990360E-09 Max =  1.64157377E-08)
+    GET_NGFLD   - free-surface western boundary condition,   t =  5962 03:00:00
+                   (Rec=0000002, Index=1, File: UH_2016_119_bdry_PALAU_800m.nc)
+                   (Tmin=       5962.0000 Tmax=       6002.0000)
+                   (Min =  6.72954062E-01 Max =  8.79951429E-01)
+    GET_NGFLD   - free-surface eastern boundary condition,   t =  5962 03:00:00
+                   (Rec=0000002, Index=1, File: UH_2016_119_bdry_PALAU_800m.nc)
+                   (Tmin=       5962.0000 Tmax=       6002.0000)
+                   (Min =  8.21778369E-01 Max =  9.95960131E-01)
+    GET_NGFLD   - free-surface southern boundary condition,  t =  5962 03:00:00
+                   (Rec=0000002, Index=1, File: UH_2016_119_bdry_PALAU_800m.nc)
+                   (Tmin=       5962.0000 Tmax=       6002.0000)
+                   (Min =  6.69164413E-01 Max =  9.00009164E-01)
+    GET_NGFLD   - free-surface northern boundary condition,  t =  5962 03:00:00
+                   (Rec=0000002, Index=1, File: UH_2016_119_bdry_PALAU_800m.nc)
+                   (Tmin=       5962.0000 Tmax=       6002.0000)
+                   (Min =  7.79721328E-01 Max =  9.82744945E-01)
+    GET_NGFLD   - 2D u-momentum western boundary condition,  t =  5962 03:00:00
+                   (Rec=0000002, Index=1, File: UH_2016_119_bdry_PALAU_800m.nc)
+                   (Tmin=       5962.0000 Tmax=       6002.0000)
+                   (Min = -9.58990605E-02 Max =  1.08179746E-01)
+    GET_NGFLD   - 2D v-momentum western boundary condition,  t =  5962 03:00:00
+                   (Rec=0000002, Index=1, File: UH_2016_119_bdry_PALAU_800m.nc)
+                   (Tmin=       5962.0000 Tmax=       6002.0000)
+                   (Min = -1.70887518E-01 Max = -2.36656500E-02)
+    GET_NGFLD   - 2D u-momentum eastern boundary condition,  t =  5962 03:00:00
+                   (Rec=0000002, Index=1, File: UH_2016_119_bdry_PALAU_800m.nc)
+                   (Tmin=       5962.0000 Tmax=       6002.0000)
+                   (Min = -1.13837545E-01 Max =  1.08859968E-01)
+    GET_NGFLD   - 2D v-momentum eastern boundary condition,  t =  5962 03:00:00
+                   (Rec=0000002, Index=1, File: UH_2016_119_bdry_PALAU_800m.nc)
+                   (Tmin=       5962.0000 Tmax=       6002.0000)
+                   (Min = -8.29216872E-02 Max =  7.68884474E-02)
+    GET_NGFLD   - 2D u-momentum southern boundary condition, t =  5962 03:00:00
+                   (Rec=0000002, Index=1, File: UH_2016_119_bdry_PALAU_800m.nc)
+                   (Tmin=       5962.0000 Tmax=       6002.0000)
+                   (Min = -2.22149280E-01 Max =  3.30807585E-02)
+    GET_NGFLD   - 2D v-momentum southern boundary condition, t =  5962 03:00:00
+                   (Rec=0000002, Index=1, File: UH_2016_119_bdry_PALAU_800m.nc)
+                   (Tmin=       5962.0000 Tmax=       6002.0000)
+                   (Min = -1.67697172E-01 Max =  5.69750956E-02)
+    GET_NGFLD   - 2D u-momentum northern boundary condition, t =  5962 03:00:00
+                   (Rec=0000002, Index=1, File: UH_2016_119_bdry_PALAU_800m.nc)
+                   (Tmin=       5962.0000 Tmax=       6002.0000)
+                   (Min = -8.88832614E-02 Max =  1.08341951E-01)
+    GET_NGFLD   - 2D v-momentum northern boundary condition, t =  5962 03:00:00
+                   (Rec=0000002, Index=1, File: UH_2016_119_bdry_PALAU_800m.nc)
+                   (Tmin=       5962.0000 Tmax=       6002.0000)
+                   (Min = -8.40849463E-02 Max =  1.05010807E-01)
+    GET_NGFLD   - 3D u-momentum western boundary condition,  t =  5962 03:00:00
+                   (Rec=0000002, Index=1, File: UH_2016_119_bdry_PALAU_800m.nc)
+                   (Tmin=       5962.0000 Tmax=       6002.0000)
+                   (Min = -8.76300673E-01 Max =  1.07652209E+00)
+    GET_NGFLD   - 3D v-momentum western boundary condition,  t =  5962 03:00:00
+                   (Rec=0000002, Index=1, File: UH_2016_119_bdry_PALAU_800m.nc)
+                   (Tmin=       5962.0000 Tmax=       6002.0000)
+                   (Min = -7.82269790E-01 Max =  7.42815984E-01)
+    GET_NGFLD   - 3D u-momentum eastern boundary condition,  t =  5962 03:00:00
+                   (Rec=0000002, Index=1, File: UH_2016_119_bdry_PALAU_800m.nc)
+                   (Tmin=       5962.0000 Tmax=       6002.0000)
+                   (Min = -8.35448674E-01 Max =  8.13035871E-01)
+    GET_NGFLD   - 3D v-momentum eastern boundary condition,  t =  5962 03:00:00
+                   (Rec=0000002, Index=1, File: UH_2016_119_bdry_PALAU_800m.nc)
+                   (Tmin=       5962.0000 Tmax=       6002.0000)
+                   (Min = -5.43500369E-01 Max =  5.62647962E-01)
+    GET_NGFLD   - 3D u-momentum southern boundary condition, t =  5962 03:00:00
+                   (Rec=0000002, Index=1, File: UH_2016_119_bdry_PALAU_800m.nc)
+                   (Tmin=       5962.0000 Tmax=       6002.0000)
+                   (Min = -6.44679412E-01 Max =  6.98103275E-01)
+    GET_NGFLD   - 3D v-momentum southern boundary condition, t =  5962 03:00:00
+                   (Rec=0000002, Index=1, File: UH_2016_119_bdry_PALAU_800m.nc)
+                   (Tmin=       5962.0000 Tmax=       6002.0000)
+                   (Min = -8.15212169E-01 Max =  9.78998459E-01)
+    GET_NGFLD   - 3D u-momentum northern boundary condition, t =  5962 03:00:00
+                   (Rec=0000002, Index=1, File: UH_2016_119_bdry_PALAU_800m.nc)
+                   (Tmin=       5962.0000 Tmax=       6002.0000)
+                   (Min = -9.24104955E-01 Max =  3.03533258E-01)
+    GET_NGFLD   - 3D v-momentum northern boundary condition, t =  5962 03:00:00
+                   (Rec=0000002, Index=1, File: UH_2016_119_bdry_PALAU_800m.nc)
+                   (Tmin=       5962.0000 Tmax=       6002.0000)
+                   (Min = -3.28358970E-01 Max =  7.52051060E-01)
+    GET_NGFLD   - temperature western boundary condition,    t =  5962 03:00:00
+                   (Rec=0000002, Index=1, File: UH_2016_119_bdry_PALAU_800m.nc)
+                   (Tmin=       5962.0000 Tmax=       6002.0000)
+                   (Min =  1.68784316E+00 Max =  3.03363096E+01)
+    GET_NGFLD   - salinity western boundary condition,       t =  5962 03:00:00
+                   (Rec=0000002, Index=1, File: UH_2016_119_bdry_PALAU_800m.nc)
+                   (Tmin=       5962.0000 Tmax=       6002.0000)
+                   (Min =  3.43553259E+01 Max =  3.49930503E+01)
+    GET_NGFLD   - temperature eastern boundary condition,    t =  5962 03:00:00
+                   (Rec=0000002, Index=1, File: UH_2016_119_bdry_PALAU_800m.nc)
+                   (Tmin=       5962.0000 Tmax=       6002.0000)
+                   (Min =  1.82483102E+00 Max =  3.03960495E+01)
+    GET_NGFLD   - salinity eastern boundary condition,       t =  5962 03:00:00
+                   (Rec=0000002, Index=1, File: UH_2016_119_bdry_PALAU_800m.nc)
+                   (Tmin=       5962.0000 Tmax=       6002.0000)
+                   (Min =  3.41663949E+01 Max =  3.50875913E+01)
+    GET_NGFLD   - temperature southern boundary condition,   t =  5962 03:00:00
+                   (Rec=0000002, Index=1, File: UH_2016_119_bdry_PALAU_800m.nc)
+                   (Tmin=       5962.0000 Tmax=       6002.0000)
+                   (Min =  1.74028985E+00 Max =  3.08153020E+01)
+    GET_NGFLD   - salinity southern boundary condition,      t =  5962 03:00:00
+                   (Rec=0000002, Index=1, File: UH_2016_119_bdry_PALAU_800m.nc)
+                   (Tmin=       5962.0000 Tmax=       6002.0000)
+                   (Min =  3.41448412E+01 Max =  3.50457278E+01)
+    GET_NGFLD   - temperature northern boundary condition,   t =  5962 03:00:00
+                   (Rec=0000002, Index=1, File: UH_2016_119_bdry_PALAU_800m.nc)
+                   (Tmin=       5962.0000 Tmax=       6002.0000)
+                   (Min =  1.69032805E+00 Max =  2.97695452E+01)
+    GET_NGFLD   - salinity northern boundary condition,      t =  5962 03:00:00
+                   (Rec=0000002, Index=1, File: UH_2016_119_bdry_PALAU_800m.nc)
+                   (Tmin=       5962.0000 Tmax=       6002.0000)
+                   (Min =  3.43364776E+01 Max =  3.50587118E+01)
+
+   STEP   Day HH:MM:SS  KINETIC_ENRG   POTEN_ENRG    TOTAL_ENRG    NET_VOLUME
+          C => (i,j,k)       Cu            Cv            Cw         Max Speed
+
+       0  5962 00:00:00  1.592668E-02  2.319511E+04  2.319512E+04  1.461053E+15
+          (465,378,50)  1.376886E-02  2.823901E-02  0.000000E+00  2.542376E+00
+      DEF_HIS2   - creating surface file: ./netcdfOutput/palau_his2_00001.nc
+       1  5962 00:00:10  1.592287E-02  2.319509E+04  2.319511E+04  1.461052E+15
+          (462,362,29)  3.764522E-03  4.860740E-03  2.100848E-01  2.546136E+00
+       2  5962 00:00:20  1.591972E-02  2.319508E+04  2.319509E+04  1.461051E+15
+          (461,361,50)  3.853563E-03  4.614750E-03  2.050126E+00  2.548650E+00
+       3  5962 00:00:30  1.591779E-02  2.319507E+04  2.319508E+04  1.461050E+15
+          (453,387,50)  4.829911E-03  3.702103E-03  1.806011E+00  2.544502E+00
+       4  5962 00:00:40  1.591631E-02  2.319505E+04  2.319507E+04  1.461049E+15
+          (461,361,50)  3.313637E-03  3.100585E-03  1.585743E+00  2.535625E+00
+       5  5962 00:00:50  1.591480E-02  2.319504E+04  2.319506E+04  1.461048E+15
+          (461,361,50)  3.950155E-03  3.811610E-03  1.351609E+00  2.524437E+00
+       6  5962 00:01:00  1.591312E-02  2.319503E+04  2.319505E+04  1.461047E+15
+          (448,412,50)  1.056459E-03  9.235191E-03  1.264249E+00  2.521105E+00
+       7  5962 00:01:10  1.591132E-02  2.319502E+04  2.319503E+04  1.461047E+15
+          (448,412,50)  9.075624E-06  8.226568E-03  1.372204E+00  2.526829E+00
+       8  5962 00:01:20  1.590953E-02  2.319501E+04  2.319502E+04  1.461046E+15
+          (449,413,50)  1.443138E-03  8.367399E-03  1.359475E+00  2.532797E+00
+       9  5962 00:01:30  1.590779E-02  2.319499E+04  2.319501E+04  1.461045E+15
+          (460,356,50)  3.542423E-03  3.074163E-03  1.296411E+00  2.538195E+00
+      10  5962 00:01:40  1.590613E-02  2.319498E+04  2.319500E+04  1.461044E+15
+          (461,355,50)  2.463585E-03  4.068500E-03  1.094795E+00  2.546261E+00
+
+ Elapsed CPU time (seconds):
+
+ Node   #  7 CPU:      32.168
+ Node   #  3 CPU:      32.162
+ Node   #  0 CPU:      11.898
+ Total:              1553.831
+
+ Nonlinear ocean model elapsed time profile, Grid: 01
+
+  Allocation and array initialization ..............        16.208  ( 1.0431 %)
+  Ocean state initialization .......................         2.917  ( 0.1877 %)
+  Reading of input data ............................      1006.321  (64.7639 %)
+  Processing of input data .........................         7.213  ( 0.4642 %)
+  Processing of output time averaged data ..........        11.996  ( 0.7720 %)
+  Computation of vertical boundary conditions ......         0.104  ( 0.0067 %)
+  Computation of global information integrals ......         3.412  ( 0.2196 %)
+  Writing of output data ...........................        26.729  ( 1.7202 %)
+  Model 2D kernel ..................................        11.006  ( 0.7083 %)
+  Tidal forcing ....................................         0.541  ( 0.0348 %)
+  2D/3D coupling, vertical metrics .................        10.666  ( 0.6865 %)
+  Omega vertical velocity ..........................         5.882  ( 0.3786 %)
+  Equation of state for seawater ...................         9.965  ( 0.6413 %)
+  KPP vertical mixing parameterization .............        42.427  ( 2.7304 %)
+  3D equations right-side terms ....................        15.463  ( 0.9951 %)
+  3D equations predictor step ......................        31.425  ( 2.0224 %)
+  Pressure gradient ................................         8.117  ( 0.5224 %)
+  Harmonic mixing of tracers, geopotentials ........        13.666  ( 0.8795 %)
+  Harmonic stress tensor, S-surfaces ...............         9.190  ( 0.5914 %)
+  Corrector time-step for 3D momentum ..............        17.071  ( 1.0987 %)
+  Corrector time-step for tracers ..................        14.006  ( 0.9014 %)
+                                              Total:      1264.325   81.3682
+
+ Nonlinear model message Passage profile, Grid: 01
+
+  Message Passage: 2D halo exchanges ...............        15.515  ( 0.9985 %)
+  Message Passage: 3D halo exchanges ...............        10.580  ( 0.6809 %)
+  Message Passage: 4D halo exchanges ...............         4.487  ( 0.2888 %)
+  Message Passage: data broadcast ..................      1123.235  (72.2881 %)
+  Message Passage: data reduction ..................        20.640  ( 1.3283 %)
+  Message Passage: data gathering ..................         3.539  ( 0.2278 %)
+  Message Passage: data scattering..................        85.911  ( 5.5290 %)
+  Message Passage: boundary data gathering .........         0.465  ( 0.0299 %)
+  Message Passage: point data gathering ............         1.141  ( 0.0734 %)
+                                              Total:      1265.514   81.4448
+
+ All percentages are with respect to total time =         1553.831
+
+ Node   # 14 CPU:      32.154
+ Node   # 13 CPU:      32.143
+ Node   # 12 CPU:      32.152
+ Node   #  9 CPU:      32.152
+ Node   # 16 CPU:      32.146
+ Node   #  6 CPU:      32.176
+ Node   #  5 CPU:      32.170
+ Node   #  8 CPU:      32.182
+ Node   #  1 CPU:      32.143
+ Node   #  2 CPU:      32.170
+ Node   #  4 CPU:      32.174
+ Node   # 10 CPU:      32.153
+ Node   # 11 CPU:      32.145
+ Node   # 15 CPU:      32.139
+
+ ROMS/TOMS - Output NetCDF summary for Grid 01:
+
+ Analytical header files used:
+
+     ROMS/Functionals/ana_btflux.h
+
+ ROMS/TOMS: DONE... Monday - June 17, 2019 -  1:50:51 PM
+ Node   # 25 CPU:      32.109
+ Node   # 33 CPU:      32.115
+ Node   # 31 CPU:      32.112
+ Node   # 35 CPU:      32.093
+ Node   # 32 CPU:      32.098
+ Node   # 44 CPU:      32.073
+ Node   # 17 CPU:      32.118
+ Node   # 48 CPU:      32.127
+ Node   # 20 CPU:      32.101
+ Node   # 46 CPU:      32.095
+ Node   # 19 CPU:      32.096
+ Node   # 34 CPU:      32.098
+ Node   # 26 CPU:      32.105
+ Node   # 37 CPU:      32.098
+ Node   # 27 CPU:      32.098
+ Node   # 36 CPU:      32.093
+ Node   # 23 CPU:      32.123
+ Node   # 43 CPU:      32.101
+ Node   # 30 CPU:      32.100
+ Node   # 45 CPU:      32.105
+ Node   # 28 CPU:      32.104
+ Node   # 40 CPU:      32.127
+ Node   # 22 CPU:      32.110
+ Node   # 47 CPU:      32.127
+ Node   # 24 CPU:      32.131
+ Node   # 39 CPU:      32.121
+ Node   # 29 CPU:      32.094
+ Node   # 42 CPU:      32.101
+ Node   # 21 CPU:      32.098
+ Node   # 41 CPU:      32.112
+ Node   # 18 CPU:      32.116
+ Node   # 38 CPU:      32.099

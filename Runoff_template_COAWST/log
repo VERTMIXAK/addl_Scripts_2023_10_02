@@ -1,0 +1,930 @@
+Load geographical grid from file
+grid size (582, 694)
+Ocean grid shape is 580 x 692.
+Runoff grid shape is 720 x 1440.
+Frequency x river cells with # ocean cell centers:
+1034943x0
+1x1
+1x2
+2x3
+1x4
+1x5
+1x6
+2x8
+2x9
+2x10
+1x13
+1x15
+1x16
+1x17
+2x18
+4x19
+2x21
+1x22
+1x26
+2x27
+3x29
+1x30
+1x31
+2x35
+1x36
+1x37
+2x38
+1x39
+1x40
+2x44
+1x45
+1x47
+1x48
+2x50
+2x51
+2x52
+3x58
+1x59
+1x63
+1x66
+1x67
+1x68
+2x70
+1x73
+2x75
+1x80
+1x83
+1x84
+1x85
+1x86
+1x87
+1x88
+2x94
+1x97
+2x99
+1x101
+1x103
+1x104
+1x107
+1x110
+4x113
+1x114
+3x116
+1x118
+2x119
+1x121
+1x123
+1x125
+1x126
+1x128
+1x129
+1x130
+2x131
+1x132
+1x133
+1x134
+2x136
+1x138
+2x140
+1x141
+2x142
+1x144
+2x146
+2x148
+1x149
+1x151
+1x152
+1x155
+1x156
+2x158
+1x159
+1x160
+1x161
+2x162
+2x164
+1x166
+1x168
+5x169
+2x171
+1x172
+1x173
+1x174
+2x175
+3x176
+1x177
+1x178
+3x179
+3x182
+5x183
+3x184
+1x185
+2x187
+12x189
+3x190
+1x191
+2x192
+3x193
+2x194
+4x195
+16x196
+9x197
+18x198
+25x199
+24x200
+24x201
+21x202
+29x203
+24x204
+30x205
+25x206
+27x207
+25x208
+28x209
+26x210
+36x211
+36x212
+21x213
+20x214
+27x215
+28x216
+26x217
+30x218
+27x219
+28x220
+27x221
+21x222
+31x223
+57x224
+35x225
+21x226
+27x227
+22x228
+25x229
+22x230
+26x231
+15x232
+26x233
+29x234
+30x235
+25x236
+17x237
+28x238
+17x239
+22x240
+26x241
+21x242
+34x243
+34x244
+14x245
+21x246
+31x247
+22x248
+24x249
+24x250
+17x251
+62x252
+19x253
+18x254
+21x255
+19x256
+21x257
+7x258
+23x259
+14x260
+16x261
+4x262
+7x263
+3x264
+4x265
+1x270
+1x280
+
+There are 1699/401360 (0.42%) coastal cells on this ocean grid.
+1035028/1036800 river cells without associated ocean id (first pass).
+1035028/1036800 river cells without associated ocean id.
+Non-conservation for record 0, net source = 938327845.220722 kg/s, net regridded = 340681.086021 kg/s, fractional error = 0.999637
+Non-conservation for record 1, net source = 941709330.633110 kg/s, net regridded = 336970.014239 kg/s, fractional error = 0.999642
+Non-conservation for record 2, net source = 940944678.871495 kg/s, net regridded = 332807.487852 kg/s, fractional error = 0.999646
+Non-conservation for record 3, net source = 939832820.148669 kg/s, net regridded = 328302.308482 kg/s, fractional error = 0.999651
+Non-conservation for record 4, net source = 949009289.219757 kg/s, net regridded = 323960.570457 kg/s, fractional error = 0.999659
+Non-conservation for record 5, net source = 964336392.659781 kg/s, net regridded = 319127.616367 kg/s, fractional error = 0.999669
+Non-conservation for record 6, net source = 968211485.919528 kg/s, net regridded = 314676.796615 kg/s, fractional error = 0.999675
+Non-conservation for record 7, net source = 964531823.990956 kg/s, net regridded = 310496.305980 kg/s, fractional error = 0.999678
+Non-conservation for record 8, net source = 960419586.704077 kg/s, net regridded = 306583.712751 kg/s, fractional error = 0.999681
+Non-conservation for record 9, net source = 955169004.110109 kg/s, net regridded = 302902.064204 kg/s, fractional error = 0.999683
+Non-conservation for record 10, net source = 951187767.015490 kg/s, net regridded = 299419.962275 kg/s, fractional error = 0.999685
+Non-conservation for record 11, net source = 955779926.230876 kg/s, net regridded = 296103.993776 kg/s, fractional error = 0.99969
+Non-conservation for record 12, net source = 958707948.538233 kg/s, net regridded = 292913.304180 kg/s, fractional error = 0.999694
+Non-conservation for record 13, net source = 961758192.545085 kg/s, net regridded = 289831.911727 kg/s, fractional error = 0.999699
+Non-conservation for record 14, net source = 964646796.271075 kg/s, net regridded = 286832.495494 kg/s, fractional error = 0.999703
+Non-conservation for record 15, net source = 964524226.814413 kg/s, net regridded = 283902.802983 kg/s, fractional error = 0.999706
+Non-conservation for record 16, net source = 964262463.193457 kg/s, net regridded = 281053.712609 kg/s, fractional error = 0.999709
+Non-conservation for record 17, net source = 962682497.949966 kg/s, net regridded = 278314.419444 kg/s, fractional error = 0.999711
+Non-conservation for record 18, net source = 960665572.317153 kg/s, net regridded = 275439.680528 kg/s, fractional error = 0.999713
+Non-conservation for record 19, net source = 960472310.097117 kg/s, net regridded = 272563.968067 kg/s, fractional error = 0.999716
+Non-conservation for record 20, net source = 963156315.470691 kg/s, net regridded = 269683.979382 kg/s, fractional error = 0.99972
+Non-conservation for record 21, net source = 965213730.951796 kg/s, net regridded = 266793.215717 kg/s, fractional error = 0.999724
+Non-conservation for record 22, net source = 968846802.492613 kg/s, net regridded = 263911.150337 kg/s, fractional error = 0.999728
+Non-conservation for record 23, net source = 975514863.949753 kg/s, net regridded = 260996.602462 kg/s, fractional error = 0.999732
+Non-conservation for record 24, net source = 975483416.363355 kg/s, net regridded = 258010.529411 kg/s, fractional error = 0.999736
+Non-conservation for record 25, net source = 973732156.841388 kg/s, net regridded = 254923.317809 kg/s, fractional error = 0.999738
+Non-conservation for record 26, net source = 973035761.065201 kg/s, net regridded = 251552.620265 kg/s, fractional error = 0.999741
+Non-conservation for record 27, net source = 974584888.740118 kg/s, net regridded = 246773.135034 kg/s, fractional error = 0.999747
+Non-conservation for record 28, net source = 977185172.765449 kg/s, net regridded = 242252.561484 kg/s, fractional error = 0.999752
+Non-conservation for record 29, net source = 977970618.936688 kg/s, net regridded = 237945.594617 kg/s, fractional error = 0.999757
+Non-conservation for record 30, net source = 976607597.792516 kg/s, net regridded = 233312.320383 kg/s, fractional error = 0.999761
+Non-conservation for record 31, net source = 974088522.522803 kg/s, net regridded = 228534.842035 kg/s, fractional error = 0.999765
+Non-conservation for record 32, net source = 972576628.346736 kg/s, net regridded = 222746.492403 kg/s, fractional error = 0.999771
+Non-conservation for record 33, net source = 970478582.433192 kg/s, net regridded = 218177.286120 kg/s, fractional error = 0.999775
+Non-conservation for record 34, net source = 970555294.025339 kg/s, net regridded = 214553.540389 kg/s, fractional error = 0.999779
+Non-conservation for record 35, net source = 971202017.281707 kg/s, net regridded = 210943.470110 kg/s, fractional error = 0.999783
+Non-conservation for record 36, net source = 970426448.799084 kg/s, net regridded = 207355.133733 kg/s, fractional error = 0.999786
+Non-conservation for record 37, net source = 969112830.903140 kg/s, net regridded = 203814.861283 kg/s, fractional error = 0.99979
+Non-conservation for record 38, net source = 968966326.415859 kg/s, net regridded = 200334.431705 kg/s, fractional error = 0.999793
+Non-conservation for record 39, net source = 967344963.932527 kg/s, net regridded = 196909.059468 kg/s, fractional error = 0.999796
+Non-conservation for record 40, net source = 965247193.747392 kg/s, net regridded = 193549.258952 kg/s, fractional error = 0.999799
+Non-conservation for record 41, net source = 963605821.741837 kg/s, net regridded = 190281.692044 kg/s, fractional error = 0.999803
+Non-conservation for record 42, net source = 963704494.316965 kg/s, net regridded = 187415.408555 kg/s, fractional error = 0.999806
+Non-conservation for record 43, net source = 966613456.842955 kg/s, net regridded = 184497.444016 kg/s, fractional error = 0.999809
+Non-conservation for record 44, net source = 970895527.814416 kg/s, net regridded = 181429.102991 kg/s, fractional error = 0.999813
+Non-conservation for record 45, net source = 971950767.796692 kg/s, net regridded = 178705.951201 kg/s, fractional error = 0.999816
+Non-conservation for record 46, net source = 970614162.431666 kg/s, net regridded = 175900.648119 kg/s, fractional error = 0.999819
+Non-conservation for record 47, net source = 970094680.461705 kg/s, net regridded = 173136.769837 kg/s, fractional error = 0.999822
+Non-conservation for record 48, net source = 971021846.012177 kg/s, net regridded = 170205.872820 kg/s, fractional error = 0.999825
+Non-conservation for record 49, net source = 973934507.233174 kg/s, net regridded = 167290.567303 kg/s, fractional error = 0.999828
+Non-conservation for record 50, net source = 973969029.609505 kg/s, net regridded = 164390.182334 kg/s, fractional error = 0.999831
+Non-conservation for record 51, net source = 976457597.839887 kg/s, net regridded = 161160.830046 kg/s, fractional error = 0.999835
+Non-conservation for record 52, net source = 977272445.885855 kg/s, net regridded = 157814.925977 kg/s, fractional error = 0.999839
+Non-conservation for record 53, net source = 977567904.168552 kg/s, net regridded = 154706.237610 kg/s, fractional error = 0.999842
+Non-conservation for record 54, net source = 978472981.305739 kg/s, net regridded = 150970.677329 kg/s, fractional error = 0.999846
+Non-conservation for record 55, net source = 977504802.267034 kg/s, net regridded = 144228.241789 kg/s, fractional error = 0.999852
+Non-conservation for record 56, net source = 976807450.100123 kg/s, net regridded = 130809.344766 kg/s, fractional error = 0.999866
+Non-conservation for record 57, net source = 976727716.815670 kg/s, net regridded = 120485.789774 kg/s, fractional error = 0.999877
+Non-conservation for record 58, net source = 977814002.843781 kg/s, net regridded = 113468.592124 kg/s, fractional error = 0.999884
+Non-conservation for record 59, net source = 981692106.715937 kg/s, net regridded = 108652.081739 kg/s, fractional error = 0.999889
+Non-conservation for record 60, net source = 985227847.489581 kg/s, net regridded = 105392.633859 kg/s, fractional error = 0.999893
+Non-conservation for record 61, net source = 989560673.088178 kg/s, net regridded = 103186.713629 kg/s, fractional error = 0.999896
+Non-conservation for record 62, net source = 994522652.770270 kg/s, net regridded = 101365.759331 kg/s, fractional error = 0.999898
+Non-conservation for record 63, net source = 1002144361.253322 kg/s, net regridded = 99801.486674 kg/s, fractional error = 0.9999
+Non-conservation for record 64, net source = 1010319214.119591 kg/s, net regridded = 98648.462385 kg/s, fractional error = 0.999902
+Non-conservation for record 65, net source = 1017126333.849092 kg/s, net regridded = 97503.807761 kg/s, fractional error = 0.999904
+Non-conservation for record 66, net source = 1026006563.365428 kg/s, net regridded = 96309.520797 kg/s, fractional error = 0.999906
+Non-conservation for record 67, net source = 1031608238.655075 kg/s, net regridded = 95195.940611 kg/s, fractional error = 0.999908
+Non-conservation for record 68, net source = 1032293704.623178 kg/s, net regridded = 94178.198835 kg/s, fractional error = 0.999909
+Non-conservation for record 69, net source = 1032874426.321320 kg/s, net regridded = 93172.514597 kg/s, fractional error = 0.99991
+Non-conservation for record 70, net source = 1033358503.932007 kg/s, net regridded = 92180.424943 kg/s, fractional error = 0.999911
+Non-conservation for record 71, net source = 1034460562.028477 kg/s, net regridded = 91221.116537 kg/s, fractional error = 0.999912
+Non-conservation for record 72, net source = 1036469128.964655 kg/s, net regridded = 90281.596078 kg/s, fractional error = 0.999913
+Non-conservation for record 73, net source = 1040889910.542053 kg/s, net regridded = 89472.455585 kg/s, fractional error = 0.999914
+Non-conservation for record 74, net source = 1046769984.841606 kg/s, net regridded = 88528.900459 kg/s, fractional error = 0.999915
+Non-conservation for record 75, net source = 1058197522.848793 kg/s, net regridded = 87641.104074 kg/s, fractional error = 0.999917
+Non-conservation for record 76, net source = 1068093714.279853 kg/s, net regridded = 86742.424086 kg/s, fractional error = 0.999919
+Non-conservation for record 77, net source = 1068778316.832582 kg/s, net regridded = 85885.143446 kg/s, fractional error = 0.99992
+Non-conservation for record 78, net source = 1066002061.932664 kg/s, net regridded = 85178.849910 kg/s, fractional error = 0.99992
+Non-conservation for record 79, net source = 1064535548.855100 kg/s, net regridded = 84208.880959 kg/s, fractional error = 0.999921
+Non-conservation for record 80, net source = 1065924970.953098 kg/s, net regridded = 83289.187678 kg/s, fractional error = 0.999922
+Non-conservation for record 81, net source = 1066960951.815996 kg/s, net regridded = 82381.760150 kg/s, fractional error = 0.999923
+Non-conservation for record 82, net source = 1067036885.983465 kg/s, net regridded = 81485.415071 kg/s, fractional error = 0.999924
+Non-conservation for record 83, net source = 1066358365.963825 kg/s, net regridded = 80597.932346 kg/s, fractional error = 0.999924
+Non-conservation for record 84, net source = 1064830022.775009 kg/s, net regridded = 79718.474971 kg/s, fractional error = 0.999925
+Non-conservation for record 85, net source = 1065799113.249163 kg/s, net regridded = 78844.183473 kg/s, fractional error = 0.999926
+Non-conservation for record 86, net source = 1067806677.726233 kg/s, net regridded = 77971.941201 kg/s, fractional error = 0.999927
+Non-conservation for record 87, net source = 1070598168.014323 kg/s, net regridded = 77105.253329 kg/s, fractional error = 0.999928
+Non-conservation for record 88, net source = 1072488106.186791 kg/s, net regridded = 76238.955416 kg/s, fractional error = 0.999929
+Non-conservation for record 89, net source = 1073349147.227801 kg/s, net regridded = 75424.593019 kg/s, fractional error = 0.99993
+Non-conservation for record 90, net source = 1073322320.146364 kg/s, net regridded = 74600.508180 kg/s, fractional error = 0.99993
+Non-conservation for record 91, net source = 1073517186.576040 kg/s, net regridded = 73765.893027 kg/s, fractional error = 0.999931
+Non-conservation for record 92, net source = 1075946524.123107 kg/s, net regridded = 72907.030175 kg/s, fractional error = 0.999932
+Non-conservation for record 93, net source = 1079312579.764129 kg/s, net regridded = 72004.725053 kg/s, fractional error = 0.999933
+Non-conservation for record 94, net source = 1082973233.468370 kg/s, net regridded = 71115.501347 kg/s, fractional error = 0.999934
+Non-conservation for record 95, net source = 1087292345.167117 kg/s, net regridded = 70096.864663 kg/s, fractional error = 0.999936
+Non-conservation for record 96, net source = 1092607129.763561 kg/s, net regridded = 67698.729564 kg/s, fractional error = 0.999938
+Non-conservation for record 97, net source = 1093879760.067148 kg/s, net regridded = 64809.885510 kg/s, fractional error = 0.999941
+Non-conservation for record 98, net source = 1094175306.512783 kg/s, net regridded = 62233.544125 kg/s, fractional error = 0.999943
+Non-conservation for record 99, net source = 1098650569.533418 kg/s, net regridded = 59983.576066 kg/s, fractional error = 0.999945
+Non-conservation for record 100, net source = 1105596763.493709 kg/s, net regridded = 58027.832899 kg/s, fractional error = 0.999948
+Non-conservation for record 101, net source = 1113000727.560900 kg/s, net regridded = 56413.873696 kg/s, fractional error = 0.999949
+Non-conservation for record 102, net source = 1121737259.321419 kg/s, net regridded = 55000.310144 kg/s, fractional error = 0.999951
+Non-conservation for record 103, net source = 1130334969.199764 kg/s, net regridded = 53826.368652 kg/s, fractional error = 0.999952
+Non-conservation for record 104, net source = 1139061332.025579 kg/s, net regridded = 52557.410396 kg/s, fractional error = 0.999954
+Non-conservation for record 105, net source = 1143644199.428355 kg/s, net regridded = 51483.193430 kg/s, fractional error = 0.999955
+Non-conservation for record 106, net source = 1151317741.416650 kg/s, net regridded = 50514.569784 kg/s, fractional error = 0.999956
+Non-conservation for record 107, net source = 1161061759.570560 kg/s, net regridded = 49624.390161 kg/s, fractional error = 0.999957
+Non-conservation for record 108, net source = 1167368047.500496 kg/s, net regridded = 48806.663646 kg/s, fractional error = 0.999958
+Non-conservation for record 109, net source = 1173779147.951228 kg/s, net regridded = 48165.965718 kg/s, fractional error = 0.999959
+Non-conservation for record 110, net source = 1180610423.527159 kg/s, net regridded = 47440.965556 kg/s, fractional error = 0.99996
+Non-conservation for record 111, net source = 1186956986.189385 kg/s, net regridded = 46755.966855 kg/s, fractional error = 0.999961
+Non-conservation for record 112, net source = 1193534686.534582 kg/s, net regridded = 46123.488904 kg/s, fractional error = 0.999961
+Non-conservation for record 113, net source = 1203517251.921098 kg/s, net regridded = 45524.211907 kg/s, fractional error = 0.999962
+Non-conservation for record 114, net source = 1215351775.249277 kg/s, net regridded = 317758.256722 kg/s, fractional error = 0.999739
+Non-conservation for record 115, net source = 1228188455.157950 kg/s, net regridded = 657356.254978 kg/s, fractional error = 0.999465
+Non-conservation for record 116, net source = 1241619235.602716 kg/s, net regridded = 885320.012548 kg/s, fractional error = 0.999287
+Non-conservation for record 117, net source = 1250884547.084373 kg/s, net regridded = 998351.829330 kg/s, fractional error = 0.999202
+Non-conservation for record 118, net source = 1256722490.667459 kg/s, net regridded = 1050296.449552 kg/s, fractional error = 0.999164
+Non-conservation for record 119, net source = 1262610838.632479 kg/s, net regridded = 1188011.077424 kg/s, fractional error = 0.999059
+Non-conservation for record 120, net source = 1267022973.209246 kg/s, net regridded = 1368209.423071 kg/s, fractional error = 0.99892
+Non-conservation for record 121, net source = 1272389265.443531 kg/s, net regridded = 1456965.689311 kg/s, fractional error = 0.998855
+Non-conservation for record 122, net source = 1276825549.963783 kg/s, net regridded = 1461521.151564 kg/s, fractional error = 0.998855
+Non-conservation for record 123, net source = 1284981078.098180 kg/s, net regridded = 1451496.805894 kg/s, fractional error = 0.99887
+Non-conservation for record 124, net source = 1298288281.766691 kg/s, net regridded = 1427151.416824 kg/s, fractional error = 0.998901
+Non-conservation for record 125, net source = 1309876372.787572 kg/s, net regridded = 1384789.657668 kg/s, fractional error = 0.998943
+Non-conservation for record 126, net source = 1316888581.245047 kg/s, net regridded = 1335378.248965 kg/s, fractional error = 0.998986
+Non-conservation for record 127, net source = 1324463355.462489 kg/s, net regridded = 1334425.245632 kg/s, fractional error = 0.998992
+Non-conservation for record 128, net source = 1332340051.067416 kg/s, net regridded = 1454962.479693 kg/s, fractional error = 0.998908
+Non-conservation for record 129, net source = 1343435365.541841 kg/s, net regridded = 1636146.993478 kg/s, fractional error = 0.998782
+Non-conservation for record 130, net source = 1357654911.454243 kg/s, net regridded = 1866601.225711 kg/s, fractional error = 0.998625
+Non-conservation for record 131, net source = 1364040390.254184 kg/s, net regridded = 2272122.726731 kg/s, fractional error = 0.998334
+Non-conservation for record 132, net source = 1369172551.118965 kg/s, net regridded = 2704376.546717 kg/s, fractional error = 0.998025
+Non-conservation for record 133, net source = 1374810374.555484 kg/s, net regridded = 3004437.135877 kg/s, fractional error = 0.997815
+Non-conservation for record 134, net source = 1378038597.057010 kg/s, net regridded = 3185329.092678 kg/s, fractional error = 0.997689
+Non-conservation for record 135, net source = 1380447192.083555 kg/s, net regridded = 3264333.024462 kg/s, fractional error = 0.997635
+Non-conservation for record 136, net source = 1385642138.268143 kg/s, net regridded = 3320059.895073 kg/s, fractional error = 0.997604
+Non-conservation for record 137, net source = 1390270431.120534 kg/s, net regridded = 3324605.003301 kg/s, fractional error = 0.997609
+Non-conservation for record 138, net source = 1395440984.422426 kg/s, net regridded = 3269277.595198 kg/s, fractional error = 0.997657
+Non-conservation for record 139, net source = 1401245490.954482 kg/s, net regridded = 3194495.069567 kg/s, fractional error = 0.99772
+Non-conservation for record 140, net source = 1406289365.149054 kg/s, net regridded = 3210437.116458 kg/s, fractional error = 0.997717
+Non-conservation for record 141, net source = 1412559992.188823 kg/s, net regridded = 3331196.458023 kg/s, fractional error = 0.997642
+Non-conservation for record 142, net source = 1418668685.507962 kg/s, net regridded = 3465992.918871 kg/s, fractional error = 0.997557
+Non-conservation for record 143, net source = 1426485402.839341 kg/s, net regridded = 3628742.948294 kg/s, fractional error = 0.997456
+Non-conservation for record 144, net source = 1429978227.671365 kg/s, net regridded = 3766913.813778 kg/s, fractional error = 0.997366
+Non-conservation for record 145, net source = 1438704191.236888 kg/s, net regridded = 3797825.426664 kg/s, fractional error = 0.99736
+Non-conservation for record 146, net source = 1443485440.603286 kg/s, net regridded = 3773144.582140 kg/s, fractional error = 0.997386
+Non-conservation for record 147, net source = 1450016538.911150 kg/s, net regridded = 3771162.646962 kg/s, fractional error = 0.997399
+Non-conservation for record 148, net source = 1457675169.348327 kg/s, net regridded = 3784234.006750 kg/s, fractional error = 0.997404
+Non-conservation for record 149, net source = 1464183402.930395 kg/s, net regridded = 3805741.649870 kg/s, fractional error = 0.997401
+Non-conservation for record 150, net source = 1471952256.325921 kg/s, net regridded = 3840158.052432 kg/s, fractional error = 0.997391
+Non-conservation for record 151, net source = 1480018411.935926 kg/s, net regridded = 3878957.642172 kg/s, fractional error = 0.997379
+Non-conservation for record 152, net source = 1487463278.582139 kg/s, net regridded = 3925658.471594 kg/s, fractional error = 0.997361
+Non-conservation for record 153, net source = 1497491566.592588 kg/s, net regridded = 3978039.715493 kg/s, fractional error = 0.997344
+Non-conservation for record 154, net source = 1508936994.182652 kg/s, net regridded = 4035599.289315 kg/s, fractional error = 0.997326
+Non-conservation for record 155, net source = 1524050951.738293 kg/s, net regridded = 4089561.623667 kg/s, fractional error = 0.997317
+Non-conservation for record 156, net source = 1542972826.370097 kg/s, net regridded = 4131102.634692 kg/s, fractional error = 0.997323
+Non-conservation for record 157, net source = 1556975310.250870 kg/s, net regridded = 4152296.981960 kg/s, fractional error = 0.997333
+Non-conservation for record 158, net source = 1568169027.488261 kg/s, net regridded = 4134025.417741 kg/s, fractional error = 0.997364
+Non-conservation for record 159, net source = 1581895974.009216 kg/s, net regridded = 4084635.616451 kg/s, fractional error = 0.997418
+Non-conservation for record 160, net source = 1596271061.576145 kg/s, net regridded = 4063295.652516 kg/s, fractional error = 0.997455
+Non-conservation for record 161, net source = 1610386999.048122 kg/s, net regridded = 4066186.776019 kg/s, fractional error = 0.997475
+Non-conservation for record 162, net source = 1622064668.490682 kg/s, net regridded = 4028486.223804 kg/s, fractional error = 0.997516
+Non-conservation for record 163, net source = 1627613132.283619 kg/s, net regridded = 4019683.063523 kg/s, fractional error = 0.99753
+Non-conservation for record 164, net source = 1626730290.422060 kg/s, net regridded = 4095020.638021 kg/s, fractional error = 0.997483
+Non-conservation for record 165, net source = 1627789561.153926 kg/s, net regridded = 4187699.501473 kg/s, fractional error = 0.997427
+Non-conservation for record 166, net source = 1628376529.494689 kg/s, net regridded = 4204553.774723 kg/s, fractional error = 0.997418
+Non-conservation for record 167, net source = 1629393399.165288 kg/s, net regridded = 4140602.297752 kg/s, fractional error = 0.997459
+Non-conservation for record 168, net source = 1627550904.438644 kg/s, net regridded = 4062085.572529 kg/s, fractional error = 0.997504
+Non-conservation for record 169, net source = 1625472827.983618 kg/s, net regridded = 3989751.228809 kg/s, fractional error = 0.997545
+Non-conservation for record 170, net source = 1626475569.876384 kg/s, net regridded = 3916067.908841 kg/s, fractional error = 0.997592
+Non-conservation for record 171, net source = 1628425491.546647 kg/s, net regridded = 3829193.737765 kg/s, fractional error = 0.997649
+Non-conservation for record 172, net source = 1628232012.588473 kg/s, net regridded = 3732189.488448 kg/s, fractional error = 0.997708
+Non-conservation for record 173, net source = 1625930034.672198 kg/s, net regridded = 3625276.294212 kg/s, fractional error = 0.99777
+Non-conservation for record 174, net source = 1622991883.958246 kg/s, net regridded = 3538829.555835 kg/s, fractional error = 0.99782
+Non-conservation for record 175, net source = 1621341094.220631 kg/s, net regridded = 3418760.311319 kg/s, fractional error = 0.997891
+Non-conservation for record 176, net source = 1620885036.685412 kg/s, net regridded = 3308595.102981 kg/s, fractional error = 0.997959
+Non-conservation for record 177, net source = 1621600652.337116 kg/s, net regridded = 3221348.508307 kg/s, fractional error = 0.998013
+Non-conservation for record 178, net source = 1623800355.392781 kg/s, net regridded = 3136045.827633 kg/s, fractional error = 0.998069
+Non-conservation for record 179, net source = 1625981316.458335 kg/s, net regridded = 3047347.662045 kg/s, fractional error = 0.998126
+Non-conservation for record 180, net source = 1624560854.905738 kg/s, net regridded = 2946100.320306 kg/s, fractional error = 0.998187
+Non-conservation for record 181, net source = 1622334032.398402 kg/s, net regridded = 2840419.087625 kg/s, fractional error = 0.998249
+Non-conservation for record 182, net source = 1620612700.834376 kg/s, net regridded = 2736235.980225 kg/s, fractional error = 0.998312
+Non-conservation for record 183, net source = 1619190779.173831 kg/s, net regridded = 2634218.304932 kg/s, fractional error = 0.998373
+Non-conservation for record 184, net source = 1616596510.104565 kg/s, net regridded = 2534166.288423 kg/s, fractional error = 0.998432
+Non-conservation for record 185, net source = 1615089166.895473 kg/s, net regridded = 2435482.216154 kg/s, fractional error = 0.998492
+Non-conservation for record 186, net source = 1620330706.850457 kg/s, net regridded = 2329051.242083 kg/s, fractional error = 0.998563
+Non-conservation for record 187, net source = 1627795381.105645 kg/s, net regridded = 2219347.591713 kg/s, fractional error = 0.998637
+Non-conservation for record 188, net source = 1628287784.079571 kg/s, net regridded = 2142704.824434 kg/s, fractional error = 0.998684
+Non-conservation for record 189, net source = 1624331651.744734 kg/s, net regridded = 2060161.285822 kg/s, fractional error = 0.998732
+Non-conservation for record 190, net source = 1622131402.433085 kg/s, net regridded = 1984345.921843 kg/s, fractional error = 0.998777
+Non-conservation for record 191, net source = 1624501371.358238 kg/s, net regridded = 1908792.138195 kg/s, fractional error = 0.998825
+Non-conservation for record 192, net source = 1626499795.435416 kg/s, net regridded = 1820800.130592 kg/s, fractional error = 0.998881
+Non-conservation for record 193, net source = 1631062248.928540 kg/s, net regridded = 1712472.866054 kg/s, fractional error = 0.99895
+Non-conservation for record 194, net source = 1636171947.558526 kg/s, net regridded = 1601897.788899 kg/s, fractional error = 0.999021
+Non-conservation for record 195, net source = 1642305167.016187 kg/s, net regridded = 1517229.230309 kg/s, fractional error = 0.999076
+Non-conservation for record 196, net source = 1646949695.991918 kg/s, net regridded = 1437453.434798 kg/s, fractional error = 0.999127
+Non-conservation for record 197, net source = 1640522109.930069 kg/s, net regridded = 1381480.571216 kg/s, fractional error = 0.999158
+Non-conservation for record 198, net source = 1630260002.667718 kg/s, net regridded = 1355680.789280 kg/s, fractional error = 0.999168
+Non-conservation for record 199, net source = 1620430880.917051 kg/s, net regridded = 1295179.540776 kg/s, fractional error = 0.999201
+Non-conservation for record 200, net source = 1611652660.478405 kg/s, net regridded = 1239337.944655 kg/s, fractional error = 0.999231
+Non-conservation for record 201, net source = 1605878203.675654 kg/s, net regridded = 1192593.185306 kg/s, fractional error = 0.999257
+Non-conservation for record 202, net source = 1601198776.717792 kg/s, net regridded = 1156876.271473 kg/s, fractional error = 0.999277
+Non-conservation for record 203, net source = 1595337882.395573 kg/s, net regridded = 1130237.967232 kg/s, fractional error = 0.999292
+Non-conservation for record 204, net source = 1586226982.704663 kg/s, net regridded = 1126200.829029 kg/s, fractional error = 0.99929
+Non-conservation for record 205, net source = 1576255382.378202 kg/s, net regridded = 1142146.206202 kg/s, fractional error = 0.999275
+Non-conservation for record 206, net source = 1567441059.612986 kg/s, net regridded = 1142966.245968 kg/s, fractional error = 0.999271
+Non-conservation for record 207, net source = 1558304777.883512 kg/s, net regridded = 1201283.523403 kg/s, fractional error = 0.999229
+Non-conservation for record 208, net source = 1552390958.077610 kg/s, net regridded = 1285196.437304 kg/s, fractional error = 0.999172
+Non-conservation for record 209, net source = 1543733154.148118 kg/s, net regridded = 1353750.350665 kg/s, fractional error = 0.999123
+Non-conservation for record 210, net source = 1535373148.878489 kg/s, net regridded = 1417234.159106 kg/s, fractional error = 0.999077
+Non-conservation for record 211, net source = 1531701905.522659 kg/s, net regridded = 1451260.545562 kg/s, fractional error = 0.999053
+Non-conservation for record 212, net source = 1527762957.086171 kg/s, net regridded = 1462290.923768 kg/s, fractional error = 0.999043
+Non-conservation for record 213, net source = 1520672038.332175 kg/s, net regridded = 1461132.700216 kg/s, fractional error = 0.999039
+Non-conservation for record 214, net source = 1512017123.065980 kg/s, net regridded = 1455110.428174 kg/s, fractional error = 0.999038
+Non-conservation for record 215, net source = 1502413752.100799 kg/s, net regridded = 1453562.125501 kg/s, fractional error = 0.999033
+Non-conservation for record 216, net source = 1493051695.334405 kg/s, net regridded = 1472288.141470 kg/s, fractional error = 0.999014
+Non-conservation for record 217, net source = 1486883733.427621 kg/s, net regridded = 1530168.380934 kg/s, fractional error = 0.998971
+Non-conservation for record 218, net source = 1498254804.102683 kg/s, net regridded = 1616260.226775 kg/s, fractional error = 0.998921
+Non-conservation for record 219, net source = 1501590731.283705 kg/s, net regridded = 1726912.494943 kg/s, fractional error = 0.99885
+Non-conservation for record 220, net source = 1503405532.140538 kg/s, net regridded = 1771137.408247 kg/s, fractional error = 0.998822
+Non-conservation for record 221, net source = 1495709859.302522 kg/s, net regridded = 1771317.204325 kg/s, fractional error = 0.998816
+Non-conservation for record 222, net source = 1485906668.060153 kg/s, net regridded = 1773154.293864 kg/s, fractional error = 0.998807
+Non-conservation for record 223, net source = 1473042276.669139 kg/s, net regridded = 1762492.470735 kg/s, fractional error = 0.998804
+Non-conservation for record 224, net source = 1476067782.270384 kg/s, net regridded = 1750759.181716 kg/s, fractional error = 0.998814
+Non-conservation for record 225, net source = 1486551875.023756 kg/s, net regridded = 1730269.723400 kg/s, fractional error = 0.998836
+Non-conservation for record 226, net source = 1486815188.904761 kg/s, net regridded = 1698996.434981 kg/s, fractional error = 0.998857
+Non-conservation for record 227, net source = 1484904203.227474 kg/s, net regridded = 1669988.082714 kg/s, fractional error = 0.998875
+Non-conservation for record 228, net source = 1478515067.919743 kg/s, net regridded = 1710681.852874 kg/s, fractional error = 0.998843
+Non-conservation for record 229, net source = 1473440730.840056 kg/s, net regridded = 1830857.575570 kg/s, fractional error = 0.998757
+Non-conservation for record 230, net source = 1465513109.732390 kg/s, net regridded = 1932080.324029 kg/s, fractional error = 0.998682
+Non-conservation for record 231, net source = 1457418465.496289 kg/s, net regridded = 1988351.977826 kg/s, fractional error = 0.998636
+Non-conservation for record 232, net source = 1444232178.616188 kg/s, net regridded = 2019623.300218 kg/s, fractional error = 0.998602
+Non-conservation for record 233, net source = 1431407015.088239 kg/s, net regridded = 2043037.393260 kg/s, fractional error = 0.998573
+Non-conservation for record 234, net source = 1422172416.886484 kg/s, net regridded = 2061977.994077 kg/s, fractional error = 0.99855
+Non-conservation for record 235, net source = 1419887846.124091 kg/s, net regridded = 2090552.355620 kg/s, fractional error = 0.998528
+Non-conservation for record 236, net source = 1419676086.133606 kg/s, net regridded = 2149974.303786 kg/s, fractional error = 0.998486
+Non-conservation for record 237, net source = 1410219317.984351 kg/s, net regridded = 2192565.638276 kg/s, fractional error = 0.998445
+Non-conservation for record 238, net source = 1400813646.160596 kg/s, net regridded = 2236978.961937 kg/s, fractional error = 0.998403
+Non-conservation for record 239, net source = 1395113939.626628 kg/s, net regridded = 2296681.211587 kg/s, fractional error = 0.998354
+Non-conservation for record 240, net source = 1394048795.761888 kg/s, net regridded = 2371448.887831 kg/s, fractional error = 0.998299
+Non-conservation for record 241, net source = 1393889840.089489 kg/s, net regridded = 2477303.663455 kg/s, fractional error = 0.998223
+Non-conservation for record 242, net source = 1394309585.864273 kg/s, net regridded = 2715921.140592 kg/s, fractional error = 0.998052
+Non-conservation for record 243, net source = 1384968455.041178 kg/s, net regridded = 2879450.847098 kg/s, fractional error = 0.997921
+Non-conservation for record 244, net source = 1370634595.937369 kg/s, net regridded = 3071807.758698 kg/s, fractional error = 0.997759
+Non-conservation for record 245, net source = 1360156191.361655 kg/s, net regridded = 3201540.541187 kg/s, fractional error = 0.997646
+Non-conservation for record 246, net source = 1352353270.974077 kg/s, net regridded = 3324039.451223 kg/s, fractional error = 0.997542
+Non-conservation for record 247, net source = 1344510734.024821 kg/s, net regridded = 3484872.381470 kg/s, fractional error = 0.997408
+Non-conservation for record 248, net source = 1336430913.071614 kg/s, net regridded = 3564081.419784 kg/s, fractional error = 0.997333
+Non-conservation for record 249, net source = 1328995703.719044 kg/s, net regridded = 3611827.696460 kg/s, fractional error = 0.997282
+Non-conservation for record 250, net source = 1320647718.387902 kg/s, net regridded = 3622210.214770 kg/s, fractional error = 0.997257
+Non-conservation for record 251, net source = 1311811523.095264 kg/s, net regridded = 3644434.750478 kg/s, fractional error = 0.997222
+Non-conservation for record 252, net source = 1303658593.635753 kg/s, net regridded = 3742756.127021 kg/s, fractional error = 0.997129
+Non-conservation for record 253, net source = 1294787324.107186 kg/s, net regridded = 3833615.966242 kg/s, fractional error = 0.997039
+Non-conservation for record 254, net source = 1284861816.567266 kg/s, net regridded = 3914470.975571 kg/s, fractional error = 0.996953
+Non-conservation for record 255, net source = 1275942310.938511 kg/s, net regridded = 4037877.203753 kg/s, fractional error = 0.996835
+Non-conservation for record 256, net source = 1270675506.352683 kg/s, net regridded = 4200725.129522 kg/s, fractional error = 0.996694
+Non-conservation for record 257, net source = 1268680978.335872 kg/s, net regridded = 4256483.158579 kg/s, fractional error = 0.996645
+Non-conservation for record 258, net source = 1267194654.710053 kg/s, net regridded = 4218335.271540 kg/s, fractional error = 0.996671
+Non-conservation for record 259, net source = 1264558516.509622 kg/s, net regridded = 4173550.521822 kg/s, fractional error = 0.9967
+Non-conservation for record 260, net source = 1261265007.699121 kg/s, net regridded = 4147473.037707 kg/s, fractional error = 0.996712
+Non-conservation for record 261, net source = 1257389117.735172 kg/s, net regridded = 4117706.890475 kg/s, fractional error = 0.996725
+Non-conservation for record 262, net source = 1253324825.933923 kg/s, net regridded = 4081700.452977 kg/s, fractional error = 0.996743
+Non-conservation for record 263, net source = 1250331523.373105 kg/s, net regridded = 4055370.283566 kg/s, fractional error = 0.996757
+Non-conservation for record 264, net source = 1248005134.460177 kg/s, net regridded = 4047384.320844 kg/s, fractional error = 0.996757
+Non-conservation for record 265, net source = 1243815625.217424 kg/s, net regridded = 4015961.548153 kg/s, fractional error = 0.996771
+Non-conservation for record 266, net source = 1240884756.243295 kg/s, net regridded = 3950922.334223 kg/s, fractional error = 0.996816
+Non-conservation for record 267, net source = 1235988807.635461 kg/s, net regridded = 3885589.197062 kg/s, fractional error = 0.996856
+Non-conservation for record 268, net source = 1231125648.784917 kg/s, net regridded = 3798615.789381 kg/s, fractional error = 0.996915
+Non-conservation for record 269, net source = 1227258368.871300 kg/s, net regridded = 3680843.535222 kg/s, fractional error = 0.997001
+Non-conservation for record 270, net source = 1223931718.091609 kg/s, net regridded = 3602514.661888 kg/s, fractional error = 0.997057
+Non-conservation for record 271, net source = 1221659897.127382 kg/s, net regridded = 3524020.949563 kg/s, fractional error = 0.997115
+Non-conservation for record 272, net source = 1220252190.049820 kg/s, net regridded = 3444803.938801 kg/s, fractional error = 0.997177
+Non-conservation for record 273, net source = 1218830418.052835 kg/s, net regridded = 3362690.670040 kg/s, fractional error = 0.997241
+Non-conservation for record 274, net source = 1214981467.800057 kg/s, net regridded = 3281526.971540 kg/s, fractional error = 0.997299
+Non-conservation for record 275, net source = 1209855278.513957 kg/s, net regridded = 3206242.844205 kg/s, fractional error = 0.99735
+Non-conservation for record 276, net source = 1206475889.933362 kg/s, net regridded = 3114312.691140 kg/s, fractional error = 0.997419
+Non-conservation for record 277, net source = 1203516345.659478 kg/s, net regridded = 3012257.011869 kg/s, fractional error = 0.997497
+Non-conservation for record 278, net source = 1199769516.191043 kg/s, net regridded = 2898566.799792 kg/s, fractional error = 0.997584
+Non-conservation for record 279, net source = 1196571021.499477 kg/s, net regridded = 2789962.324057 kg/s, fractional error = 0.997668
+Non-conservation for record 280, net source = 1192224102.728090 kg/s, net regridded = 2701100.300747 kg/s, fractional error = 0.997734
+Non-conservation for record 281, net source = 1186716071.170305 kg/s, net regridded = 2630187.162328 kg/s, fractional error = 0.997784
+Non-conservation for record 282, net source = 1181392205.381029 kg/s, net regridded = 2583851.692074 kg/s, fractional error = 0.997813
+Non-conservation for record 283, net source = 1176276233.403231 kg/s, net regridded = 2502106.572708 kg/s, fractional error = 0.997873
+Non-conservation for record 284, net source = 1170994719.985286 kg/s, net regridded = 2414898.111485 kg/s, fractional error = 0.997938
+Non-conservation for record 285, net source = 1166145206.933071 kg/s, net regridded = 2339742.803613 kg/s, fractional error = 0.997994
+Non-conservation for record 286, net source = 1161870596.991436 kg/s, net regridded = 2267813.569321 kg/s, fractional error = 0.998048
+Non-conservation for record 287, net source = 1159443828.245825 kg/s, net regridded = 2200063.170237 kg/s, fractional error = 0.998102
+Non-conservation for record 288, net source = 1158145577.766635 kg/s, net regridded = 2134969.724690 kg/s, fractional error = 0.998157
+Non-conservation for record 289, net source = 1154571214.660072 kg/s, net regridded = 2068986.559863 kg/s, fractional error = 0.998208
+Non-conservation for record 290, net source = 1148807625.699783 kg/s, net regridded = 2008067.543288 kg/s, fractional error = 0.998252
+Non-conservation for record 291, net source = 1141735994.040461 kg/s, net regridded = 1949458.169153 kg/s, fractional error = 0.998293
+Non-conservation for record 292, net source = 1137221531.494047 kg/s, net regridded = 1889439.866483 kg/s, fractional error = 0.998339
+Non-conservation for record 293, net source = 1132574385.679051 kg/s, net regridded = 1820294.917849 kg/s, fractional error = 0.998393
+Non-conservation for record 294, net source = 1127139993.749859 kg/s, net regridded = 1750571.430323 kg/s, fractional error = 0.998447
+Non-conservation for record 295, net source = 1120449283.691623 kg/s, net regridded = 1680988.364000 kg/s, fractional error = 0.9985
+Non-conservation for record 296, net source = 1115213250.328328 kg/s, net regridded = 1604405.018208 kg/s, fractional error = 0.998561
+Non-conservation for record 297, net source = 1108988105.330606 kg/s, net regridded = 1522017.332947 kg/s, fractional error = 0.998628
+Non-conservation for record 298, net source = 1101662584.522900 kg/s, net regridded = 1440554.256886 kg/s, fractional error = 0.998692
+Non-conservation for record 299, net source = 1094118625.738929 kg/s, net regridded = 1367452.591967 kg/s, fractional error = 0.99875
+Non-conservation for record 300, net source = 1088574964.918479 kg/s, net regridded = 1297440.405796 kg/s, fractional error = 0.998808
+Non-conservation for record 301, net source = 1082106498.344783 kg/s, net regridded = 1230299.091787 kg/s, fractional error = 0.998863
+Non-conservation for record 302, net source = 1074874500.943832 kg/s, net regridded = 1159832.435226 kg/s, fractional error = 0.998921
+Non-conservation for record 303, net source = 1068100803.693118 kg/s, net regridded = 1069850.795243 kg/s, fractional error = 0.998998
+Non-conservation for record 304, net source = 1062536506.829526 kg/s, net regridded = 992919.211438 kg/s, fractional error = 0.999066
+Non-conservation for record 305, net source = 1056673691.094759 kg/s, net regridded = 931548.413410 kg/s, fractional error = 0.999118
+Non-conservation for record 306, net source = 1052252076.570377 kg/s, net regridded = 836866.331171 kg/s, fractional error = 0.999205
+Non-conservation for record 307, net source = 1048993899.262468 kg/s, net regridded = 744140.160756 kg/s, fractional error = 0.999291
+Non-conservation for record 308, net source = 1045024046.819934 kg/s, net regridded = 680720.067357 kg/s, fractional error = 0.999349
+Non-conservation for record 309, net source = 1042097055.358612 kg/s, net regridded = 648650.473052 kg/s, fractional error = 0.999378
+Non-conservation for record 310, net source = 1040852908.466168 kg/s, net regridded = 632520.706738 kg/s, fractional error = 0.999392
+Non-conservation for record 311, net source = 1037640673.667797 kg/s, net regridded = 621985.230406 kg/s, fractional error = 0.999401
+Non-conservation for record 312, net source = 1032181480.959224 kg/s, net regridded = 613886.939073 kg/s, fractional error = 0.999405
+Non-conservation for record 313, net source = 1029042484.993524 kg/s, net regridded = 606863.890582 kg/s, fractional error = 0.99941
+Non-conservation for record 314, net source = 1025057726.495752 kg/s, net regridded = 599391.231835 kg/s, fractional error = 0.999415
+Non-conservation for record 315, net source = 1020794311.881549 kg/s, net regridded = 594279.488683 kg/s, fractional error = 0.999418
+Non-conservation for record 316, net source = 1016891765.346093 kg/s, net regridded = 589491.680301 kg/s, fractional error = 0.99942
+Non-conservation for record 317, net source = 1012538408.809639 kg/s, net regridded = 584784.339640 kg/s, fractional error = 0.999422
+Non-conservation for record 318, net source = 1008671349.349385 kg/s, net regridded = 580086.980886 kg/s, fractional error = 0.999425
+Non-conservation for record 319, net source = 1006241181.289784 kg/s, net regridded = 575227.657550 kg/s, fractional error = 0.999428
+Non-conservation for record 320, net source = 1005975679.284554 kg/s, net regridded = 569816.431799 kg/s, fractional error = 0.999434
+Non-conservation for record 321, net source = 1003817036.831312 kg/s, net regridded = 564561.759518 kg/s, fractional error = 0.999438
+Non-conservation for record 322, net source = 1001078159.713626 kg/s, net regridded = 558005.497520 kg/s, fractional error = 0.999443
+Non-conservation for record 323, net source = 998142646.929372 kg/s, net regridded = 550885.410270 kg/s, fractional error = 0.999448
+Non-conservation for record 324, net source = 994535155.432748 kg/s, net regridded = 542887.398016 kg/s, fractional error = 0.999454
+Non-conservation for record 325, net source = 990448688.123492 kg/s, net regridded = 535491.884229 kg/s, fractional error = 0.999459
+Non-conservation for record 326, net source = 986272148.122814 kg/s, net regridded = 527895.648584 kg/s, fractional error = 0.999465
+Non-conservation for record 327, net source = 982308939.692563 kg/s, net regridded = 521252.208381 kg/s, fractional error = 0.999469
+Non-conservation for record 328, net source = 979743689.971890 kg/s, net regridded = 515552.229780 kg/s, fractional error = 0.999474
+Non-conservation for record 329, net source = 977524560.447507 kg/s, net regridded = 510452.313783 kg/s, fractional error = 0.999478
+Non-conservation for record 330, net source = 976142261.994301 kg/s, net regridded = 505694.763193 kg/s, fractional error = 0.999482
+Non-conservation for record 331, net source = 975136022.590008 kg/s, net regridded = 501141.227161 kg/s, fractional error = 0.999486
+Non-conservation for record 332, net source = 974285699.489811 kg/s, net regridded = 496764.949973 kg/s, fractional error = 0.99949
+Non-conservation for record 333, net source = 971186024.970409 kg/s, net regridded = 492552.777345 kg/s, fractional error = 0.999493
+Non-conservation for record 334, net source = 967747839.971768 kg/s, net regridded = 488449.455491 kg/s, fractional error = 0.999495
+Non-conservation for record 335, net source = 963491481.736426 kg/s, net regridded = 484488.703990 kg/s, fractional error = 0.999497
+Non-conservation for record 336, net source = 960220740.117140 kg/s, net regridded = 480606.120421 kg/s, fractional error = 0.999499
+Non-conservation for record 337, net source = 956361950.593962 kg/s, net regridded = 476940.420784 kg/s, fractional error = 0.999501
+Non-conservation for record 338, net source = 951071686.532491 kg/s, net regridded = 473183.472684 kg/s, fractional error = 0.999502
+Non-conservation for record 339, net source = 946547783.336280 kg/s, net regridded = 469712.016976 kg/s, fractional error = 0.999504
+Non-conservation for record 340, net source = 943826543.652962 kg/s, net regridded = 466103.675578 kg/s, fractional error = 0.999506
+Non-conservation for record 341, net source = 942060574.879908 kg/s, net regridded = 462462.737642 kg/s, fractional error = 0.999509
+Non-conservation for record 342, net source = 941518893.240870 kg/s, net regridded = 458657.165045 kg/s, fractional error = 0.999513
+Non-conservation for record 343, net source = 941007077.568793 kg/s, net regridded = 454737.042915 kg/s, fractional error = 0.999517
+Non-conservation for record 344, net source = 940743158.972641 kg/s, net regridded = 450636.702247 kg/s, fractional error = 0.999521
+Non-conservation for record 345, net source = 938899819.424611 kg/s, net regridded = 446333.693029 kg/s, fractional error = 0.999525
+Non-conservation for record 346, net source = 939506949.336314 kg/s, net regridded = 441938.778200 kg/s, fractional error = 0.99953
+Non-conservation for record 347, net source = 941873093.345805 kg/s, net regridded = 437577.976289 kg/s, fractional error = 0.999535
+Non-conservation for record 348, net source = 944970925.304807 kg/s, net regridded = 433334.921010 kg/s, fractional error = 0.999541
+Non-conservation for record 349, net source = 948237694.013812 kg/s, net regridded = 429165.600262 kg/s, fractional error = 0.999547
+Non-conservation for record 350, net source = 951551301.620958 kg/s, net regridded = 425056.818987 kg/s, fractional error = 0.999553
+Non-conservation for record 351, net source = 955285416.113276 kg/s, net regridded = 421042.240082 kg/s, fractional error = 0.999559
+Non-conservation for record 352, net source = 955411286.423179 kg/s, net regridded = 417069.085101 kg/s, fractional error = 0.999563
+Non-conservation for record 353, net source = 953577445.899538 kg/s, net regridded = 413190.929622 kg/s, fractional error = 0.999567
+Non-conservation for record 354, net source = 952669645.745386 kg/s, net regridded = 409383.140286 kg/s, fractional error = 0.99957
+Non-conservation for record 355, net source = 955502514.041115 kg/s, net regridded = 405549.722997 kg/s, fractional error = 0.999576
+Non-conservation for record 356, net source = 955505255.532055 kg/s, net regridded = 401700.760911 kg/s, fractional error = 0.99958
+Non-conservation for record 357, net source = 952574997.376608 kg/s, net regridded = 397811.070477 kg/s, fractional error = 0.999582
+Non-conservation for record 358, net source = 949644153.976697 kg/s, net regridded = 393919.775271 kg/s, fractional error = 0.999585
+Non-conservation for record 359, net source = 946646195.035147 kg/s, net regridded = 390039.217467 kg/s, fractional error = 0.999588
+Non-conservation for record 360, net source = 943729417.101241 kg/s, net regridded = 386147.870872 kg/s, fractional error = 0.999591
+Non-conservation for record 361, net source = 941619318.180638 kg/s, net regridded = 382273.815608 kg/s, fractional error = 0.999594
+Non-conservation for record 362, net source = 940115269.770825 kg/s, net regridded = 378587.390448 kg/s, fractional error = 0.999597
+Non-conservation for record 363, net source = 939672896.688620 kg/s, net regridded = 374998.888742 kg/s, fractional error = 0.999601
+Non-conservation for record 364, net source = 940380107.363832 kg/s, net regridded = 371446.389610 kg/s, fractional error = 0.999605
+Record 0, net source = 938327845.220722 kg/s, net regridded = 340681.086021 kg/s, fractional error = 0.999637
+Record 1, net source = 941709330.633110 kg/s, net regridded = 336970.014239 kg/s, fractional error = 0.999642
+Record 2, net source = 940944678.871495 kg/s, net regridded = 332807.487852 kg/s, fractional error = 0.999646
+Record 3, net source = 939832820.148669 kg/s, net regridded = 328302.308482 kg/s, fractional error = 0.999651
+Record 4, net source = 949009289.219757 kg/s, net regridded = 323960.570457 kg/s, fractional error = 0.999659
+Record 5, net source = 964336392.659781 kg/s, net regridded = 319127.616367 kg/s, fractional error = 0.999669
+Record 6, net source = 968211485.919528 kg/s, net regridded = 314676.796615 kg/s, fractional error = 0.999675
+Record 7, net source = 964531823.990956 kg/s, net regridded = 310496.305980 kg/s, fractional error = 0.999678
+Record 8, net source = 960419586.704077 kg/s, net regridded = 306583.712751 kg/s, fractional error = 0.999681
+Record 9, net source = 955169004.110109 kg/s, net regridded = 302902.064204 kg/s, fractional error = 0.999683
+Record 10, net source = 951187767.015490 kg/s, net regridded = 299419.962275 kg/s, fractional error = 0.999685
+Record 11, net source = 955779926.230876 kg/s, net regridded = 296103.993776 kg/s, fractional error = 0.99969
+Record 12, net source = 958707948.538233 kg/s, net regridded = 292913.304180 kg/s, fractional error = 0.999694
+Record 13, net source = 961758192.545085 kg/s, net regridded = 289831.911727 kg/s, fractional error = 0.999699
+Record 14, net source = 964646796.271075 kg/s, net regridded = 286832.495494 kg/s, fractional error = 0.999703
+Record 15, net source = 964524226.814413 kg/s, net regridded = 283902.802983 kg/s, fractional error = 0.999706
+Record 16, net source = 964262463.193457 kg/s, net regridded = 281053.712609 kg/s, fractional error = 0.999709
+Record 17, net source = 962682497.949966 kg/s, net regridded = 278314.419444 kg/s, fractional error = 0.999711
+Record 18, net source = 960665572.317153 kg/s, net regridded = 275439.680528 kg/s, fractional error = 0.999713
+Record 19, net source = 960472310.097117 kg/s, net regridded = 272563.968067 kg/s, fractional error = 0.999716
+Record 20, net source = 963156315.470691 kg/s, net regridded = 269683.979382 kg/s, fractional error = 0.99972
+Record 21, net source = 965213730.951796 kg/s, net regridded = 266793.215717 kg/s, fractional error = 0.999724
+Record 22, net source = 968846802.492613 kg/s, net regridded = 263911.150337 kg/s, fractional error = 0.999728
+Record 23, net source = 975514863.949753 kg/s, net regridded = 260996.602462 kg/s, fractional error = 0.999732
+Record 24, net source = 975483416.363355 kg/s, net regridded = 258010.529411 kg/s, fractional error = 0.999736
+Record 25, net source = 973732156.841388 kg/s, net regridded = 254923.317809 kg/s, fractional error = 0.999738
+Record 26, net source = 973035761.065201 kg/s, net regridded = 251552.620265 kg/s, fractional error = 0.999741
+Record 27, net source = 974584888.740118 kg/s, net regridded = 246773.135034 kg/s, fractional error = 0.999747
+Record 28, net source = 977185172.765449 kg/s, net regridded = 242252.561484 kg/s, fractional error = 0.999752
+Record 29, net source = 977970618.936688 kg/s, net regridded = 237945.594617 kg/s, fractional error = 0.999757
+Record 30, net source = 976607597.792516 kg/s, net regridded = 233312.320383 kg/s, fractional error = 0.999761
+Record 31, net source = 974088522.522803 kg/s, net regridded = 228534.842035 kg/s, fractional error = 0.999765
+Record 32, net source = 972576628.346736 kg/s, net regridded = 222746.492403 kg/s, fractional error = 0.999771
+Record 33, net source = 970478582.433192 kg/s, net regridded = 218177.286120 kg/s, fractional error = 0.999775
+Record 34, net source = 970555294.025339 kg/s, net regridded = 214553.540389 kg/s, fractional error = 0.999779
+Record 35, net source = 971202017.281707 kg/s, net regridded = 210943.470110 kg/s, fractional error = 0.999783
+Record 36, net source = 970426448.799084 kg/s, net regridded = 207355.133733 kg/s, fractional error = 0.999786
+Record 37, net source = 969112830.903140 kg/s, net regridded = 203814.861283 kg/s, fractional error = 0.99979
+Record 38, net source = 968966326.415859 kg/s, net regridded = 200334.431705 kg/s, fractional error = 0.999793
+Record 39, net source = 967344963.932527 kg/s, net regridded = 196909.059468 kg/s, fractional error = 0.999796
+Record 40, net source = 965247193.747392 kg/s, net regridded = 193549.258952 kg/s, fractional error = 0.999799
+Record 41, net source = 963605821.741837 kg/s, net regridded = 190281.692044 kg/s, fractional error = 0.999803
+Record 42, net source = 963704494.316965 kg/s, net regridded = 187415.408555 kg/s, fractional error = 0.999806
+Record 43, net source = 966613456.842955 kg/s, net regridded = 184497.444016 kg/s, fractional error = 0.999809
+Record 44, net source = 970895527.814416 kg/s, net regridded = 181429.102991 kg/s, fractional error = 0.999813
+Record 45, net source = 971950767.796692 kg/s, net regridded = 178705.951201 kg/s, fractional error = 0.999816
+Record 46, net source = 970614162.431666 kg/s, net regridded = 175900.648119 kg/s, fractional error = 0.999819
+Record 47, net source = 970094680.461705 kg/s, net regridded = 173136.769837 kg/s, fractional error = 0.999822
+Record 48, net source = 971021846.012177 kg/s, net regridded = 170205.872820 kg/s, fractional error = 0.999825
+Record 49, net source = 973934507.233174 kg/s, net regridded = 167290.567303 kg/s, fractional error = 0.999828
+Record 50, net source = 973969029.609505 kg/s, net regridded = 164390.182334 kg/s, fractional error = 0.999831
+Record 51, net source = 976457597.839887 kg/s, net regridded = 161160.830046 kg/s, fractional error = 0.999835
+Record 52, net source = 977272445.885855 kg/s, net regridded = 157814.925977 kg/s, fractional error = 0.999839
+Record 53, net source = 977567904.168552 kg/s, net regridded = 154706.237610 kg/s, fractional error = 0.999842
+Record 54, net source = 978472981.305739 kg/s, net regridded = 150970.677329 kg/s, fractional error = 0.999846
+Record 55, net source = 977504802.267034 kg/s, net regridded = 144228.241789 kg/s, fractional error = 0.999852
+Record 56, net source = 976807450.100123 kg/s, net regridded = 130809.344766 kg/s, fractional error = 0.999866
+Record 57, net source = 976727716.815670 kg/s, net regridded = 120485.789774 kg/s, fractional error = 0.999877
+Record 58, net source = 977814002.843781 kg/s, net regridded = 113468.592124 kg/s, fractional error = 0.999884
+Record 59, net source = 981692106.715937 kg/s, net regridded = 108652.081739 kg/s, fractional error = 0.999889
+Record 60, net source = 985227847.489581 kg/s, net regridded = 105392.633859 kg/s, fractional error = 0.999893
+Record 61, net source = 989560673.088178 kg/s, net regridded = 103186.713629 kg/s, fractional error = 0.999896
+Record 62, net source = 994522652.770270 kg/s, net regridded = 101365.759331 kg/s, fractional error = 0.999898
+Record 63, net source = 1002144361.253322 kg/s, net regridded = 99801.486674 kg/s, fractional error = 0.9999
+Record 64, net source = 1010319214.119591 kg/s, net regridded = 98648.462385 kg/s, fractional error = 0.999902
+Record 65, net source = 1017126333.849092 kg/s, net regridded = 97503.807761 kg/s, fractional error = 0.999904
+Record 66, net source = 1026006563.365428 kg/s, net regridded = 96309.520797 kg/s, fractional error = 0.999906
+Record 67, net source = 1031608238.655075 kg/s, net regridded = 95195.940611 kg/s, fractional error = 0.999908
+Record 68, net source = 1032293704.623178 kg/s, net regridded = 94178.198835 kg/s, fractional error = 0.999909
+Record 69, net source = 1032874426.321320 kg/s, net regridded = 93172.514597 kg/s, fractional error = 0.99991
+Record 70, net source = 1033358503.932007 kg/s, net regridded = 92180.424943 kg/s, fractional error = 0.999911
+Record 71, net source = 1034460562.028477 kg/s, net regridded = 91221.116537 kg/s, fractional error = 0.999912
+Record 72, net source = 1036469128.964655 kg/s, net regridded = 90281.596078 kg/s, fractional error = 0.999913
+Record 73, net source = 1040889910.542053 kg/s, net regridded = 89472.455585 kg/s, fractional error = 0.999914
+Record 74, net source = 1046769984.841606 kg/s, net regridded = 88528.900459 kg/s, fractional error = 0.999915
+Record 75, net source = 1058197522.848793 kg/s, net regridded = 87641.104074 kg/s, fractional error = 0.999917
+Record 76, net source = 1068093714.279853 kg/s, net regridded = 86742.424086 kg/s, fractional error = 0.999919
+Record 77, net source = 1068778316.832582 kg/s, net regridded = 85885.143446 kg/s, fractional error = 0.99992
+Record 78, net source = 1066002061.932664 kg/s, net regridded = 85178.849910 kg/s, fractional error = 0.99992
+Record 79, net source = 1064535548.855100 kg/s, net regridded = 84208.880959 kg/s, fractional error = 0.999921
+Record 80, net source = 1065924970.953098 kg/s, net regridded = 83289.187678 kg/s, fractional error = 0.999922
+Record 81, net source = 1066960951.815996 kg/s, net regridded = 82381.760150 kg/s, fractional error = 0.999923
+Record 82, net source = 1067036885.983465 kg/s, net regridded = 81485.415071 kg/s, fractional error = 0.999924
+Record 83, net source = 1066358365.963825 kg/s, net regridded = 80597.932346 kg/s, fractional error = 0.999924
+Record 84, net source = 1064830022.775009 kg/s, net regridded = 79718.474971 kg/s, fractional error = 0.999925
+Record 85, net source = 1065799113.249163 kg/s, net regridded = 78844.183473 kg/s, fractional error = 0.999926
+Record 86, net source = 1067806677.726233 kg/s, net regridded = 77971.941201 kg/s, fractional error = 0.999927
+Record 87, net source = 1070598168.014323 kg/s, net regridded = 77105.253329 kg/s, fractional error = 0.999928
+Record 88, net source = 1072488106.186791 kg/s, net regridded = 76238.955416 kg/s, fractional error = 0.999929
+Record 89, net source = 1073349147.227801 kg/s, net regridded = 75424.593019 kg/s, fractional error = 0.99993
+Record 90, net source = 1073322320.146364 kg/s, net regridded = 74600.508180 kg/s, fractional error = 0.99993
+Record 91, net source = 1073517186.576040 kg/s, net regridded = 73765.893027 kg/s, fractional error = 0.999931
+Record 92, net source = 1075946524.123107 kg/s, net regridded = 72907.030175 kg/s, fractional error = 0.999932
+Record 93, net source = 1079312579.764129 kg/s, net regridded = 72004.725053 kg/s, fractional error = 0.999933
+Record 94, net source = 1082973233.468370 kg/s, net regridded = 71115.501347 kg/s, fractional error = 0.999934
+Record 95, net source = 1087292345.167117 kg/s, net regridded = 70096.864663 kg/s, fractional error = 0.999936
+Record 96, net source = 1092607129.763561 kg/s, net regridded = 67698.729564 kg/s, fractional error = 0.999938
+Record 97, net source = 1093879760.067148 kg/s, net regridded = 64809.885510 kg/s, fractional error = 0.999941
+Record 98, net source = 1094175306.512783 kg/s, net regridded = 62233.544125 kg/s, fractional error = 0.999943
+Record 99, net source = 1098650569.533418 kg/s, net regridded = 59983.576066 kg/s, fractional error = 0.999945
+Record 100, net source = 1105596763.493709 kg/s, net regridded = 58027.832899 kg/s, fractional error = 0.999948
+Record 101, net source = 1113000727.560900 kg/s, net regridded = 56413.873696 kg/s, fractional error = 0.999949
+Record 102, net source = 1121737259.321419 kg/s, net regridded = 55000.310144 kg/s, fractional error = 0.999951
+Record 103, net source = 1130334969.199764 kg/s, net regridded = 53826.368652 kg/s, fractional error = 0.999952
+Record 104, net source = 1139061332.025579 kg/s, net regridded = 52557.410396 kg/s, fractional error = 0.999954
+Record 105, net source = 1143644199.428355 kg/s, net regridded = 51483.193430 kg/s, fractional error = 0.999955
+Record 106, net source = 1151317741.416650 kg/s, net regridded = 50514.569784 kg/s, fractional error = 0.999956
+Record 107, net source = 1161061759.570560 kg/s, net regridded = 49624.390161 kg/s, fractional error = 0.999957
+Record 108, net source = 1167368047.500496 kg/s, net regridded = 48806.663646 kg/s, fractional error = 0.999958
+Record 109, net source = 1173779147.951228 kg/s, net regridded = 48165.965718 kg/s, fractional error = 0.999959
+Record 110, net source = 1180610423.527159 kg/s, net regridded = 47440.965556 kg/s, fractional error = 0.99996
+Record 111, net source = 1186956986.189385 kg/s, net regridded = 46755.966855 kg/s, fractional error = 0.999961
+Record 112, net source = 1193534686.534582 kg/s, net regridded = 46123.488904 kg/s, fractional error = 0.999961
+Record 113, net source = 1203517251.921098 kg/s, net regridded = 45524.211907 kg/s, fractional error = 0.999962
+Record 114, net source = 1215351775.249277 kg/s, net regridded = 317758.256722 kg/s, fractional error = 0.999739
+Record 115, net source = 1228188455.157950 kg/s, net regridded = 657356.254978 kg/s, fractional error = 0.999465
+Record 116, net source = 1241619235.602716 kg/s, net regridded = 885320.012548 kg/s, fractional error = 0.999287
+Record 117, net source = 1250884547.084373 kg/s, net regridded = 998351.829330 kg/s, fractional error = 0.999202
+Record 118, net source = 1256722490.667459 kg/s, net regridded = 1050296.449552 kg/s, fractional error = 0.999164
+Record 119, net source = 1262610838.632479 kg/s, net regridded = 1188011.077424 kg/s, fractional error = 0.999059
+Record 120, net source = 1267022973.209246 kg/s, net regridded = 1368209.423071 kg/s, fractional error = 0.99892
+Record 121, net source = 1272389265.443531 kg/s, net regridded = 1456965.689311 kg/s, fractional error = 0.998855
+Record 122, net source = 1276825549.963783 kg/s, net regridded = 1461521.151564 kg/s, fractional error = 0.998855
+Record 123, net source = 1284981078.098180 kg/s, net regridded = 1451496.805894 kg/s, fractional error = 0.99887
+Record 124, net source = 1298288281.766691 kg/s, net regridded = 1427151.416824 kg/s, fractional error = 0.998901
+Record 125, net source = 1309876372.787572 kg/s, net regridded = 1384789.657668 kg/s, fractional error = 0.998943
+Record 126, net source = 1316888581.245047 kg/s, net regridded = 1335378.248965 kg/s, fractional error = 0.998986
+Record 127, net source = 1324463355.462489 kg/s, net regridded = 1334425.245632 kg/s, fractional error = 0.998992
+Record 128, net source = 1332340051.067416 kg/s, net regridded = 1454962.479693 kg/s, fractional error = 0.998908
+Record 129, net source = 1343435365.541841 kg/s, net regridded = 1636146.993478 kg/s, fractional error = 0.998782
+Record 130, net source = 1357654911.454243 kg/s, net regridded = 1866601.225711 kg/s, fractional error = 0.998625
+Record 131, net source = 1364040390.254184 kg/s, net regridded = 2272122.726731 kg/s, fractional error = 0.998334
+Record 132, net source = 1369172551.118965 kg/s, net regridded = 2704376.546717 kg/s, fractional error = 0.998025
+Record 133, net source = 1374810374.555484 kg/s, net regridded = 3004437.135877 kg/s, fractional error = 0.997815
+Record 134, net source = 1378038597.057010 kg/s, net regridded = 3185329.092678 kg/s, fractional error = 0.997689
+Record 135, net source = 1380447192.083555 kg/s, net regridded = 3264333.024462 kg/s, fractional error = 0.997635
+Record 136, net source = 1385642138.268143 kg/s, net regridded = 3320059.895073 kg/s, fractional error = 0.997604
+Record 137, net source = 1390270431.120534 kg/s, net regridded = 3324605.003301 kg/s, fractional error = 0.997609
+Record 138, net source = 1395440984.422426 kg/s, net regridded = 3269277.595198 kg/s, fractional error = 0.997657
+Record 139, net source = 1401245490.954482 kg/s, net regridded = 3194495.069567 kg/s, fractional error = 0.99772
+Record 140, net source = 1406289365.149054 kg/s, net regridded = 3210437.116458 kg/s, fractional error = 0.997717
+Record 141, net source = 1412559992.188823 kg/s, net regridded = 3331196.458023 kg/s, fractional error = 0.997642
+Record 142, net source = 1418668685.507962 kg/s, net regridded = 3465992.918871 kg/s, fractional error = 0.997557
+Record 143, net source = 1426485402.839341 kg/s, net regridded = 3628742.948294 kg/s, fractional error = 0.997456
+Record 144, net source = 1429978227.671365 kg/s, net regridded = 3766913.813778 kg/s, fractional error = 0.997366
+Record 145, net source = 1438704191.236888 kg/s, net regridded = 3797825.426664 kg/s, fractional error = 0.99736
+Record 146, net source = 1443485440.603286 kg/s, net regridded = 3773144.582140 kg/s, fractional error = 0.997386
+Record 147, net source = 1450016538.911150 kg/s, net regridded = 3771162.646962 kg/s, fractional error = 0.997399
+Record 148, net source = 1457675169.348327 kg/s, net regridded = 3784234.006750 kg/s, fractional error = 0.997404
+Record 149, net source = 1464183402.930395 kg/s, net regridded = 3805741.649870 kg/s, fractional error = 0.997401
+Record 150, net source = 1471952256.325921 kg/s, net regridded = 3840158.052432 kg/s, fractional error = 0.997391
+Record 151, net source = 1480018411.935926 kg/s, net regridded = 3878957.642172 kg/s, fractional error = 0.997379
+Record 152, net source = 1487463278.582139 kg/s, net regridded = 3925658.471594 kg/s, fractional error = 0.997361
+Record 153, net source = 1497491566.592588 kg/s, net regridded = 3978039.715493 kg/s, fractional error = 0.997344
+Record 154, net source = 1508936994.182652 kg/s, net regridded = 4035599.289315 kg/s, fractional error = 0.997326
+Record 155, net source = 1524050951.738293 kg/s, net regridded = 4089561.623667 kg/s, fractional error = 0.997317
+Record 156, net source = 1542972826.370097 kg/s, net regridded = 4131102.634692 kg/s, fractional error = 0.997323
+Record 157, net source = 1556975310.250870 kg/s, net regridded = 4152296.981960 kg/s, fractional error = 0.997333
+Record 158, net source = 1568169027.488261 kg/s, net regridded = 4134025.417741 kg/s, fractional error = 0.997364
+Record 159, net source = 1581895974.009216 kg/s, net regridded = 4084635.616451 kg/s, fractional error = 0.997418
+Record 160, net source = 1596271061.576145 kg/s, net regridded = 4063295.652516 kg/s, fractional error = 0.997455
+Record 161, net source = 1610386999.048122 kg/s, net regridded = 4066186.776019 kg/s, fractional error = 0.997475
+Record 162, net source = 1622064668.490682 kg/s, net regridded = 4028486.223804 kg/s, fractional error = 0.997516
+Record 163, net source = 1627613132.283619 kg/s, net regridded = 4019683.063523 kg/s, fractional error = 0.99753
+Record 164, net source = 1626730290.422060 kg/s, net regridded = 4095020.638021 kg/s, fractional error = 0.997483
+Record 165, net source = 1627789561.153926 kg/s, net regridded = 4187699.501473 kg/s, fractional error = 0.997427
+Record 166, net source = 1628376529.494689 kg/s, net regridded = 4204553.774723 kg/s, fractional error = 0.997418
+Record 167, net source = 1629393399.165288 kg/s, net regridded = 4140602.297752 kg/s, fractional error = 0.997459
+Record 168, net source = 1627550904.438644 kg/s, net regridded = 4062085.572529 kg/s, fractional error = 0.997504
+Record 169, net source = 1625472827.983618 kg/s, net regridded = 3989751.228809 kg/s, fractional error = 0.997545
+Record 170, net source = 1626475569.876384 kg/s, net regridded = 3916067.908841 kg/s, fractional error = 0.997592
+Record 171, net source = 1628425491.546647 kg/s, net regridded = 3829193.737765 kg/s, fractional error = 0.997649
+Record 172, net source = 1628232012.588473 kg/s, net regridded = 3732189.488448 kg/s, fractional error = 0.997708
+Record 173, net source = 1625930034.672198 kg/s, net regridded = 3625276.294212 kg/s, fractional error = 0.99777
+Record 174, net source = 1622991883.958246 kg/s, net regridded = 3538829.555835 kg/s, fractional error = 0.99782
+Record 175, net source = 1621341094.220631 kg/s, net regridded = 3418760.311319 kg/s, fractional error = 0.997891
+Record 176, net source = 1620885036.685412 kg/s, net regridded = 3308595.102981 kg/s, fractional error = 0.997959
+Record 177, net source = 1621600652.337116 kg/s, net regridded = 3221348.508307 kg/s, fractional error = 0.998013
+Record 178, net source = 1623800355.392781 kg/s, net regridded = 3136045.827633 kg/s, fractional error = 0.998069
+Record 179, net source = 1625981316.458335 kg/s, net regridded = 3047347.662045 kg/s, fractional error = 0.998126
+Record 180, net source = 1624560854.905738 kg/s, net regridded = 2946100.320306 kg/s, fractional error = 0.998187
+Record 181, net source = 1622334032.398402 kg/s, net regridded = 2840419.087625 kg/s, fractional error = 0.998249
+Record 182, net source = 1620612700.834376 kg/s, net regridded = 2736235.980225 kg/s, fractional error = 0.998312
+Record 183, net source = 1619190779.173831 kg/s, net regridded = 2634218.304932 kg/s, fractional error = 0.998373
+Record 184, net source = 1616596510.104565 kg/s, net regridded = 2534166.288423 kg/s, fractional error = 0.998432
+Record 185, net source = 1615089166.895473 kg/s, net regridded = 2435482.216154 kg/s, fractional error = 0.998492
+Record 186, net source = 1620330706.850457 kg/s, net regridded = 2329051.242083 kg/s, fractional error = 0.998563
+Record 187, net source = 1627795381.105645 kg/s, net regridded = 2219347.591713 kg/s, fractional error = 0.998637
+Record 188, net source = 1628287784.079571 kg/s, net regridded = 2142704.824434 kg/s, fractional error = 0.998684
+Record 189, net source = 1624331651.744734 kg/s, net regridded = 2060161.285822 kg/s, fractional error = 0.998732
+Record 190, net source = 1622131402.433085 kg/s, net regridded = 1984345.921843 kg/s, fractional error = 0.998777
+Record 191, net source = 1624501371.358238 kg/s, net regridded = 1908792.138195 kg/s, fractional error = 0.998825
+Record 192, net source = 1626499795.435416 kg/s, net regridded = 1820800.130592 kg/s, fractional error = 0.998881
+Record 193, net source = 1631062248.928540 kg/s, net regridded = 1712472.866054 kg/s, fractional error = 0.99895
+Record 194, net source = 1636171947.558526 kg/s, net regridded = 1601897.788899 kg/s, fractional error = 0.999021
+Record 195, net source = 1642305167.016187 kg/s, net regridded = 1517229.230309 kg/s, fractional error = 0.999076
+Record 196, net source = 1646949695.991918 kg/s, net regridded = 1437453.434798 kg/s, fractional error = 0.999127
+Record 197, net source = 1640522109.930069 kg/s, net regridded = 1381480.571216 kg/s, fractional error = 0.999158
+Record 198, net source = 1630260002.667718 kg/s, net regridded = 1355680.789280 kg/s, fractional error = 0.999168
+Record 199, net source = 1620430880.917051 kg/s, net regridded = 1295179.540776 kg/s, fractional error = 0.999201
+Record 200, net source = 1611652660.478405 kg/s, net regridded = 1239337.944655 kg/s, fractional error = 0.999231
+Record 201, net source = 1605878203.675654 kg/s, net regridded = 1192593.185306 kg/s, fractional error = 0.999257
+Record 202, net source = 1601198776.717792 kg/s, net regridded = 1156876.271473 kg/s, fractional error = 0.999277
+Record 203, net source = 1595337882.395573 kg/s, net regridded = 1130237.967232 kg/s, fractional error = 0.999292
+Record 204, net source = 1586226982.704663 kg/s, net regridded = 1126200.829029 kg/s, fractional error = 0.99929
+Record 205, net source = 1576255382.378202 kg/s, net regridded = 1142146.206202 kg/s, fractional error = 0.999275
+Record 206, net source = 1567441059.612986 kg/s, net regridded = 1142966.245968 kg/s, fractional error = 0.999271
+Record 207, net source = 1558304777.883512 kg/s, net regridded = 1201283.523403 kg/s, fractional error = 0.999229
+Record 208, net source = 1552390958.077610 kg/s, net regridded = 1285196.437304 kg/s, fractional error = 0.999172
+Record 209, net source = 1543733154.148118 kg/s, net regridded = 1353750.350665 kg/s, fractional error = 0.999123
+Record 210, net source = 1535373148.878489 kg/s, net regridded = 1417234.159106 kg/s, fractional error = 0.999077
+Record 211, net source = 1531701905.522659 kg/s, net regridded = 1451260.545562 kg/s, fractional error = 0.999053
+Record 212, net source = 1527762957.086171 kg/s, net regridded = 1462290.923768 kg/s, fractional error = 0.999043
+Record 213, net source = 1520672038.332175 kg/s, net regridded = 1461132.700216 kg/s, fractional error = 0.999039
+Record 214, net source = 1512017123.065980 kg/s, net regridded = 1455110.428174 kg/s, fractional error = 0.999038
+Record 215, net source = 1502413752.100799 kg/s, net regridded = 1453562.125501 kg/s, fractional error = 0.999033
+Record 216, net source = 1493051695.334405 kg/s, net regridded = 1472288.141470 kg/s, fractional error = 0.999014
+Record 217, net source = 1486883733.427621 kg/s, net regridded = 1530168.380934 kg/s, fractional error = 0.998971
+Record 218, net source = 1498254804.102683 kg/s, net regridded = 1616260.226775 kg/s, fractional error = 0.998921
+Record 219, net source = 1501590731.283705 kg/s, net regridded = 1726912.494943 kg/s, fractional error = 0.99885
+Record 220, net source = 1503405532.140538 kg/s, net regridded = 1771137.408247 kg/s, fractional error = 0.998822
+Record 221, net source = 1495709859.302522 kg/s, net regridded = 1771317.204325 kg/s, fractional error = 0.998816
+Record 222, net source = 1485906668.060153 kg/s, net regridded = 1773154.293864 kg/s, fractional error = 0.998807
+Record 223, net source = 1473042276.669139 kg/s, net regridded = 1762492.470735 kg/s, fractional error = 0.998804
+Record 224, net source = 1476067782.270384 kg/s, net regridded = 1750759.181716 kg/s, fractional error = 0.998814
+Record 225, net source = 1486551875.023756 kg/s, net regridded = 1730269.723400 kg/s, fractional error = 0.998836
+Record 226, net source = 1486815188.904761 kg/s, net regridded = 1698996.434981 kg/s, fractional error = 0.998857
+Record 227, net source = 1484904203.227474 kg/s, net regridded = 1669988.082714 kg/s, fractional error = 0.998875
+Record 228, net source = 1478515067.919743 kg/s, net regridded = 1710681.852874 kg/s, fractional error = 0.998843
+Record 229, net source = 1473440730.840056 kg/s, net regridded = 1830857.575570 kg/s, fractional error = 0.998757
+Record 230, net source = 1465513109.732390 kg/s, net regridded = 1932080.324029 kg/s, fractional error = 0.998682
+Record 231, net source = 1457418465.496289 kg/s, net regridded = 1988351.977826 kg/s, fractional error = 0.998636
+Record 232, net source = 1444232178.616188 kg/s, net regridded = 2019623.300218 kg/s, fractional error = 0.998602
+Record 233, net source = 1431407015.088239 kg/s, net regridded = 2043037.393260 kg/s, fractional error = 0.998573
+Record 234, net source = 1422172416.886484 kg/s, net regridded = 2061977.994077 kg/s, fractional error = 0.99855
+Record 235, net source = 1419887846.124091 kg/s, net regridded = 2090552.355620 kg/s, fractional error = 0.998528
+Record 236, net source = 1419676086.133606 kg/s, net regridded = 2149974.303786 kg/s, fractional error = 0.998486
+Record 237, net source = 1410219317.984351 kg/s, net regridded = 2192565.638276 kg/s, fractional error = 0.998445
+Record 238, net source = 1400813646.160596 kg/s, net regridded = 2236978.961937 kg/s, fractional error = 0.998403
+Record 239, net source = 1395113939.626628 kg/s, net regridded = 2296681.211587 kg/s, fractional error = 0.998354
+Record 240, net source = 1394048795.761888 kg/s, net regridded = 2371448.887831 kg/s, fractional error = 0.998299
+Record 241, net source = 1393889840.089489 kg/s, net regridded = 2477303.663455 kg/s, fractional error = 0.998223
+Record 242, net source = 1394309585.864273 kg/s, net regridded = 2715921.140592 kg/s, fractional error = 0.998052
+Record 243, net source = 1384968455.041178 kg/s, net regridded = 2879450.847098 kg/s, fractional error = 0.997921
+Record 244, net source = 1370634595.937369 kg/s, net regridded = 3071807.758698 kg/s, fractional error = 0.997759
+Record 245, net source = 1360156191.361655 kg/s, net regridded = 3201540.541187 kg/s, fractional error = 0.997646
+Record 246, net source = 1352353270.974077 kg/s, net regridded = 3324039.451223 kg/s, fractional error = 0.997542
+Record 247, net source = 1344510734.024821 kg/s, net regridded = 3484872.381470 kg/s, fractional error = 0.997408
+Record 248, net source = 1336430913.071614 kg/s, net regridded = 3564081.419784 kg/s, fractional error = 0.997333
+Record 249, net source = 1328995703.719044 kg/s, net regridded = 3611827.696460 kg/s, fractional error = 0.997282
+Record 250, net source = 1320647718.387902 kg/s, net regridded = 3622210.214770 kg/s, fractional error = 0.997257
+Record 251, net source = 1311811523.095264 kg/s, net regridded = 3644434.750478 kg/s, fractional error = 0.997222
+Record 252, net source = 1303658593.635753 kg/s, net regridded = 3742756.127021 kg/s, fractional error = 0.997129
+Record 253, net source = 1294787324.107186 kg/s, net regridded = 3833615.966242 kg/s, fractional error = 0.997039
+Record 254, net source = 1284861816.567266 kg/s, net regridded = 3914470.975571 kg/s, fractional error = 0.996953
+Record 255, net source = 1275942310.938511 kg/s, net regridded = 4037877.203753 kg/s, fractional error = 0.996835
+Record 256, net source = 1270675506.352683 kg/s, net regridded = 4200725.129522 kg/s, fractional error = 0.996694
+Record 257, net source = 1268680978.335872 kg/s, net regridded = 4256483.158579 kg/s, fractional error = 0.996645
+Record 258, net source = 1267194654.710053 kg/s, net regridded = 4218335.271540 kg/s, fractional error = 0.996671
+Record 259, net source = 1264558516.509622 kg/s, net regridded = 4173550.521822 kg/s, fractional error = 0.9967
+Record 260, net source = 1261265007.699121 kg/s, net regridded = 4147473.037707 kg/s, fractional error = 0.996712
+Record 261, net source = 1257389117.735172 kg/s, net regridded = 4117706.890475 kg/s, fractional error = 0.996725
+Record 262, net source = 1253324825.933923 kg/s, net regridded = 4081700.452977 kg/s, fractional error = 0.996743
+Record 263, net source = 1250331523.373105 kg/s, net regridded = 4055370.283566 kg/s, fractional error = 0.996757
+Record 264, net source = 1248005134.460177 kg/s, net regridded = 4047384.320844 kg/s, fractional error = 0.996757
+Record 265, net source = 1243815625.217424 kg/s, net regridded = 4015961.548153 kg/s, fractional error = 0.996771
+Record 266, net source = 1240884756.243295 kg/s, net regridded = 3950922.334223 kg/s, fractional error = 0.996816
+Record 267, net source = 1235988807.635461 kg/s, net regridded = 3885589.197062 kg/s, fractional error = 0.996856
+Record 268, net source = 1231125648.784917 kg/s, net regridded = 3798615.789381 kg/s, fractional error = 0.996915
+Record 269, net source = 1227258368.871300 kg/s, net regridded = 3680843.535222 kg/s, fractional error = 0.997001
+Record 270, net source = 1223931718.091609 kg/s, net regridded = 3602514.661888 kg/s, fractional error = 0.997057
+Record 271, net source = 1221659897.127382 kg/s, net regridded = 3524020.949563 kg/s, fractional error = 0.997115
+Record 272, net source = 1220252190.049820 kg/s, net regridded = 3444803.938801 kg/s, fractional error = 0.997177
+Record 273, net source = 1218830418.052835 kg/s, net regridded = 3362690.670040 kg/s, fractional error = 0.997241
+Record 274, net source = 1214981467.800057 kg/s, net regridded = 3281526.971540 kg/s, fractional error = 0.997299
+Record 275, net source = 1209855278.513957 kg/s, net regridded = 3206242.844205 kg/s, fractional error = 0.99735
+Record 276, net source = 1206475889.933362 kg/s, net regridded = 3114312.691140 kg/s, fractional error = 0.997419
+Record 277, net source = 1203516345.659478 kg/s, net regridded = 3012257.011869 kg/s, fractional error = 0.997497
+Record 278, net source = 1199769516.191043 kg/s, net regridded = 2898566.799792 kg/s, fractional error = 0.997584
+Record 279, net source = 1196571021.499477 kg/s, net regridded = 2789962.324057 kg/s, fractional error = 0.997668
+Record 280, net source = 1192224102.728090 kg/s, net regridded = 2701100.300747 kg/s, fractional error = 0.997734
+Record 281, net source = 1186716071.170305 kg/s, net regridded = 2630187.162328 kg/s, fractional error = 0.997784
+Record 282, net source = 1181392205.381029 kg/s, net regridded = 2583851.692074 kg/s, fractional error = 0.997813
+Record 283, net source = 1176276233.403231 kg/s, net regridded = 2502106.572708 kg/s, fractional error = 0.997873
+Record 284, net source = 1170994719.985286 kg/s, net regridded = 2414898.111485 kg/s, fractional error = 0.997938
+Record 285, net source = 1166145206.933071 kg/s, net regridded = 2339742.803613 kg/s, fractional error = 0.997994
+Record 286, net source = 1161870596.991436 kg/s, net regridded = 2267813.569321 kg/s, fractional error = 0.998048
+Record 287, net source = 1159443828.245825 kg/s, net regridded = 2200063.170237 kg/s, fractional error = 0.998102
+Record 288, net source = 1158145577.766635 kg/s, net regridded = 2134969.724690 kg/s, fractional error = 0.998157
+Record 289, net source = 1154571214.660072 kg/s, net regridded = 2068986.559863 kg/s, fractional error = 0.998208
+Record 290, net source = 1148807625.699783 kg/s, net regridded = 2008067.543288 kg/s, fractional error = 0.998252
+Record 291, net source = 1141735994.040461 kg/s, net regridded = 1949458.169153 kg/s, fractional error = 0.998293
+Record 292, net source = 1137221531.494047 kg/s, net regridded = 1889439.866483 kg/s, fractional error = 0.998339
+Record 293, net source = 1132574385.679051 kg/s, net regridded = 1820294.917849 kg/s, fractional error = 0.998393
+Record 294, net source = 1127139993.749859 kg/s, net regridded = 1750571.430323 kg/s, fractional error = 0.998447
+Record 295, net source = 1120449283.691623 kg/s, net regridded = 1680988.364000 kg/s, fractional error = 0.9985
+Record 296, net source = 1115213250.328328 kg/s, net regridded = 1604405.018208 kg/s, fractional error = 0.998561
+Record 297, net source = 1108988105.330606 kg/s, net regridded = 1522017.332947 kg/s, fractional error = 0.998628
+Record 298, net source = 1101662584.522900 kg/s, net regridded = 1440554.256886 kg/s, fractional error = 0.998692
+Record 299, net source = 1094118625.738929 kg/s, net regridded = 1367452.591967 kg/s, fractional error = 0.99875
+Record 300, net source = 1088574964.918479 kg/s, net regridded = 1297440.405796 kg/s, fractional error = 0.998808
+Record 301, net source = 1082106498.344783 kg/s, net regridded = 1230299.091787 kg/s, fractional error = 0.998863
+Record 302, net source = 1074874500.943832 kg/s, net regridded = 1159832.435226 kg/s, fractional error = 0.998921
+Record 303, net source = 1068100803.693118 kg/s, net regridded = 1069850.795243 kg/s, fractional error = 0.998998
+Record 304, net source = 1062536506.829526 kg/s, net regridded = 992919.211438 kg/s, fractional error = 0.999066
+Record 305, net source = 1056673691.094759 kg/s, net regridded = 931548.413410 kg/s, fractional error = 0.999118
+Record 306, net source = 1052252076.570377 kg/s, net regridded = 836866.331171 kg/s, fractional error = 0.999205
+Record 307, net source = 1048993899.262468 kg/s, net regridded = 744140.160756 kg/s, fractional error = 0.999291
+Record 308, net source = 1045024046.819934 kg/s, net regridded = 680720.067357 kg/s, fractional error = 0.999349
+Record 309, net source = 1042097055.358612 kg/s, net regridded = 648650.473052 kg/s, fractional error = 0.999378
+Record 310, net source = 1040852908.466168 kg/s, net regridded = 632520.706738 kg/s, fractional error = 0.999392
+Record 311, net source = 1037640673.667797 kg/s, net regridded = 621985.230406 kg/s, fractional error = 0.999401
+Record 312, net source = 1032181480.959224 kg/s, net regridded = 613886.939073 kg/s, fractional error = 0.999405
+Record 313, net source = 1029042484.993524 kg/s, net regridded = 606863.890582 kg/s, fractional error = 0.99941
+Record 314, net source = 1025057726.495752 kg/s, net regridded = 599391.231835 kg/s, fractional error = 0.999415
+Record 315, net source = 1020794311.881549 kg/s, net regridded = 594279.488683 kg/s, fractional error = 0.999418
+Record 316, net source = 1016891765.346093 kg/s, net regridded = 589491.680301 kg/s, fractional error = 0.99942
+Record 317, net source = 1012538408.809639 kg/s, net regridded = 584784.339640 kg/s, fractional error = 0.999422
+Record 318, net source = 1008671349.349385 kg/s, net regridded = 580086.980886 kg/s, fractional error = 0.999425
+Record 319, net source = 1006241181.289784 kg/s, net regridded = 575227.657550 kg/s, fractional error = 0.999428
+Record 320, net source = 1005975679.284554 kg/s, net regridded = 569816.431799 kg/s, fractional error = 0.999434
+Record 321, net source = 1003817036.831312 kg/s, net regridded = 564561.759518 kg/s, fractional error = 0.999438
+Record 322, net source = 1001078159.713626 kg/s, net regridded = 558005.497520 kg/s, fractional error = 0.999443
+Record 323, net source = 998142646.929372 kg/s, net regridded = 550885.410270 kg/s, fractional error = 0.999448
+Record 324, net source = 994535155.432748 kg/s, net regridded = 542887.398016 kg/s, fractional error = 0.999454
+Record 325, net source = 990448688.123492 kg/s, net regridded = 535491.884229 kg/s, fractional error = 0.999459
+Record 326, net source = 986272148.122814 kg/s, net regridded = 527895.648584 kg/s, fractional error = 0.999465
+Record 327, net source = 982308939.692563 kg/s, net regridded = 521252.208381 kg/s, fractional error = 0.999469
+Record 328, net source = 979743689.971890 kg/s, net regridded = 515552.229780 kg/s, fractional error = 0.999474
+Record 329, net source = 977524560.447507 kg/s, net regridded = 510452.313783 kg/s, fractional error = 0.999478
+Record 330, net source = 976142261.994301 kg/s, net regridded = 505694.763193 kg/s, fractional error = 0.999482
+Record 331, net source = 975136022.590008 kg/s, net regridded = 501141.227161 kg/s, fractional error = 0.999486
+Record 332, net source = 974285699.489811 kg/s, net regridded = 496764.949973 kg/s, fractional error = 0.99949
+Record 333, net source = 971186024.970409 kg/s, net regridded = 492552.777345 kg/s, fractional error = 0.999493
+Record 334, net source = 967747839.971768 kg/s, net regridded = 488449.455491 kg/s, fractional error = 0.999495
+Record 335, net source = 963491481.736426 kg/s, net regridded = 484488.703990 kg/s, fractional error = 0.999497
+Record 336, net source = 960220740.117140 kg/s, net regridded = 480606.120421 kg/s, fractional error = 0.999499
+Record 337, net source = 956361950.593962 kg/s, net regridded = 476940.420784 kg/s, fractional error = 0.999501
+Record 338, net source = 951071686.532491 kg/s, net regridded = 473183.472684 kg/s, fractional error = 0.999502
+Record 339, net source = 946547783.336280 kg/s, net regridded = 469712.016976 kg/s, fractional error = 0.999504
+Record 340, net source = 943826543.652962 kg/s, net regridded = 466103.675578 kg/s, fractional error = 0.999506
+Record 341, net source = 942060574.879908 kg/s, net regridded = 462462.737642 kg/s, fractional error = 0.999509
+Record 342, net source = 941518893.240870 kg/s, net regridded = 458657.165045 kg/s, fractional error = 0.999513
+Record 343, net source = 941007077.568793 kg/s, net regridded = 454737.042915 kg/s, fractional error = 0.999517
+Record 344, net source = 940743158.972641 kg/s, net regridded = 450636.702247 kg/s, fractional error = 0.999521
+Record 345, net source = 938899819.424611 kg/s, net regridded = 446333.693029 kg/s, fractional error = 0.999525
+Record 346, net source = 939506949.336314 kg/s, net regridded = 441938.778200 kg/s, fractional error = 0.99953
+Record 347, net source = 941873093.345805 kg/s, net regridded = 437577.976289 kg/s, fractional error = 0.999535
+Record 348, net source = 944970925.304807 kg/s, net regridded = 433334.921010 kg/s, fractional error = 0.999541
+Record 349, net source = 948237694.013812 kg/s, net regridded = 429165.600262 kg/s, fractional error = 0.999547
+Record 350, net source = 951551301.620958 kg/s, net regridded = 425056.818987 kg/s, fractional error = 0.999553
+Record 351, net source = 955285416.113276 kg/s, net regridded = 421042.240082 kg/s, fractional error = 0.999559
+Record 352, net source = 955411286.423179 kg/s, net regridded = 417069.085101 kg/s, fractional error = 0.999563
+Record 353, net source = 953577445.899538 kg/s, net regridded = 413190.929622 kg/s, fractional error = 0.999567
+Record 354, net source = 952669645.745386 kg/s, net regridded = 409383.140286 kg/s, fractional error = 0.99957
+Record 355, net source = 955502514.041115 kg/s, net regridded = 405549.722997 kg/s, fractional error = 0.999576
+Record 356, net source = 955505255.532055 kg/s, net regridded = 401700.760911 kg/s, fractional error = 0.99958
+Record 357, net source = 952574997.376608 kg/s, net regridded = 397811.070477 kg/s, fractional error = 0.999582
+Record 358, net source = 949644153.976697 kg/s, net regridded = 393919.775271 kg/s, fractional error = 0.999585
+Record 359, net source = 946646195.035147 kg/s, net regridded = 390039.217467 kg/s, fractional error = 0.999588
+Record 360, net source = 943729417.101241 kg/s, net regridded = 386147.870872 kg/s, fractional error = 0.999591
+Record 361, net source = 941619318.180638 kg/s, net regridded = 382273.815608 kg/s, fractional error = 0.999594
+Record 362, net source = 940115269.770825 kg/s, net regridded = 378587.390448 kg/s, fractional error = 0.999597
+Record 363, net source = 939672896.688620 kg/s, net regridded = 374998.888742 kg/s, fractional error = 0.999601
+Record 364, net source = 940380107.363832 kg/s, net regridded = 371446.389610 kg/s, fractional error = 0.999605

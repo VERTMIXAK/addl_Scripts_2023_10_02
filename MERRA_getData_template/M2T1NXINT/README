@@ -1,0 +1,65 @@
+Go to
+	https://disc.gsfc.nasa.gov/
+and log in
+
+Put the desired data base into the search bar, and hit search
+
+click on Subset / Get Data
+
+edit time range, lat/lon range, download all variable, pick netcdf, select all times of day, then download
+
+This will put a text file into the Downloads folder that you copy into this directory.
+
+NOTE: the first line of this file needs to be deleted.
+
+
+
+REQUIRED fields
+	PRECCU	convective rainfall
+	PRECLS	large scale rainfall	
+	PRECSN 	snowfall
+
+
+
+
+
+
+Use this text file as input to the getData.bash script
+
+
+
+
+This creates a bunch of netcdf files, one per day. Move them into a scheduleForDeletion directory and ncrcat them
+together.
+
+This is trickier than it sounds because these files don't have the time dimension set at UNLIMITED. That's what the
+error message below means when is says there's no record dimension
+
+chinook> ncrcat MERRA2_400.tavg1_2d_int_Nx.2019010* dum.nc
+ncrcat: ERROR no variables fit criteria for processing
+ncrcat: HINT Extraction list must contain a record variable which to concatenate
+
+
+
+
+
+
+
+Run the extractFields.bash script to create a properly sized MERRA_rain file. The extract script also modifies 
+variable names and units, and it fixes the time stamp by running settime.py. 
+
+Make sure to run the sumRainComponents.m script because I actually want the sum of three fields in INT_MERRA.nc to
+be the rain field in the local file. I'm sure there's a way to do all this in one step with an ncks command ....
+
+
+
+
+
+
+
+
+I don't know if this is strictly necessary, but all the MERRA files that come from Kate have Alaska in the middle. 
+i.e. longitude originally runs from -180 to 180 but change this so that the longitude runs from 0 to 360. Do this with
+the fixLongitude.m script then move the resulting netcdf file up one directory.
+
+

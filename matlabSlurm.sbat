@@ -1,0 +1,15 @@
+#!/bin/bash
+#SBATCH --partition=t1small
+#SBATCH --ntasks=1
+#SBATCH --mail-user=jgpender@alaska.edu
+#SBATCH --mail-type=BEGIN
+#SBATCH --mail-type=END
+#SBATCH --mail-type=FAIL
+#SBATCH --time=10:00:00
+#SBATCH --output=allFour.%j
+ulimit -l unlimited
+ulimit -s unlimited
+matlab -nodisplay -nosplash <  tideComparison_M2.m > log
+matlab -nodisplay -nosplash <  tideComparison_K1.m > log
+matlab -nodisplay -nosplash <  tideComparison_S2.m > log
+matlab -nodisplay -nosplash <  tideComparison_O1.m > log

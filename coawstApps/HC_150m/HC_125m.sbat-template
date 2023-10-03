@@ -1,0 +1,32 @@
+#!/bin/bash
+#SBATCH --partition=t2standard
+#SBATCH --ntasks=108
+#SBATCH --mail-user=jgpender@alaska.edu
+#SBATCH --mail-type=BEGIN
+#SBATCH --mail-type=END
+#SBATCH --mail-type=FAIL
+#SBATCH --time=04:00:00
+#SBATCH --output=roms.%j
+source ~/.runROMSintel
+ulimit -l unlimited
+ulimit -s unlimited
+
+\rm -r netcdfOutput
+mkdir netcdfOutput
+
+mpirun -np 108 ./coawstM Apps/ocean_hc.in > log
+bash /import/VERTMIXFS/jgpender/roms-kate_svn/addl_Scripts/timeROMS/getRunTime.bash >> log
+mv log netcdfOutput
+
+bash nameLinks.bash
+
+cd parse
+
+module purge
+. /etc/profile.d/modules.sh
+module load matlab/R2013a
+matlab -nodisplay -nosplash < parse.m  > log &
+wait 
+
+/bin/bash moveFiles.bash
+

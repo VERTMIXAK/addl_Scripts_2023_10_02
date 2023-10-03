@@ -1,0 +1,35 @@
+
+https://rda.ucar.edu/datasets/ds633.0/index.html#!cgi-bin/datasets/getSubset?dsnum=633.0&listAction=customize&_da=y&gindex=29
+
+Tair        2 meter temperature            adjust     BLK_ZT, convert K to C
+Pair        surface pressure            
+Uwind        10 metre U wind component        adjust     BLK_ZW in ocean.in
+Vwind        10 metre V wind component        adjust     BLK_ZW in ocean.in
+
+
+
+Web site 2:
+
+https://cds.climate.copernicus.eu/cdsapp#!/dataset/reanalysis-era5-single-levels?tab=form
+
+Rain    Total precipitation (Popular tab)            multiply by 1000/3600 to get kg/m/s
+Swrad    MEAN SURFACE DOWNWARD SHORT-WAVE RADIATION FLUX
+        (Mean rates tab)
+Albedo    use MEAN SURFACE DOWNWARD SHORT-WAVE RADIATION FLUX (SSRD)     a = 1 - SSR/SSRD
+    and MEAN SURFACE NET DOWNWARD SHORT-WAVE RADIATION FLUX (SSR)
+    (maybe use ROMS’ own net swrad flux to calculate albedo?)
+LWrad     MEAN SURFACE DOWNWARD LONG-WAVE RADIATION FLUX
+
+
+
+
+
+
+Web site 3:
+
+https://cds.climate.copernicus.eu/cdsapp#!/dataset/reanalysis-era5-pressure-levels?tab=form
+
+Qair    Specific humidity                        use 1000 mbar level
+
+
+

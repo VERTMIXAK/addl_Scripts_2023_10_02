@@ -1,0 +1,72 @@
+site1a:	UWind, VWind, Pair
+
+site1b:	Tair
+
+site2:	radiation fluxes, rain
+
+site3:	specific humidity
+
+
+
+
+
+Uwind/Uind		longitude 				-> lat
+				latitude  				-> lat
+				time					-> wind_time
+				VAR_10U					-> Uwind
+				VAR_10V					-> Vwind
+				hours					-> days
+
+Pair			longitude   			-> lon   
+                latitude    			-> lat
+                time        			-> pair_time
+                SP						-> Pair
+                hours       			-> days
+
+Tair        	longitude   			-> lon
+                latitude    			-> lat
+                time        			-> tair_time
+                VAR_2T    				-> Tair 
+                hours       			-> days
+
+			
+
+
+
+
+rain			longitude   			-> lon
+                latitude    			-> lat
+                time        			-> rain_time
+                tp *1000 / 3600     	-> rain
+                hours       			-> days
+				units					-> kg m^-2 s^-1
+
+swrad			longitude   			-> lon
+                latitude    			-> lat
+                time        			-> srf_time
+                msdwswr   				-> swrad
+                hours       			-> days
+
+lwrad_down		longitude   			-> lon
+                latitude    			-> lat
+                time        			-> lrf_time
+                msdwlwrf    			-> lwrad_down
+                hours       			-> days
+
+albedo			longitude   			-> lon
+                latitude    			-> lat
+                time        			-> albedo_time
+                1 - msnswrfcs/msdwswrf 	-> albedo
+                hours       			-> days
+
+
+
+
+
+Qair			longitude   			-> lon
+                latitude    			-> lat
+                time        			-> qair_time
+                q    					-> qair
+                hours       			-> days
+
+

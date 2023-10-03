@@ -1,0 +1,345 @@
+function MODEL=MITGCM_calc_modes(MODEL,OB,nmodes)
+%%
+
+Nx=MODEL.Nx;  Ny=MODEL.Ny;  Nz=MODEL.Nz;  Hmax=MODEL.H_max;  z=MODEL.Z;
+
+%% Construct the basis functions. 
+
+z=[0 MODEL.fullZ']';    % use the extra-dense z-grid (cell centers AND cell faces)
+nz= length(z);
+
+N2= interp1(MODEL.Z,MODEL.N2,z);
+N2(1) = N2(2);
+N2(nz)= N2(nz-1);
+%N2 = 0*N2 +  4*10^-6;                   % make N2 constant
+
+%JGP reconstruct the density from N2, realizing this is a bit half-assed
+rho0=OB.rho0; 
+for iii=1:nz-1
+    drho0=rho0(iii)*N2(iii)/9.81*(z(iii+1)-z(iii) );
+    rho0(iii+1)=rho0(iii)+drho0;
+end;
+N2(1:nz-1)' - diff(rho0) ./ diff(z')  ./rho0(1:end-1) *9.8;
+MODEL.rho0ofZ=rho0(2:2:end);
+
+psiw =  zeros([MODEL.Nz  nmodes  2*MODEL.Nz ]);
+psip =  psiw;
+vXfm =  psiw;
+DXfm =  psiw;
+rhoXfm =  psiw;
+keMat=  zeros([          nmodes  2*MODEL.Nz ]);
+
+% pDenom =0* (1:nmodes);
+% wDenom =0* (1:nmodes);
+
+for nInterval =2:Nz
+    
+    
+
+ 
+%% first do the mode for which H is on a cell center. 
+    npoints=2*nInterval-1
+    
+    [wmodes,pmodes,ke] = dynmodes_hls(N2(1:npoints+1),z(1:npoints+1), OB );
+    
+    % scale the pmodes
+    pmodes = pmodes * MODEL.g * MODEL.rho0;
+    
+
+    % reduce the size of the wmodes matrix because the bottom row is all
+    % zeros
+    wmodes(:,1:end-1);wmodes=ans(1:end-1,:);
+    
+    nw=length(wmodes);    
+    np=length(pmodes);
+    
+    %populate data matrices
+    % don't forget to leave off the batropic p mode
+    psiw(1:nw,1:min(nw,nmodes),npoints)=wmodes(1:nw,1:min(nw,nmodes));
+    psip(1:np,1:min(np-1,nmodes),npoints)=pmodes(1:np,1+1:min(np,nmodes+1));
+    keMat(1:min(np-1,nmodes),npoints)=ke(1:min(np-1,nmodes)); %there is no ke for the barotropic mode
+    
+    % Find the various transforms
+    vXfmShort=0*pmodes;
+    DXfmShort=0*wmodes;
+    rhoXfmShort=0*wmodes;
+    pDenom =0* (1:np);
+    wDenom =0* (1:nw);
+    
+    % calculate the denominator for the transforms involving p modes
+%     for nn=1:min(np,nmodes);     
+    for nn=1:np; 
+        for pp=1:np
+            pDenom(nn)=pDenom(nn) + pmodes(pp,nn)^2 * MODEL.delZ(pp) /MODEL.rho0ofZ(pp);
+        end;
+        pDenom(nn)=pDenom(nn) - pmodes(np,nn)^2 * .5*MODEL.delZ(np) /MODEL.rho0ofZ(np);
+    end;    
+
+    % finish calculating the velocity transform
+%     for nn=1:min(np,nmodes); 
+    for nn=1:np; 
+        for pp=1:np-1
+          vXfmShort(pp,nn)=pmodes(pp,nn) *  MODEL.delZ(pp) / pDenom(nn) * MODEL.g;
+        end;
+        vXfmShort(np,nn)=  pmodes(np,nn)*.5*MODEL.delZ(np) / pDenom(nn) * MODEL.g;
+    end;   
+    
+    % calculate the denominator for the transforms involving w modes
+%     for nn=1:min(nw,nmodes); 
+    for nn=1:nw; 
+        for pp=1:nw
+            wDenom(nn)=wDenom(nn) + wmodes(pp,nn)^2 *   MODEL.delZ(pp) * MODEL.rho0ofZ(pp) * MODEL.N2(pp);
+        end;
+%         wDenom(nn)    =wDenom(nn) - wmodes(nw,nn)^2 *.5*MODEL.delZ(nw) * MODEL.rho0ofZ(nw) * MODEL.N2(nw);
+    end;    
+
+    % finish calculating the displacement and density transforms
+%     for nn=1:min(nw,nmodes); 
+    for nn=1:nw; 
+%         for pp=1:nw-1  left over from when I kept that row of zeroes
+        for pp=1:nw
+          DXfmShort(pp,nn)=  wmodes(pp,nn) * MODEL.rho0ofZ(pp) * MODEL.N2(pp) * MODEL.delZ(pp) / wDenom(nn);
+          rhoXfmShort(pp,nn)=wmodes(pp,nn) * MODEL.rho0ofZ(pp)                * MODEL.delZ(pp) / wDenom(nn);
+        end;
+%         DXfmShort(nw,nn)=wmodes(nw,nn) * .5*MODEL.delZ(nw) / wDenom(nn)* MODEL.rho0ofZ(nw) * MODEL.N2(nw);
+    end;  
+   
+    
+	% Taking the inverse works better for small nInterval
+    if nInterval < 10
+        (pmodes ./ repmat(MODEL.rho0ofZ(1:np)',[1,np]) ) / MODEL.g;  vXfmShort=inv(ans');
+	end;
+    if nInterval < 15
+        DXfmShort=inv(wmodes');
+        repmat(MODEL.N2(1:nw),[1,nw]) .* wmodes;   rhoXfmShort=inv(ans');
+	end;
+    
+    vXfm  (1:np,1:min(np-1,nmodes),npoints)=  vXfmShort(1:np,1+1:min(np,nmodes+1));    
+    DXfm  (1:nw,1:min(nw,nmodes),npoints)=  DXfmShort(1:nw,1:min(nw,nmodes));    
+    rhoXfm(1:nw,1:min(nw,nmodes),npoints)=rhoXfmShort(1:nw,1:min(nw,nmodes));
+    
+aaa=23;  % a convenient place to put a stop
+
+    
+%%         velocity DIAGNOSTIC
+%         
+%         % create a data vector      
+%         uHat=2*rand(1,min(nmodes,np))-1;
+%         sprintf('original velocity spectral coefficients')
+%         uHat(1:min(nmodes,length(uHat)))
+%         dataVec=0*pmodes(:,1);
+%         for ndat=1:length(uHat)%np
+%              dataVec=dataVec+uHat(ndat)/MODEL.g * pmodes(:,ndat)./MODEL.rho0ofZ(1:np)';
+%         end;
+%         uSynthetic=dataVec';         
+% 
+%         % Find the spectral coefficients the direct way
+%         specvXfm=(vXfmShort'*dataVec)';
+%         sprintf('recover coefficients using dot product method')
+%         specvXfm(1:min(np,nmodes))%np);
+%          
+% %         %Linear regression does a fine job of recovering the coefficients
+% %         sprintf('recover coefficients using linear regression')
+% % %         specLR=(pmodes(:,1:min(np,nmodes))./MODEL.rho0ofZ(1:min(np,nmodes)) /MODEL.g)\dataVec)';
+% %         specLR(1:min(np,nmodes))%np)
+    
+        %end dianostic
+        
+%%         Displacement DIAGNOSTIC
+%         
+%         % create a data vector      
+%         dataCoeff=2*rand(1,min(nmodes,nw))-1;
+%         sprintf('original Displacement spectral coefficients')
+%         dataCoeff(1:min(nmodes,length(dataCoeff)))
+%         dataVec=0*wmodes(:,1);
+%         for ndat=1:length(dataCoeff)%np
+%              dataVec=dataVec+dataCoeff(ndat)*wmodes(:,ndat);
+%         end;
+%         rhoSynthetic=dataVec';         
+% 
+%         % Find the spectral coefficients the direct way
+%         specDXfm=(DXfmShort'*dataVec)';
+%         sprintf('recover coefficients using dot product method')
+%         specDXfm(1:min(nw,nmodes))%np);
+%          
+% %         % Linear regression does a fine job of recovering the coefficients
+% %         sprintf('recover coefficients using linear regression')
+% %         specLR=(wmodes(:,1:min(nw,nmodes))\dataVec)';
+% %         specLR(1:min(nw,nmodes))%np)
+%     
+%         % end dianostic        
+        
+        
+%%         Density anomaly DIAGNOSTIC
+%         
+%         % create a data vector      
+%         dataCoeff=2*rand(1,min(nmodes,nw))-1;
+%         sprintf('original density anomaly spectral coefficients')
+%         dataCoeff(1:min(nmodes,length(dataCoeff)))
+%         dataVec=0*wmodes(:,1);
+%         for ndat=1:length(dataCoeff)%np
+%              dataVec=dataVec+dataCoeff(ndat)*wmodes(:,ndat).*MODEL.N2(1:nw);
+%         end;
+%         rhoSynthetic=dataVec';         
+% 
+%         % Find the spectral coefficients the direct way
+%         specrhoXfm=(rhoXfmShort'*dataVec)';
+%         sprintf('recover coefficients using dot product method')
+%         specrhoXfm(1:min(nw,nmodes))%np);
+%          
+% %         % Linear regression does a fine job of recovering the coefficients
+% %         sprintf('recover coefficients using linear regression')
+% %         specLR=(wmodes(:,1:min(nw,nmodes))\dataVec)';
+% %         specLR(1:min(nw,nmod2es))%np)
+%     
+%         % end dianostic        
+                
+%% Now do the mode for which H is on the bottom face of the cell
+    npoints=2*nInterval;
+    [wmodes,pmodes,ke] = dynmodes_hls(N2(1:npoints+1),z(1:npoints+1), OB );
+    
+    % scale the pmodes
+    pmodes = pmodes * MODEL.g * MODEL.rho0;
+
+    nw=length(wmodes);    
+    np=length(pmodes);
+    
+    % populate data matrices
+    psiw(1:nw,1:min(nw,nmodes),npoints)=wmodes(1:nw,1:min(nw,nmodes));
+    psip(1:np,1:min(np-1,nmodes),npoints)=pmodes(1:np,1+1:min(np,nmodes+1));
+    keMat(1:min(nw,nmodes),npoints)=ke(1:min(nw,nmodes));
+
+    % Find the various transforms
+    pDenom=0*(1:np);
+    wDenom=0*(1:nw);
+    vXfmShort  =0*pmodes;
+    DXfmShort  =0*wmodes;   
+    rhoXfmShort=0*wmodes;
+
+    % calculate the denominator for the transforms involving p modes
+    pDenom=0*pDenom;
+    for nn=1:np; 
+        for pp=1:np
+            pDenom(nn)=pDenom(nn) + pmodes(pp,nn)^2 * MODEL.delZ(pp) /MODEL.rho0ofZ(pp);
+    end;end;
+
+    % finish calculating the velocity transform
+    for nn=1:np; 
+        for pp=1:np
+            vXfmShort(pp,nn)=pmodes(pp,nn) * MODEL.delZ(pp) / pDenom(nn) * MODEL.g;
+    end;end;   
+
+    % calculate the denominator for the transforms involving w modes
+    wDenom=0*wDenom;
+    for nn=1:nw; for pp=1:np
+        wDenom(nn)=wDenom(nn) + wmodes(pp,nn)^2 * MODEL.delZ(pp) * MODEL.rho0ofZ(pp) * MODEL.N2(pp);
+    end;end;
+
+    % finish calculating the displacement and density transform
+    for nn=1:nw; for pp=1:np
+        DXfmShort(pp,nn)  =wmodes(pp,nn) * MODEL.rho0ofZ(pp) * MODEL.N2(pp) * MODEL.delZ(pp) / wDenom(nn) ;
+        rhoXfmShort(pp,nn)=wmodes(pp,nn) * MODEL.rho0ofZ(pp)                * MODEL.delZ(pp) / wDenom(nn);
+    end;end;   
+
+% 	% Taking the inverse works better for small nInterval
+	if nInterval < 10
+        (pmodes ./ repmat(MODEL.rho0ofZ(1:np)',[1,np]) ) / MODEL.g;  vXfmShort=inv(ans');
+	end;
+	if nInterval < 15
+        DXfmShort=inv(wmodes');
+        repmat(MODEL.N2(1:nw),[1,nw]) .* wmodes;  rhoXfmShort=inv(ans');
+	end;
+
+    
+    vXfm  (1:np,1:min(np-1,nmodes),npoints)=  vXfmShort(1:np,1+1:min(np,nmodes+1));     
+    DXfm  (1:nw,1:min(np,nmodes),npoints)=  DXfmShort(1:nw,1:min(nw,nmodes));    
+    rhoXfm(1:nw,1:min(np,nmodes),npoints)=rhoXfmShort(1:nw,1:min(nw,nmodes)); 
+    
+%%         velocity DIAGNOSTIC
+%         
+%         % create a data vector      
+%         uHat=2*rand(1,min(nmodes,np))-1;
+%         sprintf('original velocity spectral coefficients')
+%         uHat(1:min(nmodes,length(uHat)))
+%         dataVec=0*pmodes(:,1);
+%         for ndat=1:length(uHat)%np
+%              dataVec=dataVec+uHat(ndat)/MODEL.g * pmodes(:,ndat)./MODEL.rho0ofZ(1:np)';
+%         end;
+%         uSynthetic=dataVec';         
+% 
+%         % Find the spectral coefficients the direct way
+%         specvXfm=(vXfmShort'*dataVec)';
+%         sprintf('recover coefficients using dot product method')
+%         specvXfm(1:min(np,nmodes))%np);
+%          
+% %         % Linear regression does a fine job of recovering the coefficients
+% %         sprintf('recover coefficients using linear regression')
+% %         specLR=(pmodes(:,1:min(np,nmodes))\dataVec)';
+% %         specLR(1:min(np,nmodes))%np)
+% 
+%         %end diagnostic
+
+
+%%         Displacement DIAGNOSTIC
+%         
+%         % create a data vector
+%                      
+%         dataCoeff=2*rand(1,min(nmodes,np))-1;
+%         sprintf('original Displacement spectral coefficients')
+%         dataCoeff(1:min(nmodes,length(dataCoeff)))
+%         dataVec=0*wmodes(:,1);
+%         for ndat=1:length(dataCoeff)%np
+%              dataVec=dataVec+dataCoeff(ndat)*wmodes(:,ndat);
+%         end;
+%         uSynthetic=dataVec';
+%          
+%         % Find the spectral coefficients the direct way
+%         specDXfm=(DXfmShort'*dataVec)';
+%         sprintf('recover coefficients using dot product method')
+%         specDXfm(1:min(np,nmodes))%np)
+%          
+% %         % Linear regression does a fine job of recovering the coefficients
+% %         sprintf('recover coefficients using linear regression')
+% %         specLR=(wmodes(:,1:min(np,nmodes))\dataVec)';
+% %         specLR(1:min(np,nmodes))%np)
+% 
+%         % end diagnostic
+        
+        
+%%         Density anomaly DIAGNOSTIC
+%         
+%         % create a data vector      
+%         dataCoeff=2*rand(1,min(nmodes,nw))-1;
+%         sprintf('original density anomaly spectral coefficients')
+%         dataCoeff(1:min(nmodes,length(dataCoeff)))
+%         dataVec=0*wmodes(:,1);
+%         for ndat=1:length(dataCoeff)%np
+%              dataVec=dataVec+dataCoeff(ndat)*wmodes(:,ndat).*MODEL.N2(1:nw);
+%         end;
+%         rhoSynthetic=dataVec';         
+% 
+%         % Find the spectral coefficients the direct way
+%         specrhoXfm=(rhoXfmShort'*dataVec)';
+%         sprintf('recover coefficients using dot product method')
+%         specrhoXfm(1:min(nw,nmodes))%np);
+%          
+% %         % Linear regression does a fine job of recovering the coefficients
+% %         sprintf('recover coefficients using linear regression')
+% %         specLR=(wmodes(:,1:min(nw,nmodes))\dataVec)';
+% %         specLR(1:min(nw,nmodes))%np)
+%     
+%         % end dianostic        
+                
+%% finish up
+end;
+
+%% Tidy up
+MODEL.psiw=psiw;
+MODEL.psip=psip;
+MODEL.vXfm=vXfm;
+MODEL.DXfm=DXfm;
+MODEL.rhoXfm=rhoXfm;
+MODEL.ke=keMat;
+
+aaa=23;         % a stopping place for the debuggerer
+

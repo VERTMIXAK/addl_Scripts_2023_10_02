@@ -1,0 +1,43 @@
+Go to
+	https://disc.gsfc.nasa.gov/
+and log in
+
+Put the desired data base into the search bar, and hit search
+
+click on Subset / Get Data
+
+edit time range, lat/lon range, download all variable, pick netcdf, select all times of day, then download
+
+This will put a text file into the Downloads folder that you copy into this directory.
+
+NOTE: the first line of this file needs to be deleted.
+
+
+
+Use this text file as input to the getData.bash script
+
+
+
+
+This creates a bunch of netcdf files, one per day. Move them into a scheduleForDeletion directory and ncrcat them
+together.
+
+Run the extractFields.bash script to create single files for each desired script. The extract script also modifies 
+variable names and units, and it fixes the time stamp by running settime.py. 
+
+Apparently, I want daily averages for albedo. This is why the extract script calls the albedo file
+	MERRA_albedo_2019.nc_ORIG
+
+Run the aveAlbedo.m script to create a smaller albedo file for the daily average. There's a lot of times, so 
+this takes a while.
+
+
+
+
+
+
+I don't know if this is strictly necessary, but all the MERRA files that come from Kate have Alaska in the middle. 
+i.e. longitude originally runs from -180 to 180 but change this so that the longitude runs from 0 to 360. Do this with
+the fixLongitude.m script then move the resulting netcdf file up one directory.
+
+

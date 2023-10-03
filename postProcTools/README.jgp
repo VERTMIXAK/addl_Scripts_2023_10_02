@@ -1,0 +1,15 @@
+I have scarfed this code from
+
+/import/archive/u1/uaf/jpender/MITgcm_forHarper/Experiments/OUTER_TIDE_0.025x0.025_M2_S2_K1_O1_01.01.2015/matlab
+
+What I am doing now is generating the first X vertical modes so I can fold it into ROMS like I did for 
+MITgcm. The relevant tasks are:
+
+1) Make sure gendata.m knows where I am working
+
+2) Pick the reference lat/lon for generating the stratification
+
+3) Generate the pmodes and wmodes
+
+4) Figure out how to save all the transform coefficients to file where ROMS can read them in.
+

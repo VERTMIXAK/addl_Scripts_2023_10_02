@@ -1,0 +1,11 @@
+1) get your dates by copy/pasting a stretch of
+		 ~/arch/addl_Scripts/dayConverter.txt
+
+	!! simplify things by replacing the white space with a comma
+		tr -s ' ' <dates.txt | tr ' ' ',' > dates.txt
+
+2) edit for longitude and latitude range
+		./latlon.txt
+
+3) run the batch script	
+		bash batch.bash

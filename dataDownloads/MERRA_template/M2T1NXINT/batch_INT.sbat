@@ -1,0 +1,29 @@
+#!/bin/bash
+#SBATCH --partition=t2small
+#SBATCH --ntasks=1
+#SBATCH --mail-user=jgpender@alaska.edu
+#SBATCH --mail-type=BEGIN
+#SBATCH --mail-type=END
+#SBATCH --mail-type=FAIL
+#SBATCH --time=48:00:00
+#SBATCH --output=roms.%j
+source ~/.runROMSintel
+ulimit -l unlimited
+ulimit -s unlimited
+
+
+
+# make new, cleaned up copies of the data in a new directory
+bash fixExtension.bash
+
+
+# ncrcat the variables into their own files
+bash extractFields.bash
+
+module purge
+. /etc/profile.d/modules.sh
+module load matlab/R2013a
+matlab -nosplash -nodisplay < sumRainComponents.m
+matlab -nosplash -nodisplay < fixLongitude.m
+
+\rm -r orig* data*

@@ -1,0 +1,8 @@
+clear
+
+% Get the grid.
+
+
+gridFile = a9'
+
+ROMSgrid=roms_get_grid(gridFile,sampleHISfile,0,1);

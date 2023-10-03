@@ -1,0 +1,1 @@
+http://pae-paha.pacioos.hawaii.edu/thredds/catalog/pacioos/roms_native/mari/catalog.html?dataset=pacioos/roms_native/mari/ROMS_CNMI_Regional_Ocean_Model_Native_Grid_best.ncd

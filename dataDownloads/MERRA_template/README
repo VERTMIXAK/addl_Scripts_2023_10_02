@@ -1,0 +1,26 @@
+I need to access 3 MERRA data sets
+
+M2T1NXINT
+
+	PRECCU - convective_rainfall 			\
+	PRECLS - large_scale_rainfall			|	-> rain,	rain_time
+	PRECSN - snowfall				 		/
+
+M2T1NXRAD
+
+	CLDTOT - total_cloud_area_fraction				-> cloud,		cloud_time
+	LWGAB  - surface_absorbed_longwave_radiation	-> lwrad_down,	lrf_time
+	SWGDN  - surface_incoming_shortwave_flux		-> swrad, 		srf_time
+    ALBEDO - surface_albedo             			-> albedo,  	albedo_time
+
+
+M2T1NXSLV
+
+	SLP    - sea_level_pressure				-> Pair,	pair_time
+	QV2M   - 2-meter_specific_humidity		-> Qair,	qair_time
+	T2M    - 2-meter_air_temperature		-> Tair,	tair_time
+	U2M    - 2-meter-eastward_wind			-> Uwind,	wind_time
+	V2M    - 2-meter_northward_wind			-> Vwind, 	wind_time
+
+NOTE: the MERRA site doesn't offer daily averages anymore, so I will download albedo 
+		with the rest of the fields in M2T1NXRAD

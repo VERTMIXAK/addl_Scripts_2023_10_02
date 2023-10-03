@@ -1,0 +1,40 @@
+startTimeStamp=`head -n3 log | tail -n1`
+endTimeStamp=`  tail -n1 log |rev | cut -d '.' -f1 |rev`
+
+echo $startTimeStamp
+echo $endTimeStamp
+
+
+startTime=`echo $startTimeStamp | cut -d '-' -f3`
+startDate=`echo $startTimeStamp | cut -d ',' -f1 | cut -d '-' -f2`
+startYear=`echo $startTimeStamp | cut -d ',' -f2 | cut -d '-' -f1`
+startSec=`date '+%s' --date "$startDate $startTime $startYear"`
+#echo $startSec
+
+endTime=`echo $endTimeStamp | cut -d '-' -f3`
+endDate=`echo $endTimeStamp | cut -d ',' -f1 | cut -d '-' -f2`
+endYear=`echo $endTimeStamp | cut -d ',' -f2 | cut -d '-' -f1`
+endSec=`date '+%s' --date "$endDate $endTime $endYear"`
+#echo $endSec
+
+
+nSec=`echo "$endSec - $startSec" |bc`
+nHour=`echo "scale=2; $nSec / 3600" |bc`
+#echo $nHour "hours"
+
+
+dum=`grep "Tile partition information" log | rev | cut -d ":" -f1 | rev | head -n1`
+#echo $dum
+
+Ni=`echo $dum | cut -d 'x' -f1 `
+Nj=`echo $dum | cut -d 'x' -f2 `
+
+#echo "ni,nj = $Ni, $Nj"
+
+Ntiles=`echo "$Ni * $Nj" |bc`
+#echo "Ntiles = $Ntiles"
+
+CPUhours=`echo "$Ntiles * $nHour" |bc `
+#echo "CPU hours = $CPUhours"
+
+echo "The model ran for $nHour hours using $Ntiles tiles for a total of $CPUhours CPU hours"

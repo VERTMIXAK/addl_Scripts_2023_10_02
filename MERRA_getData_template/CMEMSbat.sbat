@@ -1,0 +1,25 @@
+#!/bin/bash
+#SBATCH --partition=t2standard
+#SBATCH --ntasks=1
+#SBATCH --mail-user=jgpender@alaska.edu
+#SBATCH --mail-type=BEGIN
+#SBATCH --mail-type=END
+#SBATCH --mail-type=FAIL
+#SBATCH --time=48:00:00
+#SBATCH --output=roms.%j
+source ~/.runROMSintel
+ulimit -l unlimited
+ulimit -s unlimited
+
+
+cd /import/c1/VERTMIX/jgpender/ROMS/CMEMS/SEAK_2016
+bash batch.bash
+
+cd /import/c1/VERTMIX/jgpender/ROMS/CMEMS/SEAK_2017
+bash batch.bash
+
+cd /import/c1/VERTMIX/jgpender/ROMS/CMEMS/SEAK_2018
+bash batch.bash
+
+cd /import/c1/VERTMIX/jgpender/ROMS/CMEMS/SEAK_2019
+bash batch.bash

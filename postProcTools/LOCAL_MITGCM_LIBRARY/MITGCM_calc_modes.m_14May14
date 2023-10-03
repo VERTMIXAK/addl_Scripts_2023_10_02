@@ -1,0 +1,182 @@
+function MODEL=MITGCM_calc_modes(MODEL,OB,nmodes)
+%%
+
+Nx=MODEL.Nx;  Ny=MODEL.Ny;  Nz=MODEL.Nz;  Hmax=MODEL.H_max;  z=MODEL.Z;
+
+%% Construct the basis functions. 
+
+z=[0 MODEL.fullZ']';    % use the extra-dense z-grid (cell centers AND cell faces)
+nz= length(z);
+
+N2= interp1(MODEL.Z,MODEL.N2,z);
+N2(1) = N2(2);
+N2(nz)= N2(nz-1);
+%N2 = 0*N2 +  4*10^-6;                   % make N2 constant
+
+%JGP reconstruct the density from N2, realizing this is a bit half-assed
+rho0=OB.rho0; 
+for iii=1:nz-1
+    drho0=rho0(iii)*N2(iii)/9.81*(z(iii+1)-z(iii) );
+    rho0(iii+1)=rho0(iii)+drho0;
+end;
+N2(1:nz-1)' - diff(rho0) ./ diff(z')  ./rho0(1:end-1) *9.8;
+MODEL.rho0ofZ=rho0(2:2:end);
+
+psiw =  zeros([MODEL.Nz  nmodes  2*MODEL.Nz ]);
+psip =  zeros([MODEL.Nz  nmodes  2*MODEL.Nz ]);
+pXfm =  zeros([MODEL.Nz  nmodes  2*MODEL.Nz ]);
+keMat=  zeros([          nmodes  2*MODEL.Nz ]);
+wMat  = zeros([MODEL.Nz          2*MODEL.Nz ]);
+wzMat = zeros([MODEL.Nz          2*MODEL.Nz ]);
+wzzMat= zeros([MODEL.Nz          2*MODEL.Nz ]);
+
+pNrml =0* (1:nmodes);
+
+% for nInterval = 2:Nz
+for nInterval = 95:Nz
+    
+    
+
+ 
+%% first do the mode for which H is on a cell center. 
+    npoints=2*nInterval-1
+    
+    [psidw,psidp,w,dwdz,d2wdz2,ke] = dynmodes_hls(N2(1:npoints+1),z(1:npoints+1), OB );
+    
+    nw=length(psidw);    
+    np=length(psidp);
+    
+    %populate data matrices
+
+    psiw(1:nw,1:min(nw,nmodes),npoints)=psidw(1:nw,1:min(nw,nmodes));
+    psip(1:np,1:min(np,nmodes),npoints)=psidp(1:np,1:min(np,nmodes));
+    keMat(1:min(nw-1,nmodes),npoints)=ke(1:min(nw-1,nmodes));
+    wMat(1:nw,npoints)=w;
+    wzMat(1:nw,npoints)=dwdz;
+    wzzMat(1:nw,npoints)=d2wdz2;
+   
+    pNrml=0*pNrml;
+    Xfmdp=0*psidp;
+  
+    
+    pNrml=0*pNrml;
+    for nn=1:min(np,nmodes); 
+        for pp=1:np
+            pNrml(nn)=pNrml(nn) + psidp(pp,nn)^2 * MODEL.delZ(pp);%/MODEL.rho0ofZ(pp);
+        end;
+         pNrml(nn)=pNrml(nn) - psidp(np,nn)^2 * .5*MODEL.delZ(np);%/MODEL.rho0ofZ(np);
+    end;    
+
+    for nn=1:min(np,nmodes); 
+        for pp=1:np-1
+          Xfmdp(pp,nn)=psidp(pp,nn) * MODEL.delZ(pp) / pNrml(nn);% / MODEL.rho0ofZ(pp);
+        end;
+        Xfmdp(np,nn)=psidp(np,nn) * .5*MODEL.delZ(np) / pNrml(nn);% / MODEL.rho0ofZ(np);
+    end;   
+    
+	% Taking the inverse works better for small nInterval
+    if nInterval < 25
+        Xfmdp=inv(psidp');
+	end;
+       
+    pXfm(1:np,1:min(np,nmodes),npoints)=Xfmdp(1:np,1:min(np,nmodes));    
+    
+%%         % DIAGNOSTIC
+%         
+        % create a data vector      
+        dataCoeff=2*rand(1,min(nmodes,np))-1;
+        sprintf('original spectral coefficients')
+        dataCoeff(1:min(nmodes,length(dataCoeff)))
+        dataVec=0*psidp(:,1);
+        for ndat=1:length(dataCoeff)%np
+             dataVec=dataVec+dataCoeff(ndat)*psidp(:,ndat);
+        end;
+        uSynthetic=dataVec';         
+
+        % Find the spectral coefficients the direct way
+        specPXfm=(Xfmdp'*dataVec)';
+        sprintf('recover coefficients using dot product method')
+        specPXfm(1:min(np,nmodes))%np);
+         
+        % Linear regression does a fine job of recovering the coefficients
+        sprintf('recover coefficients using linear regression')
+        specLR=(psidp(:,1:min(np,nmodes))\dataVec)';
+        specLR(1:min(np,nmodes))%np)
+    
+        % end dianostic
+        
+%% Now do the mode for which H is on the bottom face of the cell
+    npoints=2*nInterval;
+    [psidw,psidp,w,dwdz,d2wdz2,ke] = dynmodes_hls(N2(1:npoints+1),z(1:npoints+1), OB );
+
+    nw=length(psidw);    
+    np=length(psidp);
+    
+    %populate data matrices
+    
+    psiw(1:nw,1:min(nw,nmodes),npoints)=psidw(1:nw,1:min(nw,nmodes));
+    psip(1:np,1:min(np,nmodes),npoints)=psidp(1:np,1:min(np,nmodes));
+    keMat(1:min(nw-1,nmodes),npoints)=ke(1:min(nw-1,nmodes));
+    wMat(1:nw,npoints)=w;
+    wzMat(1:nw,npoints)=dwdz;
+    wzzMat(1:nw,npoints)=d2wdz2;
+    
+    pNrml=0*pNrml;
+    Xfmdp=0*psidp;
+   
+
+    pNrml=0*pNrml;
+    for nn=1:min(np,nmodes); for pp=1:np
+        pNrml(nn)=pNrml(nn) + psidp(pp,nn)^2 * MODEL.delZ(pp);%/MODEL.rho0ofZ(pp);
+    end;end;
+
+    for nn=1:min(np,nmodes); for pp=1:np
+        Xfmdp(pp,nn)=psidp(pp,nn) * MODEL.delZ(pp) / pNrml(nn);% / MODEL.rho0ofZ(pp);
+    end;end;   
+
+	% Taking the inverse works better for small nInterval
+	if nInterval < 25
+        Xfmdp=inv(psidp');
+	end;
+       
+    pXfm(1:np,1:min(np,nmodes),npoints)=Xfmdp(1:np,1:min(np,nmodes));   
+    
+%%         % DIAGNOSTIC
+%         
+        % create a data vector
+                     
+        dataCoeff=2*rand(1,min(nmodes,np))-1;
+        sprintf('original spectral coefficients')
+        dataCoeff(1:min(nmodes,length(dataCoeff)))
+        dataVec=0*psidp(:,1);
+        for ndat=1:length(dataCoeff)%np
+             dataVec=dataVec+dataCoeff(ndat)*psidp(:,ndat);
+        end;
+        uSynthetic=dataVec';
+         
+        % Find the spectral coefficients the direct way
+        specPXfm=(Xfmdp'*dataVec)';
+        sprintf('recover coefficients using dot product method')
+        specPXfm(1:min(np,nmodes))%np)
+         
+        % Linear regression does a fine job of recovering the coefficients
+        sprintf('recover coefficients using linear regression')
+        specLR=(psidp(:,1:min(np,nmodes))\dataVec)';
+        specLR(1:min(np,nmodes))%np)
+
+        % end diagnostic
+                
+%% finish up
+end;
+
+%% Tidy up
+MODEL.psiw=psiw;
+MODEL.psip=psip;
+MODEL.pXfm=pXfm;
+MODEL.ke=keMat;
+MODEL.w=wMat;
+MODEL.wz=wzMat;
+MODEL.wzz=wzzMat;
+
+aaa=23;         % a stopping place for the debuggerer
+

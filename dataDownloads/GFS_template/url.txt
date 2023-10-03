@@ -1,0 +1,1 @@
+https://rda.ucar.edu/thredds/ncss/grid/files/g/ds084.1/2022/20221002/gfs.0p25.2022100200.f021.grib2?var=Total_cloud_cover_entire_atmosphere_3_Hour_Average&north=15&west=125&east=145&south=0&horizStride=1&time_start=2022-10-02T21:00:00Z&time_end=2022-10-02T21:00:00Z&timeStride=1&vertStride=1&accept=netcdf3&addLatLon=true

@@ -1,0 +1,2 @@
+http://pae-paha.pacioos.hawaii.edu/thredds/ncss/pacioos/roms_native/mari/ROMS_CNMI_Regional_Ocean_Model_Native_Grid_best.ncd?var=ubar&var=vbar&var=zeta&var=salt&var=temp&var=u&var=v&disableLLSubset=on&disableProjSubset=on&horizStride=1&time_start=2022-01-05T00%3A00%3A00Z&time_end=2022-01-05T00%3A00%3A00Z&timeStride=1&vertCoord=&addLatLon=true
+

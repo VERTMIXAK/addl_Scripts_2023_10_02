@@ -1,0 +1,4 @@
+lonmin=-55
+lonmax=15
+latmin=50
+latmax=71

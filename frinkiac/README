@@ -1,0 +1,22 @@
+What you get from frinkiac is a set of files, each with Nt values for ocean_time.
+The problem is that ocean_time is in seconds instead of days, which is inconvenient for me.
+
+Step 1.
+
+bash fixTimes.bash
+
+This script uses settime.py to change the numerical value of ocean_time everywhere then
+uses settime.py to change the numerical value of ocean_time everywhere.
+
+NOTE: the order seems to matter
+
+
+
+Step 2.
+
+Split out the frinkiac files into individual snapshots, which is what I need to calculate the IC and BC.
+
+bash split.bash
+
+
+

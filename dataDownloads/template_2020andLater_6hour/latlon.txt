@@ -1,0 +1,4 @@
+lonmin=130
+lonmax=160
+latmin=0
+latmax=30

@@ -1,0 +1,4 @@
+lonmin=AAA
+lonmax=BBB
+latmin=CCC
+latmax=DDD

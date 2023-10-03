@@ -1,0 +1,419 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>MITGCM_get_tpxo_OBCs</title><meta name="generator" content="MATLAB 7.13"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2014-04-21"><meta name="DC.source" content="MITGCM_get_tpxo_OBCs.m"><style type="text/css">
+
+body {
+  background-color: white;
+  margin:10px;
+}
+
+h1 {
+  color: #990000; 
+  font-size: x-large;
+}
+
+h2 {
+  color: #990000;
+  font-size: medium;
+}
+
+/* Make the text shrink to fit narrow windows, but not stretch too far in 
+wide windows. */ 
+p,h1,h2,div.content div {
+  max-width: 600px;
+  /* Hack for IE6 */
+  width: auto !important; width: 600px;
+}
+
+pre.codeinput {
+  background: #EEEEEE;
+  padding: 10px;
+}
+@media print {
+  pre.codeinput {word-wrap:break-word; width:100%;}
+} 
+
+span.keyword {color: #0000FF}
+span.comment {color: #228B22}
+span.string {color: #A020F0}
+span.untermstring {color: #B20000}
+span.syscmd {color: #B28C00}
+
+pre.codeoutput {
+  color: #666666;
+  padding: 10px;
+}
+
+pre.error {
+  color: red;
+}
+
+p.footer {
+  text-align: right;
+  font-size: xx-small;
+  font-weight: lighter;
+  font-style: italic;
+  color: gray;
+}
+
+  </style></head><body><div class="content"><pre class="codeinput">    <span class="comment">% The tides to extract</span>
+    tpxofile = <span class="string">'/import/c/w/jpender/dataDir/OTIS_DATA/Model_tpxo7.2'</span>;
+    <span class="comment">% A=[ones([1 length(OB.timeD)]); cos(OB.omegaD*OB.timeD); sin(OB.omegaD*OB.timeD)];</span>
+    A=[ones([1 length(OB.timeD)]);
+        cos(OB.omegaDM2*OB.timeD); sin(OB.omegaDM2*OB.timeD);
+        cos(OB.omegaDS2*OB.timeD); sin(OB.omegaDS2*OB.timeD);
+        cos(OB.omegaDK1*OB.timeD); sin(OB.omegaDK1*OB.timeD);
+        cos(OB.omegaDO1*OB.timeD); sin(OB.omegaDO1*OB.timeD)
+        ];
+
+    <span class="comment">% Time dependence to upload</span>
+    <span class="comment">%input=[cos(OB.omegaD*OB.timeD); sin(OB.omegaD*OB.timeD)];</span>
+    input=[cos(OB.omegaDM2*OB.timeD); sin(OB.omegaDM2*OB.timeD);
+        cos(OB.omegaDS2*OB.timeD); sin(OB.omegaDS2*OB.timeD);
+        cos(OB.omegaDK1*OB.timeD); sin(OB.omegaDK1*OB.timeD);
+        cos(OB.omegaDO1*OB.timeD); sin(OB.omegaDO1*OB.timeD)];
+
+    <span class="comment">% Southern Boundary</span>
+    lat=MODEL.Lat(1,:);lon=MODEL.Lon(1,:);H0=MODEL.H(1,:);
+    [u]=GET_TIDE_TPXO(tpxofile,OB.timeD,lon,lat,<span class="string">'U'</span>,[nconsts],1);
+    [v]=GET_TIDE_TPXO(tpxofile,OB.timeD,lon,lat,<span class="string">'V'</span>,[nconsts],1);
+    su=zeros([MODEL.Nx OB.Nt]);sv=zeros([MODEL.Nx OB.Nt]);
+    <span class="keyword">for</span> i=1:size(u,1)
+        <span class="keyword">if</span> ~any(isnan(u(i,:))) &amp; H0(i)&gt;1e-6
+            B=regress(u(i,:)',A')/H0(i);
+            su(i,:)=input'*B(2:3);
+        <span class="keyword">end</span>
+        <span class="keyword">if</span> ~any(isnan(v(i,:))) &amp; H0(i)&gt;1e-6
+            B=regress(v(i,:)',A')/H0(i);
+            sv(i,:)=input'*B(2:3);
+        <span class="keyword">end</span>
+	<span class="keyword">end</span>
+    <span class="comment">%keyboard</span>
+
+    <span class="comment">% Northern Boundary</span>
+    lat=MODEL.Lat(end,:);lon=MODEL.Lon(end,:);H0=MODEL.H(end,:);
+    [u]=GET_TIDE_TPXO(tpxofile,OB.timeD,lon,lat,<span class="string">'U'</span>,[nconsts],1);
+    [v]=GET_TIDE_TPXO(tpxofile,OB.timeD,lon,lat,<span class="string">'V'</span>,[nconsts],1);
+    nu=zeros([MODEL.Nx OB.Nt]);nv=zeros([MODEL.Nx OB.Nt]);
+    <span class="keyword">for</span> i=1:size(u,1)
+        <span class="keyword">if</span> ~any(isnan(u(i,:))) &amp; H0(i)&gt;1e-6
+            B=regress(u(i,:)',A')/H0(i);
+            nu(i,:)=input'*B(2:3);
+        <span class="keyword">end</span>
+        <span class="keyword">if</span> ~any(isnan(v(i,:))) &amp; H0(i)&gt;1e-6
+            B=regress(v(i,:)',A')/H0(i);
+            nv(i,:)=input'*B(2:3);
+        <span class="keyword">end</span>
+	<span class="keyword">end</span>
+
+    <span class="comment">% Western boundary</span>
+</pre><pre class="codeoutput">
+hfile =
+
+/import/c/w/jpender/dataDir/OTIS_DATA/h_tpxo7.2
+
+Interpolating constituent m2  ... 
+
+hfile =
+
+/import/c/w/jpender/dataDir/OTIS_DATA/h_tpxo7.2
+
+Interpolating constituent m2  ... 
+</pre><pre class="codeoutput">Error using *
+Inner matrix dimensions must agree.
+
+Error in MITGCM_get_tpxo_OBCs (line 26)
+            su(i,:)=input'*B(2:3);
+</pre><pre class="codeinput">    lat=MODEL.Lat(:,1);lon=MODEL.Lon(:,1);H0=MODEL.H(:,1);
+    [u]=GET_TIDE_TPXO(tpxofile,OB.timeD,lon,lat,<span class="string">'U'</span>,[nconsts],1);
+    [v]=GET_TIDE_TPXO(tpxofile,OB.timeD,lon,lat,<span class="string">'V'</span>,[nconsts],1);
+    wu=zeros([MODEL.Ny OB.Nt]);wv=zeros([MODEL.Ny OB.Nt]);
+    <span class="keyword">for</span> i=1:size(u,1)
+        <span class="keyword">if</span> ~any(isnan(u(i,:))) &amp; H0(i)&gt;1e-6
+            B=regress(u(i,:)',A')/H0(i);
+            wu(i,:)=input'*B(2:3);
+        <span class="keyword">end</span>
+        <span class="keyword">if</span> ~any(isnan(v(i,:))) &amp; H0(i)&gt;1e-6
+            B=regress(v(i,:)',A')/H0(i);
+            wv(i,:)=input'*B(2:3);
+        <span class="keyword">end</span>
+	<span class="keyword">end</span>
+</pre><p>Eastern boundary</p><pre class="codeinput">    lat=MODEL.Lat(:,end);lon=MODEL.Lon(:,end);H0=MODEL.H(:,end);
+    [u]=GET_TIDE_TPXO(tpxofile,OB.timeD,lon,lat,<span class="string">'U'</span>,[nconsts],1);
+    [v]=GET_TIDE_TPXO(tpxofile,OB.timeD,lon,lat,<span class="string">'V'</span>,[nconsts],1);
+    eu=zeros([MODEL.Ny OB.Nt]);ev=zeros([MODEL.Ny OB.Nt]);
+    <span class="keyword">for</span> i=1:size(u,1)
+        <span class="keyword">if</span> ~any(isnan(u(i,:))) &amp; H0(i)&gt;1e-6
+            B=regress(u(i,:)',A')/H0(i);
+            eu(i,:)=input'*B(2:3);
+        <span class="keyword">end</span>
+        <span class="keyword">if</span> ~any(isnan(v(i,:))) &amp; H0(i)&gt;1e-6
+            B=regress(v(i,:)',A')/H0(i);
+            ev(i,:)=input'*B(2:3);
+        <span class="keyword">end</span>
+	<span class="keyword">end</span>
+</pre><pre class="codeinput">	nu=demean(nu')';
+	nv=demean(nv')';
+	su=demean(su')';
+	sv=demean(sv')';
+	wu=demean(wu')';
+	wv=demean(wv')';
+    eu=demean(eu')';
+	ev=demean(ev')';
+</pre><pre class="codeinput"><span class="comment">%keyboard</span>
+<span class="comment">% rotate vectors</span>
+
+<span class="keyword">if</span> rotateit
+</pre><pre class="codeinput">theta=deg2rad(MODEL.rotate_angle);R=[cos(theta) sin(theta);-sin(theta) cos(theta)];
+tmpnu=nan*nu;
+tmpnv=nan*nv;
+tmpsu=nan*su;
+tmpsv=nan*sv;
+tmpeu=nan*eu;
+tmpev=nan*ev;
+tmpwu=nan*wu;
+tmpwv=nan*wv;
+
+<span class="keyword">for</span> ii = 1:length(nu(:,1));tmp = R*[nu(ii,:);nv(ii,:)];	tmpnu(ii,:)=tmp(1,:);	tmpnv(ii,:)=tmp(2,:);<span class="keyword">end</span>
+<span class="keyword">for</span> ii = 1:length(eu(:,1));tmp = R*[eu(ii,:);ev(ii,:)];	tmpeu(ii,:)=tmp(1,:);	tmpev(ii,:)=tmp(2,:);<span class="keyword">end</span>
+<span class="keyword">for</span> ii = 1:length(wu(:,1));tmp = R*[wu(ii,:);wv(ii,:)];	tmpwu(ii,:)=tmp(1,:);	tmpwv(ii,:)=tmp(2,:);<span class="keyword">end</span>
+<span class="keyword">for</span> ii = 1:length(su(:,1));tmp = R*[su(ii,:);sv(ii,:)];	tmpsu(ii,:)=tmp(1,:);	tmpsv(ii,:)=tmp(2,:);<span class="keyword">end</span>
+nu=tmpnu;
+nv=tmpnv;
+su=tmpsu;
+nv=tmpsv;
+eu=tmpeu;
+ev=tmpev;
+wu=tmpwu;
+wv=tmpwv;
+</pre><pre class="codeinput"><span class="keyword">end</span> <span class="comment">% rotateit</span>
+
+<span class="comment">% Calculate temp boundary</span>
+    OB.NT=repmat(MODEL.Tref',[MODEL.Nx 1 OB.Nt]);
+    OB.ST=repmat(MODEL.Tref',[MODEL.Nx 1 OB.Nt]);
+    OB.WT=repmat(MODEL.Tref',[MODEL.Ny 1 OB.Nt]);
+    OB.ET=repmat(MODEL.Tref',[MODEL.Ny 1 OB.Nt]);
+
+<span class="comment">% Format for model</span>
+    OB.NU=permute(repmat(nu,[1 1 MODEL.Nz]),[1 3 2]);
+    OB.NV=permute(repmat(nv,[1 1 MODEL.Nz]),[1 3 2]);
+    OB.SU=permute(repmat(su,[1 1 MODEL.Nz]),[1 3 2]);
+    OB.SV=permute(repmat(sv,[1 1 MODEL.Nz]),[1 3 2]);
+    OB.WU=permute(repmat(wu,[1 1 MODEL.Nz]),[1 3 2]);
+    OB.WV=permute(repmat(wv,[1 1 MODEL.Nz]),[1 3 2]);
+    OB.EU=permute(repmat(eu,[1 1 MODEL.Nz]),[1 3 2]);
+    OB.EV=permute(repmat(ev,[1 1 MODEL.Nz]),[1 3 2]);
+
+<span class="comment">% plot TPXO tides</span>
+<span class="comment">% consts={'m2';'s2';'o1';'k1'};params={'z'}</span>
+<span class="comment">% for cdx = 1:length(consts)</span>
+<span class="comment">% for pdx = 1:length(params)</span>
+<span class="comment">%         param = char(params(pdx));      const = char(consts(cdx));disp([param,' ',const])</span>
+<span class="comment">%         [x,y,tmpamp,tmppha]=tmd_get_coeff('/import/c/w/jpender/dataDir/OTIS_DATA/Model_tpxo7.2',param,const);</span>
+<span class="comment">%     amp.(const).(param)=tmpamp;</span>
+<span class="comment">%     pha.(const).(param)=tmppha;</span>
+<span class="comment">% end</span>
+<span class="comment">% end</span>
+<span class="comment">% clear tmp* cdx pdx</span>
+<span class="comment">% %min(MODEL.Lon(:))</span>
+<span class="comment">% idx=find(x&gt;=min(MODEL.Lon(:))&amp;x&lt;=max(MODEL.Lon(:)));</span>
+<span class="comment">% jdx=find(y&gt;=min(MODEL.Lat(:))&amp;y&lt;=max(MODEL.Lat(:)));</span>
+<span class="comment">% if ifplottpxo</span>
+<span class="comment">% figure(201);clf</span>
+<span class="comment">% m_proj('equi','lon',[min(MODEL.Lon(:)) max(MODEL.Lon(:))],'lat',[min(MODEL.Lat(:)) max(MODEL.Lat(:))] );</span>
+<span class="comment">% %keyboard</span>
+<span class="comment">% %%</span>
+<span class="comment">% 	for cdx = 1:4</span>
+<span class="comment">% 	const = char(consts(cdx))</span>
+<span class="comment">% 	tmpamp = amp.(const).z;</span>
+<span class="comment">% 	tmppha = pha.(const).z;</span>
+<span class="comment">% 	subplot(2,2,cdx)</span>
+<span class="comment">% 	m_contourf(x(idx),y(jdx),tmpamp(jdx,idx),[0:.01:2]);caxis([0,1]);shading flat;hold on;axis equal xy tight;;caxis([0,1]);pos=get(gca,'pos');</span>
+<span class="comment">% 	if cdx==4;h=colorbar;set(h,'pos',[.925,.1,.005,.35]);end;set(gca,'pos',pos)</span>
+<span class="comment">% 	[c,h]=m_contour(x(idx),y(jdx),tmppha(jdx,idx),5:5:355,'k');clabel(c,h,'labelsp',7200)</span>
+<span class="comment">% 	m_coast('patch',.75*[.85 1 .5]);hold on;;m_grid;drawnow;m_fix;;title(const)</span>
+<span class="comment">% 	drawnow</span>
+<span class="comment">% 	end</span>
+<span class="comment">% end</span>
+</pre><p class="footer"><br>
+      Published with MATLAB&reg; 7.13<br></p></div><!--
+##### SOURCE BEGIN #####
+    % The tides to extract
+    tpxofile = '/import/c/w/jpender/dataDir/OTIS_DATA/Model_tpxo7.2';
+    % A=[ones([1 length(OB.timeD)]); cos(OB.omegaD*OB.timeD); sin(OB.omegaD*OB.timeD)];
+    A=[ones([1 length(OB.timeD)]); 
+        cos(OB.omegaDM2*OB.timeD); sin(OB.omegaDM2*OB.timeD); 
+        cos(OB.omegaDS2*OB.timeD); sin(OB.omegaDS2*OB.timeD); 
+        cos(OB.omegaDK1*OB.timeD); sin(OB.omegaDK1*OB.timeD); 
+        cos(OB.omegaDO1*OB.timeD); sin(OB.omegaDO1*OB.timeD)
+        ];
+    
+    % Time dependence to upload
+    %input=[cos(OB.omegaD*OB.timeD); sin(OB.omegaD*OB.timeD)];
+    input=[cos(OB.omegaDM2*OB.timeD); sin(OB.omegaDM2*OB.timeD); 
+        cos(OB.omegaDS2*OB.timeD); sin(OB.omegaDS2*OB.timeD); 
+        cos(OB.omegaDK1*OB.timeD); sin(OB.omegaDK1*OB.timeD); 
+        cos(OB.omegaDO1*OB.timeD); sin(OB.omegaDO1*OB.timeD)];
+    
+    % Southern Boundary
+    lat=MODEL.Lat(1,:);lon=MODEL.Lon(1,:);H0=MODEL.H(1,:);
+    [u]=GET_TIDE_TPXO(tpxofile,OB.timeD,lon,lat,'U',[nconsts],1);
+    [v]=GET_TIDE_TPXO(tpxofile,OB.timeD,lon,lat,'V',[nconsts],1);
+    su=zeros([MODEL.Nx OB.Nt]);sv=zeros([MODEL.Nx OB.Nt]);
+    for i=1:size(u,1)
+        if ~any(isnan(u(i,:))) & H0(i)>1e-6
+            B=regress(u(i,:)',A')/H0(i);
+            su(i,:)=input'*B(2:3);
+        end
+        if ~any(isnan(v(i,:))) & H0(i)>1e-6
+            B=regress(v(i,:)',A')/H0(i);
+            sv(i,:)=input'*B(2:3);
+        end
+	end
+    %keyboard
+    
+    % Northern Boundary
+    lat=MODEL.Lat(end,:);lon=MODEL.Lon(end,:);H0=MODEL.H(end,:);
+    [u]=GET_TIDE_TPXO(tpxofile,OB.timeD,lon,lat,'U',[nconsts],1);
+    [v]=GET_TIDE_TPXO(tpxofile,OB.timeD,lon,lat,'V',[nconsts],1);
+    nu=zeros([MODEL.Nx OB.Nt]);nv=zeros([MODEL.Nx OB.Nt]);
+    for i=1:size(u,1)
+        if ~any(isnan(u(i,:))) & H0(i)>1e-6
+            B=regress(u(i,:)',A')/H0(i);
+            nu(i,:)=input'*B(2:3);
+        end
+        if ~any(isnan(v(i,:))) & H0(i)>1e-6
+            B=regress(v(i,:)',A')/H0(i);
+            nv(i,:)=input'*B(2:3);
+        end
+	end
+
+    % Western boundary
+    %%
+    lat=MODEL.Lat(:,1);lon=MODEL.Lon(:,1);H0=MODEL.H(:,1);
+    [u]=GET_TIDE_TPXO(tpxofile,OB.timeD,lon,lat,'U',[nconsts],1);
+    [v]=GET_TIDE_TPXO(tpxofile,OB.timeD,lon,lat,'V',[nconsts],1);
+    wu=zeros([MODEL.Ny OB.Nt]);wv=zeros([MODEL.Ny OB.Nt]);
+    for i=1:size(u,1)
+        if ~any(isnan(u(i,:))) & H0(i)>1e-6
+            B=regress(u(i,:)',A')/H0(i);
+            wu(i,:)=input'*B(2:3);
+        end
+        if ~any(isnan(v(i,:))) & H0(i)>1e-6
+            B=regress(v(i,:)',A')/H0(i);
+            wv(i,:)=input'*B(2:3);
+        end
+	end
+	
+    %%
+    % Eastern boundary
+    lat=MODEL.Lat(:,end);lon=MODEL.Lon(:,end);H0=MODEL.H(:,end);
+    [u]=GET_TIDE_TPXO(tpxofile,OB.timeD,lon,lat,'U',[nconsts],1);
+    [v]=GET_TIDE_TPXO(tpxofile,OB.timeD,lon,lat,'V',[nconsts],1);
+    eu=zeros([MODEL.Ny OB.Nt]);ev=zeros([MODEL.Ny OB.Nt]);
+    for i=1:size(u,1)
+        if ~any(isnan(u(i,:))) & H0(i)>1e-6
+            B=regress(u(i,:)',A')/H0(i);
+            eu(i,:)=input'*B(2:3);
+        end
+        if ~any(isnan(v(i,:))) & H0(i)>1e-6
+            B=regress(v(i,:)',A')/H0(i);
+            ev(i,:)=input'*B(2:3);
+        end
+	end
+%%
+
+	nu=demean(nu')';
+	nv=demean(nv')';
+	su=demean(su')';
+	sv=demean(sv')';
+	wu=demean(wu')';
+	wv=demean(wv')';
+    eu=demean(eu')';
+	ev=demean(ev')';
+%%    
+%keyboard
+% rotate vectors
+
+if rotateit
+%%
+theta=deg2rad(MODEL.rotate_angle);R=[cos(theta) sin(theta);-sin(theta) cos(theta)];
+tmpnu=nan*nu;
+tmpnv=nan*nv;
+tmpsu=nan*su;
+tmpsv=nan*sv;
+tmpeu=nan*eu;
+tmpev=nan*ev;
+tmpwu=nan*wu;
+tmpwv=nan*wv;
+
+for ii = 1:length(nu(:,1));tmp = R*[nu(ii,:);nv(ii,:)];	tmpnu(ii,:)=tmp(1,:);	tmpnv(ii,:)=tmp(2,:);end
+for ii = 1:length(eu(:,1));tmp = R*[eu(ii,:);ev(ii,:)];	tmpeu(ii,:)=tmp(1,:);	tmpev(ii,:)=tmp(2,:);end
+for ii = 1:length(wu(:,1));tmp = R*[wu(ii,:);wv(ii,:)];	tmpwu(ii,:)=tmp(1,:);	tmpwv(ii,:)=tmp(2,:);end
+for ii = 1:length(su(:,1));tmp = R*[su(ii,:);sv(ii,:)];	tmpsu(ii,:)=tmp(1,:);	tmpsv(ii,:)=tmp(2,:);end
+nu=tmpnu;
+nv=tmpnv;
+su=tmpsu;
+nv=tmpsv;
+eu=tmpeu;
+ev=tmpev;
+wu=tmpwu;
+wv=tmpwv;
+end % rotateit
+
+% Calculate temp boundary
+    OB.NT=repmat(MODEL.Tref',[MODEL.Nx 1 OB.Nt]);
+    OB.ST=repmat(MODEL.Tref',[MODEL.Nx 1 OB.Nt]);
+    OB.WT=repmat(MODEL.Tref',[MODEL.Ny 1 OB.Nt]);
+    OB.ET=repmat(MODEL.Tref',[MODEL.Ny 1 OB.Nt]);
+
+% Format for model
+    OB.NU=permute(repmat(nu,[1 1 MODEL.Nz]),[1 3 2]);
+    OB.NV=permute(repmat(nv,[1 1 MODEL.Nz]),[1 3 2]);
+    OB.SU=permute(repmat(su,[1 1 MODEL.Nz]),[1 3 2]);
+    OB.SV=permute(repmat(sv,[1 1 MODEL.Nz]),[1 3 2]);
+    OB.WU=permute(repmat(wu,[1 1 MODEL.Nz]),[1 3 2]);
+    OB.WV=permute(repmat(wv,[1 1 MODEL.Nz]),[1 3 2]);
+    OB.EU=permute(repmat(eu,[1 1 MODEL.Nz]),[1 3 2]);
+    OB.EV=permute(repmat(ev,[1 1 MODEL.Nz]),[1 3 2]);
+
+% plot TPXO tides
+% consts={'m2';'s2';'o1';'k1'};params={'z'}
+% for cdx = 1:length(consts)
+% for pdx = 1:length(params)
+%         param = char(params(pdx));      const = char(consts(cdx));disp([param,' ',const])
+%         [x,y,tmpamp,tmppha]=tmd_get_coeff('/import/c/w/jpender/dataDir/OTIS_DATA/Model_tpxo7.2',param,const);
+%     amp.(const).(param)=tmpamp;
+%     pha.(const).(param)=tmppha;
+% end
+% end
+% clear tmp* cdx pdx
+% %min(MODEL.Lon(:))
+% idx=find(x>=min(MODEL.Lon(:))&x<=max(MODEL.Lon(:)));
+% jdx=find(y>=min(MODEL.Lat(:))&y<=max(MODEL.Lat(:)));
+% if ifplottpxo
+% figure(201);clf
+% m_proj('equi','lon',[min(MODEL.Lon(:)) max(MODEL.Lon(:))],'lat',[min(MODEL.Lat(:)) max(MODEL.Lat(:))] );
+% %keyboard
+% %%
+% 	for cdx = 1:4
+% 	const = char(consts(cdx))
+% 	tmpamp = amp.(const).z;
+% 	tmppha = pha.(const).z;
+% 	subplot(2,2,cdx)
+% 	m_contourf(x(idx),y(jdx),tmpamp(jdx,idx),[0:.01:2]);caxis([0,1]);shading flat;hold on;axis equal xy tight;;caxis([0,1]);pos=get(gca,'pos');
+% 	if cdx==4;h=colorbar;set(h,'pos',[.925,.1,.005,.35]);end;set(gca,'pos',pos)
+% 	[c,h]=m_contour(x(idx),y(jdx),tmppha(jdx,idx),5:5:355,'k');clabel(c,h,'labelsp',7200)
+% 	m_coast('patch',.75*[.85 1 .5]);hold on;;m_grid;drawnow;m_fix;;title(const)
+% 	drawnow
+% 	end
+% end
+
+##### SOURCE END #####
+--></body></html>

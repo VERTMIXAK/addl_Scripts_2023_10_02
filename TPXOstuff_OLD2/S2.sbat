@@ -1,0 +1,14 @@
+#!/bin/bash
+#SBATCH --partition=t2small
+#SBATCH --ntasks=1
+#SBATCH --mail-user=jgpender@alaska.edu
+#SBATCH --mail-type=BEGIN
+#SBATCH --mail-type=END
+#SBATCH --mail-type=FAIL
+#SBATCH --time=05:00:00
+#SBATCH --output=roms.%j
+
+module purge
+module load matlab/R2013a
+
+matlab -nodisplay -nosplash <  tideComparison_S2.m

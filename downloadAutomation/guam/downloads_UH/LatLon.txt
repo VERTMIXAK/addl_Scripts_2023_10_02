@@ -1,0 +1,4 @@
+11N	 latMin
+17N	 latMax
+141E lonMin
+148E lonMax
